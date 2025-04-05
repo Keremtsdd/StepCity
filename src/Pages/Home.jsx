@@ -65,6 +65,7 @@ function Home() {
 
             </div>
 
+
             <div>
                 <h1 className="font-bold text-4xl mt-20 ml-[100px]">Öne Çıkan Ürünler</h1>
                 <span className="h-1 w-[140px] ml-[103px] mt-2 rounded-sm bg-black block"></span>
@@ -81,6 +82,7 @@ function Home() {
                         </div>
                     ))}
                 </div>
+
 
                 <div className="flex justify-center mt-6">
                     <button
@@ -107,7 +109,7 @@ function Home() {
                         src='https://i.pinimg.com/736x/e4/1c/1d/e41c1df1326c559c5a5d8399acf5bb6b.jpg'
                         alt='Man'
                         className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                        onClick={() => navigate("/Women")}
+                        onClick={() => navigate("/Kadın-Ayakkabı")}
                     />
 
                     <h1 className='absolute top-7 left-10 text-3xl font-bold'>Kadın</h1>
@@ -120,6 +122,7 @@ function Home() {
                         src='https://i.pinimg.com/736x/be/55/4a/be554a91b6e237299be009d91c209061.jpg'
                         alt='Woman'
                         className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                        onClick={() => navigate("/Erkek-Ayakkabı")}
                     />
 
                     <h1 className='absolute bottom-24 left-10 text-3xl font-bold'>Erkek</h1>
