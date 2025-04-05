@@ -2,15 +2,15 @@ import React, { useState } from 'react'
 import logo from '../İmages/logo.png';
 import Adidas from '../İmages/adidas.png';
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
-import SearchIcon from '@mui/icons-material/Search';
-import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import LocalGroceryStoreOutlinedIcon from '@mui/icons-material/LocalGroceryStoreOutlined';
 import StarBorderPurple500Icon from '@mui/icons-material/StarBorderPurple500';
+import { useNavigate } from 'react-router-dom';
 
 function Home() {
 
     const [currentPage, setCurrentPage] = useState(0);
+    const navigate = useNavigate();
 
     const shoes = [
         { id: 1, name: 'Nike Court Legacy Lift', image: 'https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/8604a6d6-c9c0-49e7-a485-1cc746235807/NIKE+COURT+VISION+LO.png', price: '₺3000', description: 'Kadın ayakkabısı' },
@@ -50,14 +50,12 @@ function Home() {
 
                 <img className='h-[960px] w-full relative select-none' src="https://cdn.pixabay.com/photo/2020/05/03/19/09/nike-5126389_1280.jpg" alt="NikeBanner" />
 
-                <img className='absolute bottom-[380px] right-[200px] h-44 w-44 rounded-full select-none' src={logo} alt="StepCity" />
+                <img className='absolute bottom-[400px] right-[200px] h-44 w-44 rounded-full select-none' src={logo} alt="StepCity" />
 
                 <div className='cursor-pointer'>
 
-                    <div className='absolute top-[50px] right-[230px] text-white'><SearchIcon style={{ width: "35px", height: "35px" }} /></div>
-                    <div className='absolute top-[50px] right-[180px] text-white'><AccountCircleOutlinedIcon style={{ width: "30px", height: "30px" }} /></div>
-                    <div className='absolute top-[50px] right-[125px] text-white'><FavoriteBorderOutlinedIcon style={{ width: "30px", height: "30px" }} /></div>
-                    <div className='absolute top-[50px] right-[70px] text-white'><LocalGroceryStoreOutlinedIcon style={{ width: "30px", height: "30px" }} /></div>
+                    <div className='absolute top-[50px] right-[135px] text-white'><FavoriteBorderOutlinedIcon style={{ width: "30px", height: "30px" }} /></div>
+                    <div className='absolute top-[50px] right-[80px] text-white'><LocalGroceryStoreOutlinedIcon style={{ width: "30px", height: "30px" }} /></div>
 
                 </div>
 
@@ -109,12 +107,12 @@ function Home() {
                         src='https://i.pinimg.com/736x/e4/1c/1d/e41c1df1326c559c5a5d8399acf5bb6b.jpg'
                         alt='Man'
                         className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                        onClick={() => navigate("/Women")}
                     />
 
                     <h1 className='absolute top-7 left-10 text-3xl font-bold'>Kadın</h1>
                     <h1 className='absolute top-[65px] left-10 text-lg font-bold'>Yeni Sezon Kadın Ürünleri</h1>
                     <h1 className='absolute top-[93px] left-10 text-sm font-bold'>Koleksiyonu İncele <ArrowRightAltIcon className='ml-1' style={{ width: "30px", height: "30px" }} /></h1>
-
                 </div>
 
                 <div className="relative w-[600px] h-[800px] mt-20 ml-20 group overflow-hidden rounded-md shadow-xl">
@@ -143,7 +141,7 @@ function Home() {
 
                 <div className='bg-white border-2 border-black h-48 w-48 ml-10 rounded-full'>
 
-                    <img className='rounded-full mt-5 ' src="https://i.pinimg.com/736x/3f/0c/76/3f0c767a3d4d448ffb58152f7c199842.jpg" alt="Adidas" />
+                    <img className='rounded-full  mt-5 pl-1 ' src="https://i.pinimg.com/736x/3f/0c/76/3f0c767a3d4d448ffb58152f7c199842.jpg" alt="Adidas" />
 
                 </div>
 
@@ -173,7 +171,7 @@ function Home() {
 
                 <div className='bg-white border-2 border-black h-48 w-48 ml-10 rounded-full'>
 
-                    <img className='rounded-full mt-9 ' src="https://i.pinimg.com/736x/11/c6/30/11c630cf05fa1e3d863e065e90972f5f.jpg" alt="GoldenRose" />
+                    <img className='rounded-full' src="https://i.pinimg.com/736x/53/14/87/531487f5c990664e1b3ae14f35e26131.jpg" alt="GoldenGoose" />
 
                 </div>
 
