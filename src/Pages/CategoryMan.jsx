@@ -29,7 +29,10 @@ function CategoryMan() {
                         />
                     </div>
 
-                    <div className='h-12 w-36 mt-[70px] ml-7 bg-white/95 rounded-md flex cursor-pointer select-none'>
+                    <div
+                        className='h-12 w-36 mt-[70px] ml-7 bg-white/95 rounded-md flex cursor-pointer select-none'
+                        onClick={() => navigate('/favoriler')}
+                    >
 
                         <FavoriteBorderOutlinedIcon className=' mt-3.5 ml-4' /> <h1 className='mt-3 ml-1'>Favorilerim</h1>
 
@@ -59,7 +62,7 @@ function CategoryMan() {
 
                 </div>
 
-                <div className='bg-white/80 shadow-xl h-[740px] w-96 ml-12 mt-4 rounded-lg p-6'>
+                <div className='bg-white/80 shadow-xl h-[820px] w-96 ml-12 mt-4 rounded-lg p-6'>
 
                     <div className='flex'>
                         <h1 className='font-bold text-xl mb-2'>Marka</h1>
@@ -142,19 +145,42 @@ function CategoryMan() {
                     <span className='h-0.5 w-full bg-black/30 block my-6'></span>
 
                     <h1 className='font-bold text-xl mb-2'>Beden</h1>
-                    <div className='grid grid-cols-4 gap-3'>
-                        {['40', '41', '42', '43', '44'].map((size) => (
-                            <div key={size} className='bg-white border-2 border-black text-center py-1 rounded-xl cursor-pointer hover:bg-black hover:text-white transition duration-500'>
-                                {size}
-                            </div>
-                        ))}
+
+                    <div className='flex flex-col space-y-2 ml-5 mt-5 '>
+
+                        <label className='inline-flex items-center space-x-2'>
+                            <input type='checkbox' className='w-5 h-5 text-blue-600 rounded' />
+                            <span>40</span>
+                        </label>
+
+                        <label className='inline-flex items-center space-x-2'>
+                            <input type='checkbox' className='w-5 h-5 text-blue-600 rounded' />
+                            <span>41</span>
+                        </label>
+
+                        <label className='inline-flex items-center space-x-2'>
+                            <input type='checkbox' className='w-5 h-5 text-blue-600 rounded' />
+                            <span>42</span>
+                        </label>
+
+                        <label className='inline-flex items-center space-x-2'>
+                            <input type='checkbox' className='w-5 h-5 text-blue-600 rounded' />
+                            <span>43</span>
+                        </label>
+
+                        <label className='inline-flex items-center space-x-2'>
+                            <input type='checkbox' className='w-5 h-5 text-blue-600 rounded' />
+                            <span>44</span>
+                        </label>
+
                     </div>
+
 
                     <span className='h-0.5 w-full bg-black/30 block my-6'></span>
 
                     <h1 className='font-bold text-xl mb-2'>Fiyata Göre</h1>
                     <select className='w-full border border-black p-2 rounded-sm'>
-                        <option>Seçiniz</option>
+                        <option>Önerilen</option>
                         <option value="asc">Artan fiyat</option>
                         <option value="desc">Azalan fiyat</option>
                     </select>

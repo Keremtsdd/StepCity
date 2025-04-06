@@ -54,7 +54,7 @@ function Home() {
 
                 <div className='cursor-pointer'>
 
-                    <div className='absolute top-[50px] right-[135px] text-white'><FavoriteBorderOutlinedIcon style={{ width: "30px", height: "30px" }} /></div>
+                    <div onClick={() => navigate('/favoriler')} className='absolute top-[50px] right-[135px] text-white'><FavoriteBorderOutlinedIcon style={{ width: "30px", height: "30px" }} /></div>
                     <div className='absolute top-[50px] right-[80px] text-white'><LocalGroceryStoreOutlinedIcon style={{ width: "30px", height: "30px" }} /></div>
 
                 </div>
