@@ -6,6 +6,7 @@ import CategoryMan from './Pages/CategoryMan';
 import ScrollToTop from './Components/ScrollToTop';
 import PagesScrollTop from "./Components/PagesScrollTop";
 import Favorites from './Pages/Favorites';
+import CategoryWear from './Pages/CategoryWear';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/Kadın-Ayakkabı" element={<CategoryWomen />} />
         <Route path="/Erkek-Ayakkabı" element={<CategoryMan />} />
+        <Route path="/Giyim" element={<CategoryWear />} />
         <Route path="/Favoriler" element={<Favorites />} />
 
       </Routes>

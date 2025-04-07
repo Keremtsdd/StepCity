@@ -1,0 +1,108 @@
+import React, { useState, useEffect } from 'react';
+import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
+import LocalGroceryStoreOutlinedIcon from '@mui/icons-material/LocalGroceryStoreOutlined';
+import SearchIcon from '@mui/icons-material/Search';
+import { useNavigate } from 'react-router-dom';
+
+function Header() {
+    const navigate = useNavigate();
+    const [isSticky, setIsSticky] = useState(false); // header'ın sabit olup olmayacağını kontrol ederiz
+    const [lastScrollY, setLastScrollY] = useState(0); // son kaydırma pozisyonunu tutar
+    const [isVisible, setIsVisible] = useState(true); // header'ın görünür olup olmadığını tutar
+
+    useEffect(() => {
+        const handleScroll = () => {
+            // 50px'lik kaydırma sonrasında header'ı görünür yap
+            if (window.scrollY > 50) {
+                setIsSticky(true); // header'ı sabitler
+            } else {
+                setIsSticky(false); // header'ı sabit olmayan konuma alır
+            }
+
+            // Sayfada kaydırma yönünü kontrol et
+            if (window.scrollY < lastScrollY) {
+                setIsVisible(true); // Yukarı kaydırıldığında header'ı görünür yap
+            } else if (window.scrollY > lastScrollY && window.scrollY > 50) {
+                setIsVisible(false); // Aşağı kaydırıldığında header'ı gizler
+            }
+
+            setLastScrollY(window.scrollY); // Kaydırma pozisyonunu günceller
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, [lastScrollY]);
+
+    return (
+        <div>
+            {/* Header kısmı */}
+            <div
+                className={`${isSticky ? 'fixed top-0 z-50 bg-white shadow-lg' : 'relative'
+                    } w-full h-[170px] bg-white/50 flex border-b-2 border-black/70 transition-all duration-300 ${isVisible ? 'transform translate-y-0' : 'transform -translate-y-full'
+                    }`}
+            >
+                <h1
+                    onClick={() => navigate('/')}
+                    style={{ height: '50px' }}
+                    className="ml-[400px] pt-14 text-6xl font-serif cursor-pointer text-black select-none"
+                >
+                    StepCity
+                </h1>
+
+                <span className="h-32 w-0.5 mt-5 ml-14 bg-black/60 block"></span>
+
+                <div className="flex items-center h-12 w-[450px] ml-14 mt-[70px] border-2 border-black rounded-sm bg-neutral-100 px-3">
+                    <span className="text-gray-700 mr-2 cursor-pointer">
+                        <SearchIcon />
+                    </span>
+                    <input
+                        type="search"
+                        className="bg-transparent outline-none flex-1 text-black placeholder-gray-700 placeholder:select-none"
+                        placeholder="Aradığınız ürünü giriniz."
+                    />
+                </div>
+
+                <div
+                    className="h-12 w-36 mt-[70px] ml-7 hover:bg-neutral-300 duration-300 border-2 border-black rounded-md flex cursor-pointer select-none"
+                    onClick={() => navigate('/favoriler')}
+                >
+                    <FavoriteBorderOutlinedIcon className=" mt-3 ml-4" />{' '}
+                    <h1 className="mt-2.5 ml-1">Favorilerim</h1>
+                </div>
+
+                <div className="h-12 w-32 mt-[70px] ml-4 hover:bg-neutral-300 duration-300 border-2 border-black rounded-md flex cursor-pointer select-none">
+                    <LocalGroceryStoreOutlinedIcon className=" mt-3 ml-4" />{' '}
+                    <h1 className="mt-2.5 ml-1">Sepetim</h1>
+                </div>
+
+
+            </div>
+
+            <div className="h-12 w-full bg-black/95 flex justify-center space-x-4 border-b-2 border-black/60 select-none ">
+                <h1
+                    onClick={() => navigate('/Kadın-Ayakkabı')}
+                    className="text-2xl font-serif mt-2 cursor-pointer text-white hover:text-neutral-400 duration-300"
+                >
+                    Kadın
+                </h1>
+                <span className="h-7 w-0.5 mt-2.5 bg-black block"></span>
+                <h1
+                    onClick={() => navigate('/Erkek-Ayakkabı')}
+                    className="text-2xl font-serif mt-2 cursor-pointer text-white hover:text-neutral-400 duration-300"
+                >
+                    Erkek
+                </h1>
+                <span className="h-7 w-0.5 mt-2.5 bg-black block"></span>
+                <h1
+                    onClick={() => navigate('/Giyim')}
+                    className="text-2xl font-serif mt-2 cursor-pointer flex text-white hover:text-neutral-400 duration-300"
+                >
+                    Giyim
+                </h1>
+            </div>
+
+        </div>
+    );
+}
+
+export default Header;
