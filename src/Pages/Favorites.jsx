@@ -6,27 +6,27 @@ import SearchIcon from '@mui/icons-material/Search';
 
 function Favorites() {
     const navigate = useNavigate();
-    const [isSticky, setIsSticky] = useState(false); // header'ın sabit olup olmayacağını kontrol ederiz
-    const [lastScrollY, setLastScrollY] = useState(0); // son kaydırma pozisyonunu tutar
-    const [isVisible, setIsVisible] = useState(true); // header'ın görünür olup olmadığını tutar
+    const [isSticky, setIsSticky] = useState(false);
+    const [lastScrollY, setLastScrollY] = useState(0);
+    const [isVisible, setIsVisible] = useState(true);
 
     useEffect(() => {
         const handleScroll = () => {
-            // 50px'lik kaydırma sonrasında header'ı görünür yap
+
             if (window.scrollY > 50) {
-                setIsSticky(true); // header'ı sabitler
+                setIsSticky(true);
             } else {
-                setIsSticky(false); // header'ı sabit olmayan konuma alır
+                setIsSticky(false);
             }
 
-            // Sayfada kaydırma yönünü kontrol et
+
             if (window.scrollY < lastScrollY) {
-                setIsVisible(true); // Yukarı kaydırıldığında header'ı görünür yap
+                setIsVisible(true);
             } else if (window.scrollY > lastScrollY && window.scrollY > 50) {
-                setIsVisible(false); // Aşağı kaydırıldığında header'ı gizler
+                setIsVisible(false);
             }
 
-            setLastScrollY(window.scrollY); // Kaydırma pozisyonunu günceller
+            setLastScrollY(window.scrollY);
         };
 
         window.addEventListener('scroll', handleScroll);
@@ -38,7 +38,7 @@ function Favorites() {
         <>
 
             <div>
-                {/* Header kısmı */}
+
                 <div
                     className={`${isSticky ? 'fixed top-0 z-50 bg-white shadow-lg' : 'relative'
                         } w-full h-[170px] bg-white/50 flex border-b-2 border-black/70 transition-all duration-300 ${isVisible ? 'transform translate-y-0' : 'transform -translate-y-full'
