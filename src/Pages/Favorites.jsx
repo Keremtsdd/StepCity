@@ -52,7 +52,7 @@ function Favorites() {
                         StepCity
                     </h1>
 
-                    <span className="h-32 w-0.5 mt-5 ml-14 bg-black/60 block"></span>
+                    <span className="h-32 w-1 mt-5 ml-14 bg-black/90 block"></span>
 
                     <div className="flex items-center h-12 w-[450px] ml-14 mt-[70px] border-2 border-black rounded-sm bg-neutral-100 px-3">
                         <span className="text-gray-700 mr-2 cursor-pointer">
