@@ -9,6 +9,7 @@ import Favorites from './Pages/Favorites';
 import CategoryWear from './Pages/CategoryWear';
 import ManShoeDetail from './Pages/ManShoeDetail';
 import WomenShoeDetail from './Pages/WomenShoeDetail';
+import Footer from './Components/Footer';
 
 function App() {
   return (
@@ -28,6 +29,8 @@ function App() {
         <Route path='/Erkek-Ayakkabı/:id' element={<ManShoeDetail />} />
 
       </Routes>
+
+      <Footer />
 
     </BrowserRouter>
   );

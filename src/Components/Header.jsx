@@ -32,7 +32,7 @@ function Header() {
     }, [lastScrollY]);
 
     return (
-        <div>
+        <header>
 
             <div
                 className={`${isSticky ? 'fixed top-0 z-50 bg-white shadow-lg' : 'relative'
@@ -99,7 +99,7 @@ function Header() {
                 </h1>
             </div>
 
-        </div>
+        </header>
     );
 }
 
