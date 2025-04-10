@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import logo from '../İmages/logo.png';
 import Adidas from '../İmages/adidas.png';
+import SpezialBlack from '../İmages/SpezialBlack.png';
+import SpezialRed from '../İmages/SpezialRed.png';
+import SambaWhite from '../İmages/SambaWhite.png';
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import LocalGroceryStoreOutlinedIcon from '@mui/icons-material/LocalGroceryStoreOutlined';
@@ -179,7 +182,7 @@ function Home() {
 
                 </div>
 
-                <div onClick={() => navigate('/Erkek-Ayakkabı?brand=EA7')} className='bg-white border-2 border-black h-48 w-48 ml-10 rounded-full z-50'>
+                <div onClick={() => navigate('/Erkek-Ayakkabı?brand=EA7')} className='bg-white border-2 border-black h-48 w-48 ml-10 rounded-full z-40'>
 
                     <img className='rounded-full mt-3 ml-4 w-40 ' src="https://brandlogos.net/wp-content/uploads/2022/03/ea7_emporio_armani-logo-brandlogos.net_.png" alt="EA7" />
 
@@ -202,10 +205,10 @@ function Home() {
 
                         <div className='flex'>
 
-                            <div className="relative w-72 h-[350px] -mt-[850px] ml-[100px]">
+                            <div onClick={() => navigate('/Kadın-Ayakkabı/6-adidas-handball-spezial-sneaker')} className="relative w-72 h-[350px] -mt-[850px] ml-[100px]">
                                 <img
                                     className="w-full h-full object-cover rounded-sm select-none "
-                                    src="https://i.pinimg.com/736x/98/c3/74/98c374b1d62caa80dfa1ea1c9895a538.jpg"
+                                    src={SpezialBlack}
                                     alt="Spezial"
                                 />
                                 <span className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 text-white text-lg font-semibold opacity-0 hover:opacity-100 transition-opacity duration-300">
@@ -213,22 +216,23 @@ function Home() {
                                 </span>
                             </div>
 
-                            <div className="relative w-72 h-[350px] -mt-[850px] ml-10">
+                            <div onClick={() => navigate('/Kadın-Ayakkabı/9-adidas-handball-spezial-sneaker')} className="relative w-72 h-[350px] -mt-[850px] ml-10">
                                 <img
                                     className="w-full h-full object-cover rounded-sm select-none"
-                                    src="https://i.pinimg.com/736x/9f/06/7a/9f067abe5f0143af98d03ef926e0014f.jpg"
-                                    alt="Samba"
+                                    src={SpezialRed}
+                                    alt="Spezial"
                                 />
                                 <span className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 text-white text-lg font-semibold opacity-0 hover:opacity-100 transition-opacity duration-300">
                                     Yakından İncele
                                 </span>
                             </div>
 
-                            <div className="relative w-72 h-[350px] -mt-[850px] ml-10">
+                            <div onClick={() => navigate('/Kadın-Ayakkabı/12-adidas--samba-sneaker')} className="relative w-72 h-[350px] -mt-[850px] ml-10">
                                 <img
                                     className="w-full h-full object-cover rounded-sm select-none"
-                                    src="https://i.pinimg.com/736x/98/01/82/980182e4d31a8940ce136029b2f1bc98.jpg"
-                                    alt="Campus"
+                                    src={SambaWhite}
+                                    alt="Samba"
+
                                 />
                                 <span className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 text-white text-lg font-semibold opacity-0 hover:opacity-100 transition-opacity duration-300">
                                     Yakından İncele
@@ -269,7 +273,7 @@ function Home() {
 
                 <div className='flex cursor-pointer'>
 
-                    <div className="relative w-72 h-[350px] -mt-[850px] ml-[680px]">
+                    <div onClick={() => navigate('/Erkek-Ayakkabı/1-nike-dunk-low-panda')} className="relative w-72 h-[350px] -mt-[850px] ml-[680px]">
                         <img
                             className="w-full h-full object-cover rounded-sm select-none"
                             src="https://i.pinimg.com/736x/1c/4d/3f/1c4d3f5c81cb88341eb98b01f9aee838.jpg"
@@ -280,7 +284,7 @@ function Home() {
                         </span>
                     </div>
 
-                    <div className="relative w-72 h-[350px] -mt-[850px] ml-10">
+                    <div onClick={() => navigate('/Erkek-Ayakkabı/47-nike-air-force-1')} className="relative w-72 h-[350px] -mt-[850px] ml-10">
                         <img
                             className="w-full h-full object-cover rounded-sm select-none"
                             src="https://i.pinimg.com/736x/b6/9f/13/b69f130c212424c343ebae91e8e1bb88.jpg"
@@ -291,10 +295,10 @@ function Home() {
                         </span>
                     </div>
 
-                    <div className="relative w-72 h-[350px] -mt-[850px] ml-10 select-none">
+                    <div onClick={() => navigate('/Erkek-Ayakkabı/45-nike-dunk-low-triple-white')} className="relative w-72 h-[350px] -mt-[850px] ml-10 select-none">
                         <img
                             className="w-full h-full object-cover rounded-sm"
-                            src="https://i.pinimg.com/736x/e1/79/17/e17917e8c739de154925d16e9db1fd49.jpg"
+                            src="https://sparkystore.nl/cdn/shop/files/nike-sb-dunk-low-pro-white-fj1674-100-release-date_9742e1da-89ba-4d10-940f-cf90d3c0f619_1445x.webp?v=1725270892"
                             alt="Campus"
                         />
                         <span className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 text-white text-lg font-semibold opacity-0 hover:opacity-100 transition-opacity duration-300">
