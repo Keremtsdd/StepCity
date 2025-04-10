@@ -16,7 +16,7 @@ function Footer() {
     return (
         <footer>
 
-            <div className='flex'>
+            <div className='flex -mt-[150px]'>
 
                 <div className='relative h-[450px] w-[800px] bg-black border-r-2 border-white'>
 
@@ -52,7 +52,7 @@ function Footer() {
 
                         <h1 className='text-white font-semibold text-2xl mt-16'>Kategoriler</h1>
 
-                        <div className='mt-6'>
+                        <div className='mt-5'>
 
                             <p onClick={() => navigate('/kadın-ayakkabı')} className='w-[50px] cursor-pointer transition-transform hover:translate-x-1.5 duration-300'>Kadın</p>
                             <p onClick={() => navigate('/erkek-ayakkabı')} className='w-[50px] mt-1.5 cursor-pointer transition-transform hover:translate-x-1.5 duration-300'>Erkek</p>
@@ -62,11 +62,11 @@ function Footer() {
 
                     </div>
 
-                    <div className='text-white ml-36 mt-5  text-lg '>
+                    <div className='text-white ml-20 mt-5  text-lg '>
 
                         <h1 className='text-white font-semibold text-2xl mt-16 '>Markalar</h1>
 
-                        <div className='mt-6'>
+                        <div className='mt-5'>
 
                             <p onClick={() => navigate('/kadın-ayakkabı?brand=Adidas')} className='w-[60px] cursor-pointer transition-transform hover:translate-x-1.5 duration-300'>Adidas</p>
                             <p onClick={() => navigate('/erkek-ayakkabı?brand=Nike')} className='w-[50px] mt-1.5 cursor-pointer transition-transform hover:translate-x-1.5 duration-300'>Nike</p>
@@ -79,24 +79,22 @@ function Footer() {
 
                     </div>
 
-                    <div className='text-white ml-36 mt-5  text-lg '>
+                    <div className='text-white ml-20 mt-5  text-lg '>
 
                         <h1 className='text-white font-semibold text-2xl mt-16 '>İletişim</h1>
 
-                        <div className='mt-6'>
+                        <div className='mt-5'>
 
-                            <p className='cursor-pointer transition-transform hover:translate-x-1.5 duration-300'><LocationOnOutlinedIcon />Lorem ipsum dolor sit amet.</p>
-                            <p className='mt-4 cursor-pointer transition-transform hover:translate-x-1.5 duration-300'><LocalPhoneOutlinedIcon />11111111111</p>
-                            <p className='mt-4 cursor-pointer transition-transform hover:translate-x-1.5 duration-300'><MailOutlineOutlinedIcon />stepcityy@gmail.com</p>
+                            <p className='cursor-pointer'><LocationOnOutlinedIcon className='mr-1 mb-0.5' />Lorem ipsum dolor sit amet.</p>
+                            <p className='mt-2.5 cursor-pointer'><LocalPhoneOutlinedIcon className='mr-1 mb-0.5' />11111111111</p>
+                            <p className='mt-2.5 cursor-pointer'><MailOutlineOutlinedIcon className='mr-1 mb-0.5' />stepcityy@gmail.com</p>
 
                         </div>
 
                     </div>
 
-
-
                     <div>
-                        <img className='h-[450px] w-[330px] ml-[91px] opacity-30' src={FooterBanner} alt="FooterBanner" />
+                        <img className='h-[450px] w-[330px] ml-[215px] opacity-30' src={FooterBanner} alt="FooterBanner" />
                     </div>
 
                 </div>

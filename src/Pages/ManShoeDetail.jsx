@@ -4,7 +4,6 @@ import axios from 'axios';
 import Header from '../Components/Header';
 import HomeIcon from '@mui/icons-material/Home';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
-import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import LocalGroceryStoreOutlinedIcon from '@mui/icons-material/LocalGroceryStoreOutlined';
 
 function ManShoeDetail() {
@@ -38,7 +37,7 @@ function ManShoeDetail() {
                 <h1 className='ml-1'>{shoe.model}</h1>
             </div>
 
-            <div className='flex'>
+            <div className='flex mb-[360px]'>
                 <div className='flex '>
                     <img src={shoe.image1} alt={shoe.model} className="my-4 h-[500px] w-[450px] ml-[350px] mt-[120px] relative " />
                     <img src={shoe.image2} alt={shoe.model} className="my-4 h-[500px] w-[450px] ml-[400px] mt-[120px] rounded-sm absolute left-[345px]" />
@@ -78,12 +77,6 @@ function ManShoeDetail() {
                     </div>
 
                     <div className='mt-10 font-semibold'>
-
-                        <div className="mt-4">
-                            <button className="w-[300px] rounded-full ml-[400px] px-4 py-2 bg-green-700 hover:bg-green-900 duration-300 text-white">
-                                <FavoriteBorderOutlinedIcon style={{ width: "20px", height: "20px" }} className='mb-0.5' /> Favorilere Ekle
-                            </button>
-                        </div>
 
                         <div className="mt-5">
                             <button className="w-[300px] ml-[400px] px-4 py-2 bg-blue-600 hover:bg-blue-800 duration-300 text-white rounded-full">

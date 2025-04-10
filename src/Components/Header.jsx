@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import LocalGroceryStoreOutlinedIcon from '@mui/icons-material/LocalGroceryStoreOutlined';
 import SearchIcon from '@mui/icons-material/Search';
 import { useNavigate } from 'react-router-dom';
@@ -60,15 +59,7 @@ function Header() {
                     />
                 </div>
 
-                <div
-                    className="h-12 w-36 mt-[70px] ml-7 hover:bg-neutral-300 duration-300 border-2 border-black rounded-md flex cursor-pointer select-none"
-                    onClick={() => navigate('/favoriler')}
-                >
-                    <FavoriteBorderOutlinedIcon className=" mt-3 ml-4" />{' '}
-                    <h1 className="mt-2.5 ml-1">Favorilerim</h1>
-                </div>
-
-                <div className="h-12 w-32 mt-[70px] ml-4 hover:bg-neutral-300 duration-300 border-2 border-black rounded-md flex cursor-pointer select-none">
+                <div className="h-12 w-32 mt-[70px] ml-10 hover:bg-neutral-300 duration-300 border-2 border-black rounded-md flex cursor-pointer select-none">
                     <LocalGroceryStoreOutlinedIcon className=" mt-3 ml-4" />{' '}
                     <h1 className="mt-2.5 ml-1">Sepetim</h1>
                 </div>

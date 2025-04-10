@@ -48,7 +48,7 @@ function WomenShoeList({ searchParams }) {
                 {filteredShoes.length} Ürün bulundu.
             </h2>
 
-            <div className="grid grid-cols-4 gap-6 pl-10 pt-2">
+            <div className="grid grid-cols-4 gap-6 pl-10 pt-2 -mb-16">
                 {filteredShoes.map((shoe) => (
                     <Link
                         key={shoe.id}

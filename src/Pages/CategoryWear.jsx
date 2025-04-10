@@ -4,14 +4,14 @@ import Header from '../Components/Header'
 function CategoryWear() {
     return (
         <>
-            <div>
+            <div className='mb-[275px]'>
 
                 <div>
                     <Header />
                 </div>
 
 
-                <h1 className='text-4xl font-semibold text-center mt-52'>Giyim Ürünleri Çok Yakında Sizlerle...</h1>
+                <h1 className='text-4xl font-semibold text-center mt-32'>Giyim Ürünleri Çok Yakında Sizlerle...</h1>
 
 
 
