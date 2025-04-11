@@ -59,7 +59,7 @@ function Header() {
                     />
                 </div>
 
-                <div className="h-12 w-32 mt-[70px] ml-10 hover:bg-neutral-300 duration-300 border-2 border-black rounded-md flex cursor-pointer select-none">
+                <div onClick={() => navigate('/sepetim')} className="h-12 w-32 mt-[70px] ml-10 hover:bg-neutral-300 duration-300 border-2 border-black rounded-md flex cursor-pointer select-none">
                     <LocalGroceryStoreOutlinedIcon className=" mt-3 ml-4" />{' '}
                     <h1 className="mt-2.5 ml-1">Sepetim</h1>
                 </div>
@@ -69,21 +69,21 @@ function Header() {
 
             <div className="h-12 w-full bg-black/95 flex justify-center space-x-4 border-b-2 border-black/60 select-none ">
                 <h1
-                    onClick={() => navigate('/Kadın-Ayakkabı')}
+                    onClick={() => navigate('/kadın-ayakkabı')}
                     className="text-2xl font-serif mt-2 cursor-pointer text-white hover:text-neutral-400 duration-300"
                 >
                     Kadın
                 </h1>
                 <span className="h-7 w-0.5 mt-2.5 bg-black block"></span>
                 <h1
-                    onClick={() => navigate('/Erkek-Ayakkabı')}
+                    onClick={() => navigate('/erkek-ayakkabı')}
                     className="text-2xl font-serif mt-2 cursor-pointer text-white hover:text-neutral-400 duration-300"
                 >
                     Erkek
                 </h1>
                 <span className="h-7 w-0.5 mt-2.5 bg-black block"></span>
                 <h1
-                    onClick={() => navigate('/Giyim')}
+                    onClick={() => navigate('/giyim')}
                     className="text-2xl font-serif mt-2 cursor-pointer flex text-white hover:text-neutral-400 duration-300"
                 >
                     Giyim

@@ -5,7 +5,6 @@ import SpezialBlack from '../İmages/SpezialBlack.png';
 import SpezialRed from '../İmages/SpezialRed.png';
 import SambaWhite from '../İmages/SambaWhite.png';
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
-import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import LocalGroceryStoreOutlinedIcon from '@mui/icons-material/LocalGroceryStoreOutlined';
 import StarBorderPurple500Icon from '@mui/icons-material/StarBorderPurple500';
 import { useNavigate } from 'react-router-dom';
@@ -49,7 +48,7 @@ function Home() {
     return (
         <div className='bg-neutral-100'>
 
-            <div onClick={() => navigate('Erkek-Ayakkabı?brand=Nike')} className='h-[960px] w-full relative cursor-pointer'>
+            <div onClick={() => navigate('erkek-ayakkabı?brand=Nike')} className='h-[960px] w-full relative cursor-pointer'>
 
                 <img className='h-[960px] w-full relative select-none' src="https://cdn.pixabay.com/photo/2020/05/03/19/09/nike-5126389_1280.jpg" alt="NikeBanner" />
 
@@ -57,7 +56,6 @@ function Home() {
 
                 <div className='cursor-pointer'>
 
-                    <div onClick={() => navigate('/favoriler')} className='absolute top-[50px] right-[135px] text-white'><FavoriteBorderOutlinedIcon style={{ width: "30px", height: "30px" }} /></div>
                     <div className='absolute top-[50px] right-[80px] text-white'><LocalGroceryStoreOutlinedIcon style={{ width: "30px", height: "30px" }} /></div>
 
                 </div>
@@ -112,7 +110,7 @@ function Home() {
                         src='https://i.pinimg.com/736x/e4/1c/1d/e41c1df1326c559c5a5d8399acf5bb6b.jpg'
                         alt='Man'
                         className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110 cursor-pointer"
-                        onClick={() => navigate("/Kadın-Ayakkabı")}
+                        onClick={() => navigate("/kadın-ayakkabı")}
                     />
 
                     <h1 className='absolute top-7 left-10 text-3xl font-bold'>Kadın</h1>
@@ -140,13 +138,13 @@ function Home() {
 
             <div className='mt-32 flex select-none z-40 cursor-pointer'>
 
-                <div onClick={() => navigate('/Erkek-Ayakkabı?brand=Nike')} className='bg-white border-2 border-black h-48 w-48 ml-11 rounded-full z-50'>
+                <div onClick={() => navigate('/erkek-ayakkabı?brand=Nike')} className='bg-white border-2 border-black h-48 w-48 ml-11 rounded-full z-50'>
 
                     <img className='rounded-full mt-12' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzVqds5XpuvICAg9dSoXuxTrycPHH-CkYLfg&s" alt="Nike" />
 
                 </div>
 
-                <div onClick={() => navigate('/Kadın-Ayakkabı?brand=Adidas')} className='bg-white border-2 border-black h-48 w-48 ml-10 rounded-full z-50'>
+                <div onClick={() => navigate('/kadın-ayakkabı?brand=Adidas')} className='bg-white border-2 border-black h-48 w-48 ml-10 rounded-full z-50'>
 
                     <img className='rounded-full  mt-5 pl-1 ' src="https://i.pinimg.com/736x/3f/0c/76/3f0c767a3d4d448ffb58152f7c199842.jpg" alt="Adidas" />
 
@@ -164,25 +162,25 @@ function Home() {
 
                 </div>
 
-                <div onClick={() => navigate('/Erkek-Ayakkabı?brand=New+Balance')} className='bg-white border-2 border-black h-48 w-48 ml-10 rounded-full z-50'>
+                <div onClick={() => navigate('/erkek-ayakkabı?brand=New+Balance')} className='bg-white border-2 border-black h-48 w-48 ml-10 rounded-full z-50'>
 
                     <img className='rounded-full mt-3 ml-3 h-40 w-40' src="https://images.seeklogo.com/logo-png/9/1/new-balance-logo-png_seeklogo-98723.png" alt="NewBalence" />
 
                 </div>
 
-                <div onClick={() => navigate('/Kadın-Ayakkabı?brand=Lacoste')} className='bg-white border-2 border-black h-48 w-48 ml-10 rounded-full z-50'>
+                <div onClick={() => navigate('/kadın-ayakkabı?brand=Lacoste')} className='bg-white border-2 border-black h-48 w-48 ml-10 rounded-full z-50'>
 
                     <img className=' w-36 mt-12 ml-6 ' src="https://upload.wikimedia.org/wikinews/en/thumb/4/43/Lacoste_logo.svg/2560px-Lacoste_logo.svg.png" alt="Lacoste" />
 
                 </div>
 
-                <div onClick={() => navigate('/Kadın-Ayakkabı?brand=Golden+Goose')} className='bg-white border-2 border-black h-48 w-48 ml-10 rounded-full z-50'>
+                <div onClick={() => navigate('/kadın-ayakkabı?brand=Golden+Goose')} className='bg-white border-2 border-black h-48 w-48 ml-10 rounded-full z-50'>
 
                     <img className='rounded-full' src="https://i.pinimg.com/736x/53/14/87/531487f5c990664e1b3ae14f35e26131.jpg" alt="GoldenGoose" />
 
                 </div>
 
-                <div onClick={() => navigate('/Erkek-Ayakkabı?brand=EA7')} className='bg-white border-2 border-black h-48 w-48 ml-10 rounded-full z-40'>
+                <div onClick={() => navigate('/erkek-ayakkabı?brand=EA7')} className='bg-white border-2 border-black h-48 w-48 ml-10 rounded-full z-40'>
 
                     <img className='rounded-full mt-3 ml-4 w-40 ' src="https://brandlogos.net/wp-content/uploads/2022/03/ea7_emporio_armani-logo-brandlogos.net_.png" alt="EA7" />
 
@@ -196,7 +194,7 @@ function Home() {
 
                     <img className='rotate-90 ml-[500px] h-[1600px] w-[750px] rounded-sm select-none' src="https://i.pinimg.com/736x/f1/04/66/f1046620a147d374fa8b7801f08ed8d1.jpg" alt="AdidasBanner" />
 
-                    <img onClick={() => navigate('/Kadın-Ayakkabı?brand=Adidas')} className='absolute h-[750px] top-[425px] right-[230px] rounded-sm select-none cursor-pointer' src="https://i.pinimg.com/736x/94/a9/fa/94a9facc6e8732cbc06ff9c2431fa2bf.jpg" alt="Spezial" />
+                    <img onClick={() => navigate('/kadın-ayakkabı?brand=Adidas')} className='absolute h-[750px] top-[425px] right-[230px] rounded-sm select-none cursor-pointer' src="https://i.pinimg.com/736x/94/a9/fa/94a9facc6e8732cbc06ff9c2431fa2bf.jpg" alt="Spezial" />
 
                     <div className='cursor-pointer'>
 
@@ -205,7 +203,7 @@ function Home() {
 
                         <div className='flex'>
 
-                            <div onClick={() => navigate('/Kadın-Ayakkabı/6-adidas-handball-spezial-sneaker')} className="relative w-72 h-[350px] -mt-[850px] ml-[100px]">
+                            <div onClick={() => navigate('/kadın-ayakkabı/6-adidas-handball-spezial-sneaker')} className="relative w-72 h-[350px] -mt-[850px] ml-[100px]">
                                 <img
                                     className="w-full h-full object-cover rounded-sm select-none "
                                     src={SpezialBlack}
@@ -216,7 +214,7 @@ function Home() {
                                 </span>
                             </div>
 
-                            <div onClick={() => navigate('/Kadın-Ayakkabı/9-adidas-handball-spezial-sneaker')} className="relative w-72 h-[350px] -mt-[850px] ml-10">
+                            <div onClick={() => navigate('/kadın-ayakkabı/9-adidas-handball-spezial-sneaker')} className="relative w-72 h-[350px] -mt-[850px] ml-10">
                                 <img
                                     className="w-full h-full object-cover rounded-sm select-none"
                                     src={SpezialRed}
@@ -227,7 +225,7 @@ function Home() {
                                 </span>
                             </div>
 
-                            <div onClick={() => navigate('/Kadın-Ayakkabı/12-adidas--samba-sneaker')} className="relative w-72 h-[350px] -mt-[850px] ml-10">
+                            <div onClick={() => navigate('/kadın-ayakkabı/12-adidas--samba-sneaker')} className="relative w-72 h-[350px] -mt-[850px] ml-10">
                                 <img
                                     className="w-full h-full object-cover rounded-sm select-none"
                                     src={SambaWhite}
@@ -265,7 +263,7 @@ function Home() {
 
                     <img className='rotate-90 ml-[500px] h-[1600px] w-[750px] select-none' src="https://i.pinimg.com/736x/dc/8d/40/dc8d400a6ce5b0e88413d90de9f51545.jpg" alt="NikeBanner" />
 
-                    <img onClick={() => navigate('/Erkek-Ayakkabı?brand=Nike')} className='absolute h-[750px] w-[560px] bottom-[425px] left-0 ml-[75px] select-none cursor-pointer' src="https://i.pinimg.com/736x/22/71/6a/22716a097468b8f70562d1c75bb79a98.jpg" alt="nike" />
+                    <img onClick={() => navigate('/erkek-ayakkabı?brand=Nike')} className='absolute h-[750px] w-[560px] bottom-[425px] left-0 ml-[75px] select-none cursor-pointer' src="https://i.pinimg.com/736x/22/71/6a/22716a097468b8f70562d1c75bb79a98.jpg" alt="nike" />
 
                     <p className="absolute bottom-[980px] left-[750px] text-[100px] text-orange-900 font-serif tracking-wide select-none">NIKE</p>
                     <p style={{ width: "700px" }} className='absolute bottom-[930px] left-[750px] font-serif text-orange-800 text-3xl'>Her adımın bir hikâyesi var. Nike Air Force ile geçmişten geleceğe uzanan bir efsaneyi yaşa.</p>
@@ -273,7 +271,7 @@ function Home() {
 
                 <div className='flex cursor-pointer'>
 
-                    <div onClick={() => navigate('/Erkek-Ayakkabı/1-nike-dunk-low-panda')} className="relative w-72 h-[350px] -mt-[850px] ml-[680px]">
+                    <div onClick={() => navigate('/erkek-ayakkabı/1-nike-dunk-low-panda')} className="relative w-72 h-[350px] -mt-[850px] ml-[680px]">
                         <img
                             className="w-full h-full object-cover rounded-sm select-none"
                             src="https://i.pinimg.com/736x/1c/4d/3f/1c4d3f5c81cb88341eb98b01f9aee838.jpg"
@@ -284,7 +282,7 @@ function Home() {
                         </span>
                     </div>
 
-                    <div onClick={() => navigate('/Erkek-Ayakkabı/47-nike-air-force-1')} className="relative w-72 h-[350px] -mt-[850px] ml-10">
+                    <div onClick={() => navigate('/erkek-ayakkabı/47-nike-air-force-1')} className="relative w-72 h-[350px] -mt-[850px] ml-10">
                         <img
                             className="w-full h-full object-cover rounded-sm select-none"
                             src="https://i.pinimg.com/736x/b6/9f/13/b69f130c212424c343ebae91e8e1bb88.jpg"
@@ -295,7 +293,7 @@ function Home() {
                         </span>
                     </div>
 
-                    <div onClick={() => navigate('/Erkek-Ayakkabı/45-nike-dunk-low-triple-white')} className="relative w-72 h-[350px] -mt-[850px] ml-10 select-none">
+                    <div onClick={() => navigate('/erkek-ayakkabı/45-nike-dunk-low-triple-white')} className="relative w-72 h-[350px] -mt-[850px] ml-10 select-none">
                         <img
                             className="w-full h-full object-cover rounded-sm"
                             src="https://sparkystore.nl/cdn/shop/files/nike-sb-dunk-low-pro-white-fj1674-100-release-date_9742e1da-89ba-4d10-940f-cf90d3c0f619_1445x.webp?v=1725270892"

@@ -1,5 +1,6 @@
 import { useNavigate, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import { useCart } from '../Context/CartContext'; // ekle
 import axios from 'axios';
 import Header from '../Components/Header';
 import HomeIcon from '@mui/icons-material/Home';
@@ -11,6 +12,7 @@ function WomenShoeDetail() {
     const { id } = useParams();
     const [shoe, setShoe] = useState(null);
     const [selectedSize, setSelectedSize] = useState(null);
+    const { addToCart } = useCart(); // hook'tan fonksiyonu al
 
     const realId = id.split('-')[0];
 
@@ -31,8 +33,8 @@ function WomenShoeDetail() {
 
             <div className='flex mt-5 ml-20 cursor-pointer w-[400px]'>
                 <h1 onClick={() => navigate('/')} className='text-black/60'><HomeIcon style={{ width: "20px", height: "20px" }} className='mr-1 mb-1' />Anasayfa / </h1>
-                <h1 onClick={() => navigate('/Kadın-Ayakkabı')} className='text-black/60 ml-1'>Kadın /</h1>
-                <h1 onClick={() => navigate(`/Erkek-Ayakkabı?brand=${encodeURIComponent(shoe.brand)}`)} className='text-black/60 ml-1'>{shoe.brand} /</h1>
+                <h1 onClick={() => navigate('/kadın-ayakkabı')} className='text-black/60 ml-1'>Kadın /</h1>
+                <h1 onClick={() => navigate(`/kadın-ayakkabı?brand=${encodeURIComponent(shoe.brand)}`)} className='text-black/60 ml-1'>{shoe.brand} /</h1>
                 <h1 className='ml-1'>{shoe.model}</h1>
             </div>
 
@@ -78,8 +80,26 @@ function WomenShoeDetail() {
                     <div className='mt-10 font-semibold'>
 
                         <div className="mt-5">
-                            <button className="w-[300px] ml-[400px] px-4 py-2 bg-blue-600 hover:bg-blue-800 duration-300 text-white rounded-full">
-                                <LocalGroceryStoreOutlinedIcon style={{ width: "20px", height: "20px" }} className='mb-0.5' />  Sepete Ekle
+                            <button
+                                onClick={() => {
+                                    if (!selectedSize) {
+                                        alert('Lütfen bir beden seçiniz!');
+                                        return;
+                                    }
+                                    const item = {
+                                        id: shoe.id,
+                                        model: shoe.model,
+                                        brand: shoe.brand,
+                                        price: shoe.price,
+                                        image: shoe.image1,
+                                        size: selectedSize
+                                    };
+                                    addToCart(item);
+                                    navigate('/sepetim'); // ShoeBasket sayfasına yönlendir
+                                }}
+                                className="w-[300px] ml-[400px] px-4 py-2 bg-blue-600 hover:bg-blue-800 duration-300 text-white rounded-full"
+                            >
+                                <LocalGroceryStoreOutlinedIcon style={{ width: "20px", height: "20px" }} className='mb-0.5' /> Sepete Ekle
                             </button>
                         </div>
 

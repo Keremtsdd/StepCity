@@ -32,8 +32,8 @@ function ManShoeDetail() {
             <div className='flex flex-wrap mt-5 ml-20 cursor-pointer max-w-[625px]'>
 
                 <h1 onClick={() => navigate('/')} className='text-black/60'><HomeIcon style={{ width: "20px", height: "20px" }} className='mr-1 mb-1' />Anasayfa / </h1>
-                <h1 onClick={() => navigate('/Erkek-Ayakkabı')} className='text-black/60 ml-1'>Erkek /</h1>
-                <h1 onClick={() => navigate(`/Erkek-Ayakkabı?brand=${encodeURIComponent(shoe.brand)}`)} className='text-black/60 ml-1'>{shoe.brand} /</h1>
+                <h1 onClick={() => navigate('/erkek-ayakkabı')} className='text-black/60 ml-1'>Erkek /</h1>
+                <h1 onClick={() => navigate(`/erkek-ayakkabı?brand=${encodeURIComponent(shoe.brand)}`)} className='text-black/60 ml-1'>{shoe.brand} /</h1>
                 <h1 className='ml-1'>{shoe.model}</h1>
             </div>
 
