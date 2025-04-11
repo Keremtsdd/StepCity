@@ -1,11 +1,18 @@
 import React from 'react'
 import Header from '../Components/Header'
 import { useCart } from '../Context/CartContext';
+import LocalGroceryStoreOutlinedIcon from '@mui/icons-material/LocalGroceryStoreOutlined';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import { useNavigate } from 'react-router-dom';
+
+
 
 
 function ShoeStore() {
 
+    const navigate = useNavigate();
     const { cartItems } = useCart();
+
     return (
         <>
 
@@ -14,32 +21,62 @@ function ShoeStore() {
             </div>
 
             <div className='p-8'>
-                <h2 className='text-2xl font-bold mb-4'>Sepetim</h2>
+                <h2 className='text-4xl font-bold ml-72 mt-10'>Alışveriş Sepetiniz</h2>
                 {cartItems.length === 0 ? (
-                    <p>Sepet boş</p>
+                    <>
+                        <div className="flex flex-col items-center justify-center mt-32">
+                            <p><LocalGroceryStoreOutlinedIcon style={{ width: "150px", height: "150px" }} className="mt-3 ml-4" /></p>
+
+                            <p className="mt-2 ml-4 text-3xl font-semibold">Alışveriş Sepetiniz Boş</p>
+
+                            <h1 onClick={() => navigate('/kadın-ayakkabı')} className='text-xl mt-6 ml-7 cursor-pointer text-purple-900'>Ürünleri Keşfedin<ArrowForwardIosIcon style={{ width: "20px", height: "20px" }} className='ml-1 ' /></h1>
+                        </div>
+
+                    </>
                 ) : (
-                    <ul className='space-y-4'>
+                    <ul className='space-y-5'>
+
                         {cartItems.map((item, index) => (
-                            <li key={index} className='border p-4 rounded flex items-center gap-4'>
-                                <img src={item.image} alt={item.model} className='w-24 h-24 object-cover' />
-                                <div>
-                                    <h3 className='font-semibold'>{item.brand} - {item.model}</h3>
-                                    <p>Beden: {item.size}</p>
-                                    <p className='text-gray-600'>{item.price.toLocaleString('tr-TR')} ₺</p>
+
+                            <li key={index} className='h-52 w-[1000px] border-2 border-black/30 rounded-md mt-14 ml-[285px]'>
+
+                                <div className='flex'>
+
+                                    <img src={item.image} alt={item.model} className='w-36 h-36 mt-7 ml-12 object-cover' />
+
+                                    <h3 className='font-semibold text-lg mt-8'>{item.brand} - {item.model}</h3>
+
                                 </div>
+
+                                <div>
+
+                                    <p className='ml-[192px] -mt-24 font-semibold'>Seçilen Beden ({item.size})</p>
+
+
+                                </div>
+
+
+                                <div className='ml-[450px] -mt-16'>
+
+                                    <p className="text-gray-900 text-2xl ml-1 font-semibold">
+                                        {item.price.toLocaleString('tr-TR')} TL
+                                    </p>
+
+                                    <p className="text-gray-600 text-xl line-through">
+                                        {(item.price * 1.4).toLocaleString('tr-TR')} TL
+                                    </p>
+
+                                    <p className='mt-5 -ml-3 h-6 w-28 text-center rounded-sm  bg-slate-400'>Ücretsiz Kargo</p>
+
+                                </div>
+
                             </li>
+
                         ))}
+
                     </ul>
                 )}
             </div>
-
-
-
-
-
-
-
-
         </>
     )
 }

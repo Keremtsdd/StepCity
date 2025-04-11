@@ -1,5 +1,6 @@
 import { useNavigate, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import { useCart } from '../Context/CartContext';
 import axios from 'axios';
 import Header from '../Components/Header';
 import HomeIcon from '@mui/icons-material/Home';
@@ -11,6 +12,7 @@ function ManShoeDetail() {
     const { id } = useParams();
     const [shoe, setShoe] = useState(null);
     const [selectedSize, setSelectedSize] = useState(null);
+    const { addToCart } = useCart();
 
     const realId = id.split('-')[0];
 
@@ -79,8 +81,26 @@ function ManShoeDetail() {
                     <div className='mt-10 font-semibold'>
 
                         <div className="mt-5">
-                            <button className="w-[300px] ml-[400px] px-4 py-2 bg-blue-600 hover:bg-blue-800 duration-300 text-white rounded-full">
-                                <LocalGroceryStoreOutlinedIcon style={{ width: "20px", height: "20px" }} className='mb-0.5' />  Sepete Ekle
+                            <button
+                                onClick={() => {
+                                    if (!selectedSize) {
+                                        alert('Lütfen bir beden seçiniz!');
+                                        return;
+                                    }
+                                    const item = {
+                                        id: shoe.id,
+                                        model: shoe.model,
+                                        brand: shoe.brand,
+                                        price: shoe.price,
+                                        image: shoe.image1,
+                                        size: selectedSize
+                                    };
+                                    addToCart(item);
+                                    navigate('/sepetim');
+                                }}
+                                className="w-[300px] ml-[400px] px-4 py-2 bg-blue-600 hover:bg-blue-800 duration-300 text-white rounded-full"
+                            >
+                                <LocalGroceryStoreOutlinedIcon style={{ width: "20px", height: "20px" }} className='mb-0.5' /> Sepete Ekle
                             </button>
                         </div>
 

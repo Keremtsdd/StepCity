@@ -60,7 +60,9 @@ function Header() {
                 </div>
 
                 <div onClick={() => navigate('/sepetim')} className="h-12 w-32 mt-[70px] ml-10 hover:bg-neutral-300 duration-300 border-2 border-black rounded-md flex cursor-pointer select-none">
-                    <LocalGroceryStoreOutlinedIcon className=" mt-3 ml-4" />{' '}
+                    <LocalGroceryStoreOutlinedIcon className=" mt-3 ml-4" /><div className='cursor-pointer z-50'>
+                        <div onClick={() => navigate('/sepetim')} className='absolute top-[50px] right-[80px] text-white'><LocalGroceryStoreOutlinedIcon style={{ width: "30px", height: "30px" }} /></div>
+                    </div>
                     <h1 className="mt-2.5 ml-1">Sepetim</h1>
                 </div>
 

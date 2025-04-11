@@ -5,7 +5,6 @@ import SpezialBlack from '../İmages/SpezialBlack.png';
 import SpezialRed from '../İmages/SpezialRed.png';
 import SambaWhite from '../İmages/SambaWhite.png';
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
-import LocalGroceryStoreOutlinedIcon from '@mui/icons-material/LocalGroceryStoreOutlined';
 import StarBorderPurple500Icon from '@mui/icons-material/StarBorderPurple500';
 import { useNavigate } from 'react-router-dom';
 
@@ -48,17 +47,11 @@ function Home() {
     return (
         <div className='bg-neutral-100'>
 
-            <div onClick={() => navigate('erkek-ayakkabı?brand=Nike')} className='h-[960px] w-full relative cursor-pointer'>
+            <div onClick={() => navigate('erkek-ayakkabı?brand=Nike')} className='h-[960px] w-full relative cursor-pointer z-40'>
 
                 <img className='h-[960px] w-full relative select-none' src="https://cdn.pixabay.com/photo/2020/05/03/19/09/nike-5126389_1280.jpg" alt="NikeBanner" />
 
                 <img className='absolute bottom-[400px] right-[200px] h-44 w-44 rounded-full select-none' src={logo} alt="StepCity" />
-
-                <div className='cursor-pointer'>
-
-                    <div className='absolute top-[50px] right-[80px] text-white'><LocalGroceryStoreOutlinedIcon style={{ width: "30px", height: "30px" }} /></div>
-
-                </div>
 
                 <h1 style={{ width: "340px" }} className='absolute bottom-[400px] left-[250px] text-white font-serif font-bold text-7xl select-none'>Farklı ol, şimdi keşfet!</h1>
 

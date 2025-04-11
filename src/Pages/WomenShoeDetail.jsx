@@ -1,6 +1,6 @@
 import { useNavigate, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { useCart } from '../Context/CartContext'; // ekle
+import { useCart } from '../Context/CartContext';
 import axios from 'axios';
 import Header from '../Components/Header';
 import HomeIcon from '@mui/icons-material/Home';
@@ -12,7 +12,7 @@ function WomenShoeDetail() {
     const { id } = useParams();
     const [shoe, setShoe] = useState(null);
     const [selectedSize, setSelectedSize] = useState(null);
-    const { addToCart } = useCart(); // hook'tan fonksiyonu al
+    const { addToCart } = useCart();
 
     const realId = id.split('-')[0];
 
@@ -95,7 +95,7 @@ function WomenShoeDetail() {
                                         size: selectedSize
                                     };
                                     addToCart(item);
-                                    navigate('/sepetim'); // ShoeBasket sayfasına yönlendir
+                                    navigate('/sepetim');
                                 }}
                                 className="w-[300px] ml-[400px] px-4 py-2 bg-blue-600 hover:bg-blue-800 duration-300 text-white rounded-full"
                             >
