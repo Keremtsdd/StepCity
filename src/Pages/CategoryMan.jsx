@@ -5,8 +5,8 @@ import ManShoeList from '../Components/ManShoeList';
 import Header from '../Components/Header';
 
 const brands = [
-    'Adidas', 'Nike', 'New Balance', 'EA7',
-    'Dolce & Gabbana', 'Alexander McQuuen', 'Louis Vuitton',
+    'Adidas', 'Nike', 'New Balance', 'Lacoste', 'EA7',
+    'Dolce&Gabbana', 'Alexander McQueen', 'Louis Vuitton',
     'Valentino Garavani', 'Prada', 'Off White', 'Hugo Boss'
 ];
 
@@ -36,7 +36,7 @@ function CategoryMan() {
     };
 
     return (
-        <div className='bg-neutral-200'>
+        <div className='bg-white'>
             <Header />
 
             <div className='mt-7 ml-16 flex select-none'>
@@ -100,7 +100,7 @@ function CategoryMan() {
                 </div>
             </div>
 
-            <div className='h-96 w-full bg-neutral-200'></div>
+            <div className='h-96 w-full bg-white'></div>
         </div>
     );
 }

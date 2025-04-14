@@ -1,9 +1,6 @@
 import React, { useState } from 'react'
 import logo from '../İmages/logo.png';
 import Adidas from '../İmages/adidas.png';
-import SpezialBlack from '../İmages/SpezialBlack.png';
-import SpezialRed from '../İmages/SpezialRed.png';
-import SambaWhite from '../İmages/SambaWhite.png';
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 import StarBorderPurple500Icon from '@mui/icons-material/StarBorderPurple500';
 import { useNavigate } from 'react-router-dom';
@@ -143,15 +140,15 @@ function Home() {
 
                 </div>
 
-                <div className='bg-white border-2 border-black h-48 w-48 ml-10 rounded-full z-50'>
+                <div onClick={() => navigate('/kadın-ayakkabı?brand=Puma')} className='bg-white border-2 border-black h-48 w-48 ml-10 rounded-full z-50'>
 
                     <img className='rounded-full mt-1 ml-5 h-40 w-40 ' src="https://www.designenlassen.de/blog/wp-content/uploads/2024/03/Puma-585x585.png" alt="Puma" />
 
                 </div>
 
-                <div className='bg-white border-2 border-black h-48 w-48 ml-10 rounded-full z-50'>
+                <div onClick={() => navigate('/Erkek-Ayakkabı?brand=Dolce%26Gabbana')} className='bg-white border-2 border-black h-48 w-48 ml-10 rounded-full z-50'>
 
-                    <img className='rounded-full mt-11 ' src="https://1000logos.net/wp-content/uploads/2017/06/Vans-Logo-1966.jpg" alt="Vans" />
+                    <img className='h-40 w-40 rounded-full mt-5 ml-3.5 ' src="https://toplist.info/images/800px/dolce-amp-gabbana-dampg-769123.jpg" alt="Vans" />
 
                 </div>
 
@@ -196,10 +193,10 @@ function Home() {
 
                         <div className='flex'>
 
-                            <div onClick={() => navigate('/kadın-ayakkabı/6-adidas-handball-spezial-sneaker')} className="relative w-72 h-[350px] -mt-[850px] ml-[100px]">
+                            <div onClick={() => navigate('/Kadın-Ayakkabı/15-adidas-handball-spezial-kadn-sneaker')} className="relative w-72 h-[350px] -mt-[850px] ml-[100px]">
                                 <img
-                                    className="w-full h-full object-cover rounded-sm select-none "
-                                    src={SpezialBlack}
+                                    className="w-[400px] h-full object-cover rounded-sm select-none "
+                                    src="https://cdn.shopier.app/pictures_large/stepcity_e042b913ff6babc52382141156f098f0.jpeg"
                                     alt="Spezial"
                                 />
                                 <span className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 text-white text-lg font-semibold opacity-0 hover:opacity-100 transition-opacity duration-300">
@@ -207,22 +204,22 @@ function Home() {
                                 </span>
                             </div>
 
-                            <div onClick={() => navigate('/kadın-ayakkabı/9-adidas-handball-spezial-sneaker')} className="relative w-72 h-[350px] -mt-[850px] ml-10">
+                            <div onClick={() => navigate('/Kadın-Ayakkabı/7-adidas-kadn-sneaker')} className="relative w-72 h-[350px] -mt-[850px] ml-10">
                                 <img
                                     className="w-full h-full object-cover rounded-sm select-none"
-                                    src={SpezialRed}
-                                    alt="Spezial"
+                                    src="https://cdn.shopier.app/pictures_large/stepcity_c5ca9e1d4adf1ef0d3afa021a18d71a8.jpeg"
+                                    alt="Flow"
                                 />
                                 <span className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 text-white text-lg font-semibold opacity-0 hover:opacity-100 transition-opacity duration-300">
                                     Yakından İncele
                                 </span>
                             </div>
 
-                            <div onClick={() => navigate('/kadın-ayakkabı/12-adidas--samba-sneaker')} className="relative w-72 h-[350px] -mt-[850px] ml-10">
+                            <div onClick={() => navigate('/Kadın-Ayakkabı/8-adidas-superstar-kadn-sneaker')} className="relative w-72 h-[350px] -mt-[850px] ml-10">
                                 <img
                                     className="w-full h-full object-cover rounded-sm select-none"
-                                    src={SambaWhite}
-                                    alt="Samba"
+                                    src="https://cdn.shopier.app/pictures_large/stepcity_874f97bf12b5d8cf04b461fb54ac4e0f.jpeg"
+                                    alt="Superstar"
 
                                 />
                                 <span className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 text-white text-lg font-semibold opacity-0 hover:opacity-100 transition-opacity duration-300">
@@ -264,10 +261,10 @@ function Home() {
 
                 <div className='flex cursor-pointer'>
 
-                    <div onClick={() => navigate('/erkek-ayakkabı/1-nike-dunk-low-panda')} className="relative w-72 h-[350px] -mt-[850px] ml-[680px]">
+                    <div onClick={() => navigate('/Erkek-Ayakkabı/5-nike-dunk-low-panda-erkek')} className="relative w-72 h-[350px] -mt-[850px] ml-[680px]">
                         <img
                             className="w-full h-full object-cover rounded-sm select-none"
-                            src="https://i.pinimg.com/736x/1c/4d/3f/1c4d3f5c81cb88341eb98b01f9aee838.jpg"
+                            src="https://cdn.shopier.app/pictures_large/stepcity_7c80d95212ea1f999a660cf98deb687e.jpeg"
                             alt="Panda"
                         />
                         <span className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 text-white text-lg font-semibold opacity-0 hover:opacity-100 transition-opacity duration-300">
@@ -275,10 +272,10 @@ function Home() {
                         </span>
                     </div>
 
-                    <div onClick={() => navigate('/erkek-ayakkabı/47-nike-air-force-1')} className="relative w-72 h-[350px] -mt-[850px] ml-10">
+                    <div onClick={() => navigate('/Erkek-Ayakkabı/4-nike-air-force-1-erkek')} className="relative w-72 h-[350px] -mt-[850px] ml-10">
                         <img
                             className="w-full h-full object-cover rounded-sm select-none"
-                            src="https://i.pinimg.com/736x/b6/9f/13/b69f130c212424c343ebae91e8e1bb88.jpg"
+                            src="https://cdn.shopier.app/pictures_large/stepcity_3da1030c40045a0acc0f1266047c6e69.jpeg"
                             alt="AirForce"
                         />
                         <span className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 text-white text-lg font-semibold opacity-0 hover:opacity-100 transition-opacity duration-300">
@@ -286,10 +283,10 @@ function Home() {
                         </span>
                     </div>
 
-                    <div onClick={() => navigate('/erkek-ayakkabı/45-nike-dunk-low-triple-white')} className="relative w-72 h-[350px] -mt-[850px] ml-10 select-none">
+                    <div onClick={() => navigate('/Erkek-Ayakkabı/64-nike-dunk-low-triple-white-erkek-sneaker')} className="relative w-72 h-[350px] -mt-[850px] ml-10 select-none">
                         <img
                             className="w-full h-full object-cover rounded-sm"
-                            src="https://sparkystore.nl/cdn/shop/files/nike-sb-dunk-low-pro-white-fj1674-100-release-date_9742e1da-89ba-4d10-940f-cf90d3c0f619_1445x.webp?v=1725270892"
+                            src="https://cdn.shopier.app/pictures_large/stepcity_c5d53588536e7844201f3d636e6442c4.jpeg"
                             alt="Campus"
                         />
                         <span className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 text-white text-lg font-semibold opacity-0 hover:opacity-100 transition-opacity duration-300">

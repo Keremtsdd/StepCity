@@ -44,37 +44,54 @@ function WomenShoeList({ searchParams }) {
 
     return (
         <>
-            <h2 className="text-sm ml-11 mt-4">
+            <h2 className="text-sm ml-10 mt-4 font-semibold">
                 {filteredShoes.length} Ürün bulundu.
             </h2>
 
-            <div className="grid grid-cols-4 gap-6 pl-10 pt-2 -mb-16">
+            <div className="grid grid-cols-4 gap-1 pl-2 -mb-16">
                 {filteredShoes.map((shoe) => (
                     <Link
                         key={shoe.id}
                         to={`/Kadın-Ayakkabı/${shoe.id}-${slugify(shoe.brand, shoe.model)}`}
                     >
-                        <div className="bg-white h-[450px] w-[300px] shadow-md rounded-md p-4 cursor-pointer">
-                            <h1 className='text-red-600 h-5 w-20 text-center -ml-4 bg-slate-200 text-sm select-none'>%40 İndirim</h1>
+                        <div className="">
 
-                            <img src={shoe.image1} alt={shoe.brand} className="object-cover rounded-xl mt-4 select-none" />
+                            <img src={shoe.image1} alt={shoe.brand} className="h-[400px] w-[800px] object-cover rounded-xl mt-4 select-none" />
 
-                            <div className="truncate w-[250px]">
-                                <span className="text-lg font-bold ml-9">{shoe.brand}</span>
-                                <span className="text-md font-semibold ml-1">{shoe.model}</span>
+                            <div className='flex'>
+
+                                <div className='mt-3 ml-8'>
+                                    <h1 className='h-10 w-10 text-center font-bold pt-2 bg-black text-white'>%40</h1>
+                                </div>
+
+                                <div className="truncate w-[260px] mt-2">
+                                    <h1 className="text-xl font-bold ml-2">{shoe.brand}</h1>
+                                    <h1 className="text-lg font-semibold -mt-1.5 ml-2">{shoe.model}</h1>
+                                </div>
+
                             </div>
 
-                            <div className="ml-9 flex">
-                                <p className="text-gray-900 text-lg">
-                                    {shoe.price.toLocaleString('tr-TR')} ₺
-                                </p>
+                            <div className='flex'>
 
-                                <p className="text-gray-600 text-lg ml-4 line-through">
-                                    {(shoe.price * 1.4).toLocaleString('tr-TR')} ₺
-                                </p>
+                                <img className='h-12 w-12 ml-7' src="https://t4.ftcdn.net/jpg/00/60/31/45/360_F_60314527_wbv9w76D4LPIZ6aI3qsvhANXYk2BiD6V.jpg" alt="KargoBedava" />
+
+                                <div className="ml-1 mt-2.5 flex">
+
+                                    <p className="text-gray-900 text-lg font-semibold">
+                                        {shoe.price.toLocaleString('tr-TR')} ₺
+                                    </p>
+
+                                    <p className="text-gray-600 text-lg ml-4 line-through">
+                                        {(shoe.price * 1.4).toLocaleString('tr-TR')} ₺
+                                    </p>
+                                </div>
+
                             </div>
 
-                            <h1 className='text-sm h-5 w-[95px] text-center rounded-sm ml-9 mt-2 bg-slate-200'>Ücretsiz Kargo</h1>
+                            <div className='mb-3'>
+                                <button className='h-10 w-[300px] ml-8 mt-2 border-2 text-lg font-semibold rounded-sm border-black hover:bg-black hover:text-white duration-300'>Hemen İncele </button>
+                            </div>
+
                         </div>
                     </Link>
                 ))}

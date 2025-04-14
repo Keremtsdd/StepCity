@@ -20,8 +20,8 @@ function ShoeStore() {
                 <Header />
             </div>
 
-            <div className='p-8'>
-                <h2 className='text-4xl font-bold ml-72 mt-10'>Alışveriş Sepetiniz</h2>
+            <div className='p-8 mb-[300px]'>
+                <h2 className='text-4xl font-bold ml-72 mt-10'>Alışveriş Sepetiniz <LocalGroceryStoreOutlinedIcon style={{ width: "40px", height: "40px" }} /></h2>
                 {cartItems.length === 0 ? (
                     <>
                         <div className="flex flex-col items-center justify-center mt-32">
@@ -35,28 +35,31 @@ function ShoeStore() {
                     </>
                 ) : (
                     <ul className='space-y-5'>
-
                         {cartItems.map((item, index) => (
 
                             <li key={index} className='h-52 w-[1000px] border-2 border-black/30 rounded-md mt-14 ml-[285px]'>
 
                                 <div className='flex'>
 
-                                    <img src={item.image} alt={item.model} className='w-36 h-36 mt-7 ml-12 object-cover' />
+                                    <img src={item.image} alt={item.model} className='w-48 h-48 mt-1.5 ml-12 object-cover' />
 
                                     <h3 className='font-semibold text-lg mt-8'>{item.brand} - {item.model}</h3>
 
                                 </div>
 
                                 <div>
+                                    <p className='ml-[240px] -mt-28 font-semibold'>Seçilen Beden ({item.size})</p>
+                                </div>
 
-                                    <p className='ml-[192px] -mt-24 font-semibold'>Seçilen Beden ({item.size})</p>
+                                <div>
+
+                                    <button className='h-9 w-32 font-semibold hover:bg-black hover:text-white duration-300 rounded-sm ml-[240px] mt-5 border-2 border-black'>Hemen Al</button>
 
 
                                 </div>
 
 
-                                <div className='ml-[450px] -mt-16'>
+                                <div className='ml-[850px] -mt-32 '>
 
                                     <p className="text-gray-900 text-2xl ml-1 font-semibold">
                                         {item.price.toLocaleString('tr-TR')} TL

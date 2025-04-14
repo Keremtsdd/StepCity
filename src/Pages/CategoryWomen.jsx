@@ -5,7 +5,7 @@ import WomenShoeList from '../Components/WomenShoeList';
 import Header from '../Components/Header';
 
 const brands = [
-    'Adidas', 'Nike', 'Lacoste', 'Golden Goose',
+    'Adidas', 'Nike', 'Puma', 'Lacoste', 'Golden Goose',
 ];
 
 function CategoryWomen() {
@@ -34,7 +34,7 @@ function CategoryWomen() {
     };
 
     return (
-        <div className='bg-neutral-200'>
+        <div className='bg-white'>
             <Header />
 
             <div className='mt-7 ml-16 flex select-none'>
@@ -98,7 +98,7 @@ function CategoryWomen() {
                 </div>
             </div>
 
-            <div className='h-96 w-full bg-neutral-200'></div>
+            <div className='h-96 w-full bg-white'></div>
         </div>
     );
 }
