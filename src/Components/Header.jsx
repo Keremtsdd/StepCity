@@ -122,16 +122,23 @@ function Header() {
                     )}
 
                     {searchTerm && searchResults.length > 0 && !isSearching && (
-                        <div className="absolute top-[130px] left-14 w-[450px] bg-white shadow-lg border border-black rounded z-10 max-h-64 overflow-y-auto">
+                        <div className="absolute top-[130px] left-14 w-[450px] bg-white shadow-lg border border-black rounded z-10 max-h-[400px] overflow-y-auto">
                             {searchResults.map((item, i) => (
                                 <Link
                                     key={i}
                                     to={`/${item.gender === 'male' ? 'Erkek-Ayakkabı' : 'Kadın-Ayakkabı'}/${item.id}-${slugify(item.brand, item.model)}`}
                                     className="p-2 hover:bg-neutral-200 cursor-pointer"
                                 >
-                                    <h4 className="font-medium">{item.brand}</h4>
-                                    <h4 className="font-medium">{item.model}</h4>
-                                    <p className="text-sm text-gray-600">{item.price}₺</p>
+                                    <div className='flex'>
+                                        <img className='h-14 w-14' src={item.image1} alt={item.model} />
+
+                                        <div>
+                                            <span className="text-md font-bold">{item.brand}</span>
+                                            <span className="font-semibold ml-1">{item.model}</span>
+                                            <p className="text-sm text-gray-800 ml-0">{item.price}₺</p>
+                                        </div>
+
+                                    </div>
                                 </Link>
                             ))}
                         </div>
@@ -147,29 +154,7 @@ function Header() {
                 </div>
             </div>
 
-            <div className={`h-12 w-full bg-black/95 flex justify-center space-x-4 border-b-2 border-black/60 select-none transition-all duration-300 z-40 
-    ${isSticky && isVisible ? 'fixed top-[170px]' : isSticky && !isVisible ? 'fixed top-0' : 'relative'}`}>
-                <h1
-                    onClick={() => navigate('/kadın-ayakkabı')}
-                    className="text-2xl font-serif mt-2 cursor-pointer text-white hover:text-neutral-400 duration-300"
-                >
-                    Kadın
-                </h1>
-                <span className="h-7 w-0.5 mt-2.5 bg-white block"></span>
-                <h1
-                    onClick={() => navigate('/erkek-ayakkabı')}
-                    className="text-2xl font-serif mt-2 cursor-pointer text-white hover:text-neutral-400 duration-300"
-                >
-                    Erkek
-                </h1>
-                <span className="h-7 w-0.5 mt-2.5 bg-white block"></span>
-                <h1
-                    onClick={() => navigate('/giyim')}
-                    className="text-2xl font-serif mt-2 cursor-pointer text-white hover:text-neutral-400 duration-300"
-                >
-                    Giyim
-                </h1>
-            </div>
+
         </header>
     );
 }
