@@ -5,8 +5,10 @@ import axios from 'axios';
 import Header from '../Components/Header';
 import HomeIcon from '@mui/icons-material/Home';
 import LocalGroceryStoreOutlinedIcon from '@mui/icons-material/LocalGroceryStoreOutlined';
-import AirportShuttleOutlinedIcon from '@mui/icons-material/AirportShuttleOutlined';
 import CompareArrowsRoundedIcon from '@mui/icons-material/CompareArrowsRounded';
+import LocalShippingIcon from '@mui/icons-material/LocalShipping';
+import GppGoodIcon from '@mui/icons-material/GppGood';
+import CreditCardIcon from '@mui/icons-material/CreditCard';
 
 function ManShoeDetail() {
     const navigate = useNavigate();
@@ -70,24 +72,24 @@ function ManShoeDetail() {
                 <h1 className='ml-1'>{shoe.model}</h1>
             </div>
 
-            <div className='flex mb-[360px]'>
+            <div className='flex mb-[360px] relative z-0'>
                 <div>
-                    <div className='flex '>
-                        <img src={shoe.image1} alt={shoe.model} className="my-4 h-[500px] w-[500px] ml-[250px] mt-[120px] relative " />
-                        <img src={shoe.image2} alt={shoe.model} className="my-4 h-[500px] w-[500px] ml-[345px] mt-[120px] rounded-sm absolute left-[345px]" />
+                    <div className='flex relative z-0'>
+                        <img src={shoe.image1} alt={shoe.model} className="my-4 h-[500px] w-[500px] ml-[250px] mt-[120px]" />
+                        <img src={shoe.image2} alt={shoe.model} className="my-4 h-[500px] w-[500px] ml-[345px] mt-[120px] rounded-sm absolute left-[345px] z-0" />
                     </div>
 
-                    <div className='flex mt-5'>
+                    <div className='flex mt-5 relative z-0'>
                         {shoe.image3 && (
                             <img
-                                className='h-[500px] w-[500px] ml-[250px] relative'
+                                className='h-[500px] w-[500px] ml-[250px]'
                                 src={shoe.image3}
                                 alt={shoe.model}
                             />
                         )}
                         {shoe.image4 && (
                             <img
-                                className='h-[500px] w-[500px] ml-[345px] rounded-sm absolute left-[345px]'
+                                className='h-[500px] w-[500px] ml-[345px] rounded-sm absolute left-[345px] z-0'
                                 src={shoe.image4}
                                 alt={shoe.model}
                             />
@@ -139,7 +141,7 @@ function ManShoeDetail() {
 
                     <div className='bg-neutral-300 ml-[440px] mt-12 h-12 w-[410px] rounded-sm'>
                         <div className='flex'>
-                            <span><AirportShuttleOutlinedIcon fontSize='large' className='mt-2 ml-4' /></span>
+                            <span><LocalShippingIcon fontSize='large' className='mt-2 ml-4' /></span>
                             <h1 className='ml-4 mt-3 font-bold'>Ücretsiz Kargo</h1>
                         </div>
                     </div>
@@ -152,6 +154,26 @@ function ManShoeDetail() {
                                 <h1 style={{ width: "320px" }} className='ml-4 mt-1.5'>Siparişleriniz size ulaştıktan sonra 7 gün içinde iade veya değişim talebinde bulunabilirsiniz. Ürün kullanılmamış, kutusu zarar görmemiş olmalıdır.</h1>
                             </div>
                         </div>
+                    </div>
+
+                    <div className='flex h-16 w-[410px] ml-[440px] rounded-sm  bg-neutral-300 mt-5'>
+
+                        <div>
+                            <h1 className='ml-14 mt-1.5'><LocalShippingIcon /></h1>
+                            <h1 className='ml-8 font-semibold'>Hızlı Kargo</h1>
+                        </div>
+
+                        <div>
+                            <h1 className='mt-1.5 ml-[70px]'><GppGoodIcon /></h1>
+                            <h1 className='ml-6 font-semibold'>Güvenli Alışveriş</h1>
+
+                        </div>
+
+                        <div>
+                            <h1 className='ml-14 mt-1.5'><CreditCardIcon /></h1>
+                            <h1 className='ml-6 font-semibold'>Kolay Ödeme</h1>
+                        </div>
+
                     </div>
 
                     <div>

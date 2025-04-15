@@ -3,16 +3,22 @@ import LocalGroceryStoreOutlinedIcon from '@mui/icons-material/LocalGroceryStore
 import SearchIcon from '@mui/icons-material/Search';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { useCart } from '../Context/CartContext';
 
 function Header() {
+    const { cartItems } = useCart();
     const navigate = useNavigate();
-    const [isSticky, setIsSticky] = useState(false);
-    const [lastScrollY, setLastScrollY] = useState(0);
-    const [isVisible, setIsVisible] = useState(true);
-
     const [searchTerm, setSearchTerm] = useState('');
     const [searchResults, setSearchResults] = useState([]);
     const [isSearching, setIsSearching] = useState(false);
+
+    const normalizeString = (str) => {
+        return str
+            .toLowerCase()
+            .replace(/[^a-z0-9\s-]/g, '')
+            .replace(/\s+/g, ' ')
+            .trim();
+    };
 
     useEffect(() => {
         const fetchSearchResults = async () => {
@@ -32,11 +38,13 @@ function Header() {
 
                 const allProducts = [...kadinData, ...erkekData];
 
+
                 const filtered = allProducts.filter(item =>
-                    item.brand && typeof item.brand === 'string' && item.brand.toLowerCase().includes(searchTerm.toLowerCase())
+                    item.brand && typeof item.brand === 'string' &&
+                    normalizeString(item.brand).includes(normalizeString(searchTerm))
                 );
 
-                setSearchResults(filtered.slice(0, 5)); // İlk 5 sonucu göster
+                setSearchResults(filtered.slice(0, 5));
                 setIsSearching(false);
             } catch (error) {
                 console.error('Arama hatası:', error);
@@ -47,34 +55,12 @@ function Header() {
         if (searchTerm.trim()) {
             const delayDebounce = setTimeout(() => {
                 fetchSearchResults();
-            }, 300); // 300ms bekleme süresi (debounce)
-
+            }, 300);
             return () => clearTimeout(delayDebounce);
         } else {
             setSearchResults([]);
         }
-    }, [searchTerm]); // searchTerm değiştiğinde çalışacak
-
-    useEffect(() => {
-        const handleScroll = () => {
-            if (window.scrollY > 100) {
-                setIsSticky(true);
-            } else {
-                setIsSticky(false);
-            }
-
-            if (window.scrollY > lastScrollY) {
-                setIsVisible(false);
-            } else {
-                setIsVisible(true);
-            }
-
-            setLastScrollY(window.scrollY);
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, [lastScrollY]);
+    }, [searchTerm]);
 
     const slugify = (brand, model) => {
         const text = `${brand}-${model}`;
@@ -84,13 +70,26 @@ function Header() {
             .replace(/[^a-z0-9-]/g, '');
     };
 
+
+    const determineCategory = (model) => {
+        if (model.toLowerCase().includes('kadın')) {
+            return 'Kadın-Ayakkabı';
+        }
+        if (model.toLowerCase().includes('erkek')) {
+            return 'Erkek-Ayakkabı';
+        }
+        return '';
+    };
+
+
+    const handleProductClick = () => {
+        setSearchTerm('');
+        setSearchResults([]);
+    };
+
     return (
-        <header>
-            <div
-                className={`${isSticky ? 'fixed top-0 z-50 bg-white shadow-lg' : 'relative'
-                    } w-full h-[170px] bg-white/95 flex border-b-4 border-black/90 transition-all duration-300 ${isVisible ? 'transform translate-y-0' : 'transform -translate-y-full'
-                    }`}
-            >
+        <header className="w-full top-0 bg-white shadow-md z-50">
+            <div className="w-full h-[170px] bg-white/95 flex border-b-4 border-black/90">
                 <h1
                     onClick={() => navigate('/')}
                     style={{ height: '50px' }}
@@ -116,28 +115,27 @@ function Header() {
                     </div>
 
                     {isSearching && (
-                        <div className="absolute top-[130px] left-14 w-[450px] bg-white shadow-lg border border-black rounded z-50 max-h-64 overflow-y-auto">
+                        <div className="absolute top-[130px] left-14 w-[450px] bg-white shadow-lg border border-black rounded max-h-64 overflow-y-auto z-[9999]">
                             <div className="p-2 text-center">Yükleniyor...</div>
                         </div>
                     )}
 
                     {searchTerm && searchResults.length > 0 && !isSearching && (
-                        <div className="absolute top-[130px] left-14 w-[450px] bg-white shadow-lg border border-black rounded z-10 max-h-[400px] overflow-y-auto">
+                        <div className="absolute top-[130px] left-14 w-[450px] bg-white shadow-lg border border-black rounded max-h-[400px] overflow-y-auto z-[9999]">
                             {searchResults.map((item, i) => (
                                 <Link
                                     key={i}
-                                    to={`/${item.gender === 'male' ? 'Erkek-Ayakkabı' : 'Kadın-Ayakkabı'}/${item.id}-${slugify(item.brand, item.model)}`}
-                                    className="p-2 hover:bg-neutral-200 cursor-pointer"
+                                    to={`/${determineCategory(item.model)}/${item.id}-${slugify(item.brand, item.model)}`}
+                                    className="p-1  cursor-pointer"
+                                    onClick={handleProductClick}
                                 >
-                                    <div className='flex'>
+                                    <div className='flex '>
                                         <img className='h-14 w-14' src={item.image1} alt={item.model} />
-
                                         <div>
                                             <span className="text-md font-bold">{item.brand}</span>
                                             <span className="font-semibold ml-1">{item.model}</span>
-                                            <p className="text-sm text-gray-800 ml-0">{item.price}₺</p>
+                                            <p className="text-md font-semibold text-gray-900 ">{item.price}₺</p>
                                         </div>
-
                                     </div>
                                 </Link>
                             ))}
@@ -147,13 +145,31 @@ function Header() {
 
                 <div
                     onClick={() => navigate('/sepetim')}
-                    className="h-12 w-32 mt-[70px] ml-10 hover:bg-neutral-300 duration-300 border-2 border-black rounded-sm flex cursor-pointer select-none"
+                    className="h-12 w-32 mt-[70px] ml-10 hover:bg-neutral-300 duration-300 border-2 border-black rounded-sm flex items-center cursor-pointer select-none relative"
                 >
-                    <LocalGroceryStoreOutlinedIcon className="mt-3 ml-4" />
-                    <h1 className="mt-2.5 ml-1">Sepetim</h1>
+                    <div className="relative">
+                        <LocalGroceryStoreOutlinedIcon style={{ width: "30px", height: "30px" }} className="ml-4" />
+
+                        {cartItems.length > 0 && (
+                            <span className="absolute -top-1 -right-1 bg-red-600 text-white text-xs w-4 h-4 flex items-center justify-center rounded-full">
+                                {cartItems.length}
+                            </span>
+                        )}
+                    </div>
+
+                    <h1 className="ml-1 ">Sepetim</h1>
                 </div>
+
+
             </div>
 
+            <div className='flex justify-center h-11 bg-black text-white text-2xl space-x-3'>
+                <h1 onClick={() => navigate('/Kadın-Ayakkabı')} className='cursor-pointer mt-0.5 hover:text-neutral-400 duration-200'>Kadın</h1>
+                <span className='h-7 w-0.5 mt-1.5 bg-white block '></span>
+                <h1 onClick={() => navigate('/Erkek-Ayakkabı')} className='cursor-pointer mt-0.5 hover:text-neutral-400 duration-200'>Erkek</h1>
+                <span className='h-7 w-0.5 mt-1.5 bg-white block'></span>
+                <h1 onClick={() => navigate('/Giyim')} className='cursor-pointer mt-0.5 hover:text-neutral-400 duration-200'>Giyim</h1>
+            </div>
 
         </header>
     );

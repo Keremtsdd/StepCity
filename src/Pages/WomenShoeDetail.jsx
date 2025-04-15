@@ -7,6 +7,9 @@ import HomeIcon from '@mui/icons-material/Home';
 import LocalGroceryStoreOutlinedIcon from '@mui/icons-material/LocalGroceryStoreOutlined';
 import AirportShuttleOutlinedIcon from '@mui/icons-material/AirportShuttleOutlined';
 import CompareArrowsRoundedIcon from '@mui/icons-material/CompareArrowsRounded';
+import LocalShippingIcon from '@mui/icons-material/LocalShipping';
+import GppGoodIcon from '@mui/icons-material/GppGood';
+import CreditCardIcon from '@mui/icons-material/CreditCard';
 
 function WomenShoeDetail() {
     const navigate = useNavigate();
@@ -70,7 +73,7 @@ function WomenShoeDetail() {
 
             <div className='flex mb-[360px]'>
                 <div>
-                    <div className='flex'>
+                    <div className='flex z-10'>
                         <img src={shoe.image1} alt={shoe.model} className="my-4 h-[500px] w-[500px] ml-[250px] mt-[120px] relative" />
                         <img src={shoe.image2} alt={shoe.model} className="my-4 h-[500px] w-[500px] ml-[345px] mt-[120px] rounded-sm absolute left-[345px]" />
                     </div>
@@ -109,7 +112,7 @@ function WomenShoeDetail() {
                     <div className="ml-[440px] mt-[30px]">
                         <h3 className="text-lg font-bold mb-2">Beden Seçiniz</h3>
                         <div className="flex gap-2 mt-3 font-semibold">
-                            {[40, 41, 42, 43, 44].map((size) => (
+                            {[36, 37, 38, 39, 40].map((size) => (
                                 <button
                                     key={size}
                                     onClick={() => setSelectedSize(size)}
@@ -150,6 +153,26 @@ function WomenShoeDetail() {
                                 <h1 style={{ width: "320px" }} className='ml-4 mt-1.5'>Siparişleriniz size ulaştıktan sonra 7 gün içinde iade veya değişim talebinde bulunabilirsiniz. Ürün kullanılmamış, kutusu zarar görmemiş olmalıdır.</h1>
                             </div>
                         </div>
+                    </div>
+
+                    <div className='flex h-16 w-[410px] ml-[440px] rounded-sm  bg-neutral-300 mt-5'>
+
+                        <div>
+                            <h1 className='ml-14 mt-1.5'><LocalShippingIcon /></h1>
+                            <h1 className='ml-8 font-semibold'>Hızlı Kargo</h1>
+                        </div>
+
+                        <div>
+                            <h1 className='mt-1.5 ml-[70px]'><GppGoodIcon /></h1>
+                            <h1 className='ml-6 font-semibold'>Güvenli Alışveriş</h1>
+
+                        </div>
+
+                        <div>
+                            <h1 className='ml-14 mt-1.5'><CreditCardIcon /></h1>
+                            <h1 className='ml-6 font-semibold'>Kolay Ödeme</h1>
+                        </div>
+
                     </div>
 
                     <div>

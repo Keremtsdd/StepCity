@@ -47,7 +47,7 @@ function CategoryWomen() {
                 <div className='bg-white/80 shadow-xl h-[720px] w-96 ml-12 mt-4 rounded-lg p-6'>
                     <div className="flex">
                         <h1 className='font-bold text-xl mb-2 ml-5'>Marka</h1>
-                        <span className='ml-[240px]'>
+                        <span className='ml-[220px]'>
                             <FilterListIcon style={{ width: "30px", height: "30px" }} />
                         </span>
                     </div>

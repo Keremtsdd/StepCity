@@ -84,6 +84,7 @@ function WomenShoeList({ searchParams }) {
                                     <p className="text-gray-600 text-lg ml-4 line-through">
                                         {(shoe.price * 1.4).toLocaleString('tr-TR')} ₺
                                     </p>
+
                                 </div>
 
                             </div>

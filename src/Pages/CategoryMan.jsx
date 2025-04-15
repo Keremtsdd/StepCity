@@ -46,13 +46,16 @@ function CategoryMan() {
             </div>
 
             <div className='flex'>
-                <div className='bg-white/80 shadow-xl h-[820px] w-96 ml-12 mt-4 rounded-lg p-6'>
+
+                <div className='bg-white shadow-xl h-[820px] w-96 ml-12 mt-4 rounded-lg p-6'>
+
                     <div className='flex'>
                         <h1 className='font-bold text-xl ml-5 mb-2'>Marka</h1>
-                        <span className='ml-[240px]'>
+                        <span className='ml-[220px]'>
                             <FilterListIcon style={{ width: "30px", height: "30px" }} />
                         </span>
                     </div>
+
                     <span className='h-0.5 w-full bg-black/60 block mb-4'></span>
 
                     <div className='flex flex-col space-y-2 ml-5 mt-5 w-96 overflow-y-auto max-h-64 max-w-[315px]'>

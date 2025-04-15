@@ -128,49 +128,49 @@ function Home() {
 
             <div className='mt-32 flex select-none z-40 cursor-pointer'>
 
-                <div onClick={() => navigate('/erkek-ayakkabı?brand=Nike')} className='bg-white border-2 border-black h-48 w-48 ml-11 rounded-full z-50'>
+                <div onClick={() => navigate('/erkek-ayakkabı?brand=Nike')} className='bg-white border-2 border-black h-48 w-48 ml-11 rounded-full z-50 hover:scale-105 duration-300'>
 
                     <img className='rounded-full mt-12' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzVqds5XpuvICAg9dSoXuxTrycPHH-CkYLfg&s" alt="Nike" />
 
                 </div>
 
-                <div onClick={() => navigate('/kadın-ayakkabı?brand=Adidas')} className='bg-white border-2 border-black h-48 w-48 ml-10 rounded-full z-50'>
+                <div onClick={() => navigate('/kadın-ayakkabı?brand=Adidas')} className='bg-white border-2 border-black h-48 w-48 ml-10 rounded-full z-50 hover:scale-105 duration-300'>
 
                     <img className='rounded-full  mt-5 pl-1 ' src="https://i.pinimg.com/736x/3f/0c/76/3f0c767a3d4d448ffb58152f7c199842.jpg" alt="Adidas" />
 
                 </div>
 
-                <div onClick={() => navigate('/kadın-ayakkabı?brand=Puma')} className='bg-white border-2 border-black h-48 w-48 ml-10 rounded-full z-50'>
+                <div onClick={() => navigate('/kadın-ayakkabı?brand=Puma')} className='bg-white border-2 border-black h-48 w-48 ml-10 rounded-full z-50 hover:scale-105 duration-300'>
 
                     <img className='rounded-full mt-1 ml-5 h-40 w-40 ' src="https://www.designenlassen.de/blog/wp-content/uploads/2024/03/Puma-585x585.png" alt="Puma" />
 
                 </div>
 
-                <div onClick={() => navigate('/Erkek-Ayakkabı?brand=Dolce%26Gabbana')} className='bg-white border-2 border-black h-48 w-48 ml-10 rounded-full z-50'>
+                <div onClick={() => navigate('/Erkek-Ayakkabı?brand=Dolce%26Gabbana')} className='bg-white border-2 border-black h-48 w-48 ml-10 rounded-full z-50 hover:scale-105 duration-300'>
 
                     <img className='h-40 w-40 rounded-full mt-5 ml-3.5 ' src="https://toplist.info/images/800px/dolce-amp-gabbana-dampg-769123.jpg" alt="Vans" />
 
                 </div>
 
-                <div onClick={() => navigate('/erkek-ayakkabı?brand=New+Balance')} className='bg-white border-2 border-black h-48 w-48 ml-10 rounded-full z-50'>
+                <div onClick={() => navigate('/erkek-ayakkabı?brand=New+Balance')} className='bg-white border-2 border-black h-48 w-48 ml-10 rounded-full z-50 hover:scale-105 duration-300'>
 
                     <img className='rounded-full mt-3 ml-3 h-40 w-40' src="https://images.seeklogo.com/logo-png/9/1/new-balance-logo-png_seeklogo-98723.png" alt="NewBalence" />
 
                 </div>
 
-                <div onClick={() => navigate('/kadın-ayakkabı?brand=Lacoste')} className='bg-white border-2 border-black h-48 w-48 ml-10 rounded-full z-50'>
+                <div onClick={() => navigate('/kadın-ayakkabı?brand=Lacoste')} className='bg-white border-2 border-black h-48 w-48 ml-10 rounded-full z-50 hover:scale-105 duration-300'>
 
                     <img className=' w-36 mt-12 ml-6 ' src="https://upload.wikimedia.org/wikinews/en/thumb/4/43/Lacoste_logo.svg/2560px-Lacoste_logo.svg.png" alt="Lacoste" />
 
                 </div>
 
-                <div onClick={() => navigate('/kadın-ayakkabı?brand=Golden+Goose')} className='bg-white border-2 border-black h-48 w-48 ml-10 rounded-full z-50'>
+                <div onClick={() => navigate('/kadın-ayakkabı?brand=Golden+Goose')} className='bg-white border-2 border-black h-48 w-48 ml-10 rounded-full z-50 hover:scale-105 duration-300'>
 
                     <img className='rounded-full' src="https://i.pinimg.com/736x/53/14/87/531487f5c990664e1b3ae14f35e26131.jpg" alt="GoldenGoose" />
 
                 </div>
 
-                <div onClick={() => navigate('/erkek-ayakkabı?brand=EA7')} className='bg-white border-2 border-black h-48 w-48 ml-10 rounded-full z-40'>
+                <div onClick={() => navigate('/erkek-ayakkabı?brand=EA7')} className='bg-white border-2 border-black h-48 w-48 ml-10 rounded-full z-40 hover:scale-105 duration-300'>
 
                     <img className='rounded-full mt-3 ml-4 w-40 ' src="https://brandlogos.net/wp-content/uploads/2022/03/ea7_emporio_armani-logo-brandlogos.net_.png" alt="EA7" />
 
