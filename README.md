@@ -1,7 +1,7 @@
 StepCity – Ayakkabı Satış E-Ticaret Sitesi
 
 Açıklama ;
-● StepCity, özel markalı ayakkabıların satışına odaklanan modern bir e-ticaret web sitesidir. Kullanıcı dostu arayüzü, gelişmiş filtreleme seçenekleri ve entegre ödeme sistemi ile ziyaretçilere kolay ve güvenli bir alışveriş deneyimi sunar.
+● StepCity, ayakkabıların satışına odaklanan bir e-ticaret web sitesidir. Kullanıcı dostu arayüzü, gelişmiş filtreleme seçenekleri ve entegre ödeme sistemi ile kolay ve güvenli bir alışveriş deneyimi sunar.
 
 → Kullanılan Teknolojiler:
 
