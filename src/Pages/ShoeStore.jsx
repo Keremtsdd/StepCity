@@ -6,6 +6,7 @@ import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { useNavigate } from 'react-router-dom';
 
+
 function ShoeStore() {
     const { cartItems, setCartItems, removeFromCart } = useCart();
     const navigate = useNavigate();
@@ -50,14 +51,24 @@ function ShoeStore() {
                             <li key={index} className='h-52 w-[1000px] border-2 border-black/30 rounded-md mt-14 ml-[285px] relative'>
 
                                 <div className='flex'>
+
                                     <img src={item.image} alt={item.model} className='w-48 h-48 mt-1.5 ml-12 object-cover' />
+
                                     <div className='mt-8 ml-8'>
+
                                         <h3 className='font-semibold text-lg'>{item.brand} - {item.model}</h3>
                                         <p className='font-semibold mt-2'>Seçilen Beden ({item.size})</p>
 
-                                        <button className='h-9 w-32 font-semibold hover:bg-black hover:text-white duration-300 rounded-sm mt-4 border-2 border-black'>
-                                            Hemen Al
-                                        </button>
+                                        <a href={item.ShopierLink} target='_blank' rel='noreferrer'>
+
+                                            <button
+                                                className="h-9 w-32 font-semibold hover:bg-black hover:text-white duration-300 rounded-sm mt-4 border-2 border-black"
+
+                                            >
+                                                Hemen Al
+                                            </button>
+
+                                        </a>
 
                                     </div>
 

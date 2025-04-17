@@ -5,7 +5,6 @@ import axios from 'axios';
 import Header from '../Components/Header';
 import HomeIcon from '@mui/icons-material/Home';
 import LocalGroceryStoreOutlinedIcon from '@mui/icons-material/LocalGroceryStoreOutlined';
-import AirportShuttleOutlinedIcon from '@mui/icons-material/AirportShuttleOutlined';
 import CompareArrowsRoundedIcon from '@mui/icons-material/CompareArrowsRounded';
 import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 import GppGoodIcon from '@mui/icons-material/GppGood';
@@ -140,7 +139,7 @@ function WomenShoeDetail() {
 
                     <div className='bg-neutral-300 ml-[440px] mt-12 h-12 w-[410px] rounded-sm'>
                         <div className='flex'>
-                            <span><AirportShuttleOutlinedIcon fontSize='large' className='mt-2 ml-4' /></span>
+                            <span><LocalShippingIcon fontSize='large' className='mt-2 ml-4' /></span>
                             <h1 className='ml-4 mt-3 font-bold'>Ücretsiz Kargo</h1>
                         </div>
                     </div>

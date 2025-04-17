@@ -101,17 +101,7 @@ function Footer() {
 
                     <div>
 
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d188.26509128033513!2d28.73097876031879!3d40.976193251640254!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14caa1b07e906093%3A0xe2def87e5423e11d!2zRGVuaXprw7bFn2tsZXIgQ2QuIE5vOjYx!5e0!3m2!1str!2str!4v1744644532958!5m2!1str!2str"
-                            width="150%"
-                            height="70%"
-                            style={{ border: 0 }}
-                            allowFullScreen
-                            loading="lazy"
-                            referrerPolicy="no-referrer-when-downgrade"
-                            title="Google Map showing coffee shop location"
-                            className='mt-20 ml-7 select-none'
-                        ></iframe>
+
 
 
                     </div>
