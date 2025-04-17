@@ -10,7 +10,6 @@ function ShoeStore() {
     const { cartItems, setCartItems, removeFromCart } = useCart();
     const navigate = useNavigate();
 
-    // Sayfa açıldığında localStorage'dan veriyi çek
     useEffect(() => {
         const savedCart = localStorage.getItem("cartItems");
         if (savedCart) {
@@ -18,7 +17,6 @@ function ShoeStore() {
         }
     }, [setCartItems]);
 
-    // cartItems değiştikçe localStorage'a kaydet
     useEffect(() => {
         if (cartItems.length > 0) {
             localStorage.setItem("cartItems", JSON.stringify(cartItems));
@@ -70,7 +68,8 @@ function ShoeStore() {
                                     <p className='mt-3 h-6 w-28 text-center rounded-sm bg-slate-400'>Ücretsiz Kargo</p>
 
                                     <button
-                                        onClick={() => removeFromCart(item.id)}
+                                        onClick={() => removeFromCart(item.id, item.size)}
+
                                         className="mt-5 text-red-600 font-semibold"
                                     >
                                         <DeleteOutlineOutlinedIcon style={{ width: "25px", height: "25px" }} />

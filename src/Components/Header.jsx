@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { useCart } from '../Context/CartContext';
 
 function Header() {
-    const { cartItems } = useCart();
+    const { cartItems, isCartReady } = useCart();
     const navigate = useNavigate();
     const [searchTerm, setSearchTerm] = useState('');
     const [searchResults, setSearchResults] = useState([]);
@@ -150,14 +150,14 @@ function Header() {
                     <div className="relative">
                         <LocalGroceryStoreOutlinedIcon style={{ width: "30px", height: "30px" }} className="ml-4" />
 
-                        {cartItems.length > 0 && (
+                        {isCartReady && cartItems.length > 0 && (
                             <span className="absolute -top-1 -right-1 bg-red-600 text-white text-xs w-4 h-4 flex items-center justify-center rounded-full">
                                 {cartItems.length}
                             </span>
                         )}
                     </div>
 
-                    <h1 className="ml-1 ">Sepetim</h1>
+                    <h1 className="ml-1">Sepetim</h1>
                 </div>
 
 
