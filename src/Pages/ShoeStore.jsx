@@ -29,10 +29,12 @@ function ShoeStore() {
         <>
             <Header />
 
+
             <div className='p-8 mb-[350px]'>
                 <h2 className='text-4xl font-bold ml-72 mt-10'>
                     Alışveriş Sepetiniz <LocalGroceryStoreOutlinedIcon style={{ width: "40px", height: "40px" }} />
                 </h2>
+
 
                 {cartItems.length === 0 ? (
                     <div className="flex flex-col items-center justify-center mt-32">
@@ -52,10 +54,13 @@ function ShoeStore() {
                                     <div className='mt-8 ml-8'>
                                         <h3 className='font-semibold text-lg'>{item.brand} - {item.model}</h3>
                                         <p className='font-semibold mt-2'>Seçilen Beden ({item.size})</p>
+
                                         <button className='h-9 w-32 font-semibold hover:bg-black hover:text-white duration-300 rounded-sm mt-4 border-2 border-black'>
                                             Hemen Al
                                         </button>
+
                                     </div>
+
                                 </div>
 
                                 <div className='absolute right-8 top-6 text-right'>

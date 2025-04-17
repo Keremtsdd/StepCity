@@ -25,8 +25,12 @@ export const CartProvider = ({ children }) => {
     }, [cartItems]);
 
     const addToCart = (item) => {
-        setCartItems(prev => [...prev, item]);
+        setCartItems(prev => [...prev, {
+            ...item,
+            ShopierLink: item.ShopierLink || ''
+        }]);
     };
+
 
     const removeFromCart = (id, size) => {
         setCartItems(prev => prev.filter(item => !(item.id === id && item.size === size)));

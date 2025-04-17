@@ -11,21 +11,21 @@ function Home() {
     const navigate = useNavigate();
 
     const shoes = [
-        { id: 1, name: 'Nike Court Legacy Lift', image: 'https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/8604a6d6-c9c0-49e7-a485-1cc746235807/NIKE+COURT+VISION+LO.png', price: '₺3000', description: 'Kadın ayakkabısı' },
-        { id: 2, name: 'Nike Air Force 1', image: 'https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/8604a6d6-c9c0-49e7-a485-1cc746235807/NIKE+COURT+VISION+LO.png', price: '₺3500', description: 'Erkek ayakkabısı' },
-        { id: 3, name: 'Adidas Ultraboost', image: 'https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/8604a6d6-c9c0-49e7-a485-1cc746235807/NIKE+COURT+VISION+LO.png', price: '₺4000', description: 'Unisex ayakkabısı' },
-        { id: 4, name: 'Puma RS-X', image: 'https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/8604a6d6-c9c0-49e7-a485-1cc746235807/NIKE+COURT+VISION+LO.png', price: '₺3200', description: 'Erkek ayakkabısı' },
-        { id: 5, name: 'Converse Chuck Taylor', image: 'https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/8604a6d6-c9c0-49e7-a485-1cc746235807/NIKE+COURT+VISION+LO.png', price: '₺1500', description: 'Kadın ayakkabısı' },
-        { id: 6, name: 'Nike React Element', image: 'https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/8604a6d6-c9c0-49e7-a485-1cc746235807/NIKE+COURT+VISION+LO.png', price: '₺3600', description: 'Kadın ayakkabısı' },
-        { id: 7, name: 'Adidas NMD', image: 'https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/8604a6d6-c9c0-49e7-a485-1cc746235807/NIKE+COURT+VISION+LO.png', price: '₺3800', description: 'Unisex ayakkabısı' },
-        { id: 8, name: 'Reebok Classic', image: 'https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/8604a6d6-c9c0-49e7-a485-1cc746235807/NIKE+COURT+VISION+LO.png', price: '₺2800', description: 'Kadın ayakkabısı' },
-        { id: 9, name: 'New Balance 990', image: 'https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/8604a6d6-c9c0-49e7-a485-1cc746235807/NIKE+COURT+VISION+LO.png', price: '₺4200', description: 'Erkek ayakkabısı' },
-        { id: 10, name: 'Vans Old Skool', image: 'https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/8604a6d6-c9c0-49e7-a485-1cc746235807/NIKE+COURT+VISION+LO.png', price: '₺2500', description: 'Unisex ayakkabısı' },
-        { id: 11, name: 'Saucony Jazz', image: 'https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/8604a6d6-c9c0-49e7-a485-1cc746235807/NIKE+COURT+VISION+LO.png', price: '₺3300', description: 'Kadın ayakkabısı' },
-        { id: 12, name: 'Nike Zoom', image: 'https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/8604a6d6-c9c0-49e7-a485-1cc746235807/NIKE+COURT+VISION+LO.png', price: '₺3900', description: 'Unisex ayakkabısı' },
+        { id: 1, image: 'https://cdn.shopier.app/pictures_large/stepcity_b0c4c8378f1bf57d5320b0475abf170b.jpeg', link: '/Erkek-Ayakkabı/8-nike-dunk-low-retro-erkek-sneaker' },
+        { id: 2, image: 'https://cdn.shopier.app/pictures_large/stepcity_428d88ec4361a4845fb41300b28284f5.jpeg', link: '/Kadın-Ayakkabı/12-adidas-handball-spezial-kadn-sneaker' },
+        { id: 3, image: 'https://cdn.shopier.app/pictures_large/stepcity_7f83f3fdaf99de7fa66a1fed69567b77.jpeg', link: '/Kadın-Ayakkabı/25-new-balance-530-kadn-sneaker' },
+        { id: 4, image: 'https://cdn.shopier.app/pictures_large/stepcity_55ef3b9a370ce6ad5c9ceaa5cd369e46.jpeg', link: '/Kadın-Ayakkabı/32-christian-dior-kadn-sneaker' },
+        { id: 5, image: 'https://cdn.shopier.app/pictures_large/stepcity_962bc9523bd322a16703f7d693400e84.jpeg', link: '/Kadın-Ayakkabı/31-golden-goose-super-star-kadn-sneaker' },
+        { id: 6, image: 'https://cdn.shopier.app/pictures_large/stepcity_ba3047550391c3459f14815bdb9e6c4d.jpeg', link: '/Kadın-Ayakkabı/4-new-balance-9060-kadn-sneaker' },
+        { id: 7, image: 'https://cdn.shopier.app/pictures_large/stepcity_3da1030c40045a0acc0f1266047c6e69.jpeg', link: '/Erkek-Ayakkabı/4-nike-air-force-1-erkek-sneaker' },
+        { id: 8, image: 'https://cdn.shopier.app/pictures_large/stepcity_d75ae8b8a7c5648c7e77416c0a356062.jpeg', link: '/Erkek-Ayakkabı/6-nike--air-force-1-07-petrol-yeili-erkek-sneaker' },
+        { id: 9, image: 'https://cdn.shopier.app/pictures_large/stepcity_7fd76f0ece7092d6cec9877f6db3d2b0.jpeg', link: '/Erkek-Ayakkabı/7-adidas-handball-spezial-erkek-sneaker' },
+        { id: 10, image: 'https://cdn.shopier.app/pictures_large/stepcity_122e103f44e5ed6f7018fda14e05cba9.jpeg', link: '/Erkek-Ayakkabı/14-ea7-emporio-armani-erkek-sneaker' },
+        { id: 11, image: 'https://cdn.shopier.app/pictures_large/stepcity_6a332c268ccdceca2b69a213540cb5e7.jpeg', link: '/Erkek-Ayakkabı/17-dolcegabbana-erkek-sneaker' },
+        { id: 12, image: 'https://cdn.shopier.app/pictures_large/stepcity_4bf5cb057a02561ea000b845b998f78a.jpeg', link: '/Erkek-Ayakkabı/24-louis-vuitton-trainer-sneaker-blue-erkek-sneaker' },
     ];
 
-    const shoesPerPage = 5;
+    const shoesPerPage = 4;
 
     const displayedShoes = shoes.slice(currentPage * shoesPerPage, (currentPage + 1) * shoesPerPage);
 
@@ -42,7 +42,7 @@ function Home() {
     };
 
     return (
-        <div className='bg-neutral-100'>
+        <div className='bg-white'>
 
             <div onClick={() => navigate('erkek-ayakkabı?brand=Nike')} className='h-[960px] w-full relative cursor-pointer z-40'>
 
@@ -57,25 +57,34 @@ function Home() {
             </div>
 
 
-            <div>
-                <h1 className="font-bold text-4xl mt-20 ml-[100px]">Öne Çıkan Ürünler</h1>
-                <span className="h-1 w-[140px] ml-[103px] mt-2 rounded-sm bg-black block"></span>
+            <div className='bg-white'>
+                <h1 className="font-bold text-4xl mt-20 ml-[205px]">Öne Çıkan Ürünler</h1>
+                <span className="h-1 w-[140px] ml-[210px] mt-2 rounded-sm bg-black block"></span>
 
-                <div className="flex overflow-x-auto mt-10 ">
+                <div className="flex overflow-x-auto mt-10 ml-[155px]">
                     {displayedShoes.map((shoe) => (
-                        <div key={shoe.id} className="flex-none ml-12">
-                            <div className="h-80 w-80 bg-white shadow-2xl select-none cursor-pointer">
-                                <img src={shoe.image} alt={shoe.name} />
-                            </div>
-                            <h1 className="ml-[10px] mt-1 font-bold">{shoe.name}</h1>
-                            <h1 className="ml-[10px] text-xs -mt-1">{shoe.description}</h1>
-                            <h1 className="ml-[10px] mt-1 text-lg">{shoe.price}</h1>
+                        <div key={shoe.id} className="flex-none">
+                            {shoe.link ? (
+                                <a href={shoe.link}>
+                                    <div className="h-[400px] w-[400px] bg-white select-none cursor-pointer relative">
+                                        <img src={shoe.image} alt={`Shoe ${shoe.id}`} />
+                                        <span className="absolute w-[301px] ml-12 inset-0 flex items-center justify-center bg-black bg-opacity-50 text-white text-lg font-semibold opacity-0 hover:opacity-100 transition-opacity duration-300">
+                                            Yakından İncele
+                                        </span>
+                                    </div>
+                                </a>
+                            ) : (
+                                <div className="h-[400px] w-[400px] bg-white select-none cursor-pointer">
+                                    <img src={shoe.image} alt={`Shoe ${shoe.id}`} />
+                                </div>
+                            )}
                         </div>
                     ))}
                 </div>
 
 
-                <div className="flex justify-center mt-6">
+
+                <div className="flex justify-center mt-10">
                     <button
                         onClick={prevPage}
                         className="text-4xl text-gray-600 mr-4 disabled:text-gray-400"
@@ -146,11 +155,7 @@ function Home() {
 
                 </div>
 
-                <div onClick={() => navigate('/Erkek-Ayakkabı?brand=Dolce%26Gabbana')} className='bg-white border-2 border-black h-48 w-48 ml-10 rounded-full z-50 hover:scale-105 duration-300'>
 
-                    <img className='h-40 w-40 rounded-full mt-5 ml-3.5 ' src="https://toplist.info/images/800px/dolce-amp-gabbana-dampg-769123.jpg" alt="Vans" />
-
-                </div>
 
                 <div onClick={() => navigate('/erkek-ayakkabı?brand=New+Balance')} className='bg-white border-2 border-black h-48 w-48 ml-10 rounded-full z-50 hover:scale-105 duration-300'>
 
@@ -167,6 +172,12 @@ function Home() {
                 <div onClick={() => navigate('/kadın-ayakkabı?brand=Golden+Goose')} className='bg-white border-2 border-black h-48 w-48 ml-10 rounded-full z-50 hover:scale-105 duration-300'>
 
                     <img className='rounded-full' src="https://i.pinimg.com/736x/53/14/87/531487f5c990664e1b3ae14f35e26131.jpg" alt="GoldenGoose" />
+
+                </div>
+
+                <div onClick={() => navigate('/Erkek-Ayakkabı?brand=Dolce%26Gabbana')} className='bg-white border-2 border-black h-48 w-48 ml-10 rounded-full z-50 hover:scale-105 duration-300'>
+
+                    <img className='h-40 w-40 rounded-full mt-5 ml-3.5 ' src="https://toplist.info/images/800px/dolce-amp-gabbana-dampg-769123.jpg" alt="Vans" />
 
                 </div>
 
