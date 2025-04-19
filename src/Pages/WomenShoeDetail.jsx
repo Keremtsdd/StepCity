@@ -38,8 +38,10 @@ function WomenShoeDetail() {
             brand: shoe.brand,
             price: shoe.price,
             image: shoe.image1,
-            size: selectedSize
+            size: selectedSize,
+            shopierLink: shoe.shopierLink
         };
+
 
         addToCart(item);
         setShowSuccess(true);
@@ -72,12 +74,12 @@ function WomenShoeDetail() {
 
             <div className='flex mb-[360px]'>
                 <div>
-                    <div className='flex z-10'>
+                    <div className='flex z-10 select-none'>
                         <img src={shoe.image1} alt={shoe.model} className="my-4 h-[500px] w-[500px] ml-[250px] mt-[120px] relative" />
                         <img src={shoe.image2} alt={shoe.model} className="my-4 h-[500px] w-[500px] ml-[345px] mt-[120px] rounded-sm absolute left-[345px]" />
                     </div>
 
-                    <div className='flex mt-5'>
+                    <div className='flex mt-5 select-none'>
                         {shoe.image3 && (
                             <img
                                 className='h-[500px] w-[500px] ml-[250px] relative'

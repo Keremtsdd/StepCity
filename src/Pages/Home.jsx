@@ -84,7 +84,7 @@ function Home() {
 
 
 
-                <div className="flex justify-center mt-10">
+                <div className="flex justify-center mt-10 select-none">
                     <button
                         onClick={prevPage}
                         className="text-4xl text-gray-600 mr-4 disabled:text-gray-400"

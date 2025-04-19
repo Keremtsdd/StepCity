@@ -7,11 +7,31 @@
         transform: translateX(-50%);
     }
 
-    /* Sonsuz tekrar için sadece -50% kaydırıyoruz */
 }
 
 .animate-marquee {
     display: flex;
     min-width: 200%;
     animation: marquee 20s linear infinite;
+}
+
+/* App.css veya index.css */
+#nprogress .bar {
+    background: #007bff !important;
+    /* Mavi çizgi */
+    height: 3px;
+}
+
+#nprogress .peg {
+    box-shadow: 0 0 10px #007bff, 0 0 5px #007bff;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }

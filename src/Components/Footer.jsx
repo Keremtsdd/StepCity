@@ -19,7 +19,7 @@ function Footer() {
 
                 <div className='relative h-[450px] w-[800px] bg-black border-r-2 border-white'>
 
-                    <img className='h-72 w-72 ml-[120px]' src={logo} alt="StepCityLogo" />
+                    <img className='h-72 w-72 ml-[120px] select-none' src={logo} alt="StepCityLogo" />
                     <p className='text-white/90 ml-[146px] -mt-14 font-mono'>Adım Attıkça Farkı Hissedin!</p>
 
                     <div className="flex items-center space-x-5 mt-7 ml-[200px] text-white ">
@@ -100,10 +100,17 @@ function Footer() {
                     </div>
 
                     <div>
-
-
-
-
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d376.53032098776185!2d28.73090369814754!3d40.976168999757725!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14caa1b07e906093%3A0xe2def87e5423e11d!2zRGVuaXprw7bFn2tsZXIgQ2QuIE5vOjYx!5e0!3m2!1str!2str!4v1745063236041!5m2!1str!2str"
+                            width="170%"
+                            height="70%"
+                            style={{ border: 0 }}
+                            allowFullScreen
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
+                            title="Google Map showing coffee shop location"
+                            className='select-none mt-[70px] ml-1'
+                        ></iframe>
                     </div>
 
                 </div>

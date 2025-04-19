@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import Cargo from '../İmages/Cargo.jpg';
 
 const slugify = (brand, model) => {
     const text = `${brand}-${model}`;
@@ -61,7 +62,7 @@ function ManShoeList({ searchParams }) {
                             <div className='flex'>
 
                                 <div className='mt-3 ml-8'>
-                                    <h1 className='h-10 w-10 text-center font-bold pt-2 bg-black text-white'>%40</h1>
+                                    <h1 className='h-10 w-10 text-center font-bold pt-2 bg-black text-white select-none'>%40</h1>
                                 </div>
 
                                 <div className="truncate w-[260px] mt-2">
@@ -73,7 +74,7 @@ function ManShoeList({ searchParams }) {
 
                             <div className='flex'>
 
-                                <img className='h-12 w-12 ml-7' src="https://t4.ftcdn.net/jpg/00/60/31/45/360_F_60314527_wbv9w76D4LPIZ6aI3qsvhANXYk2BiD6V.jpg" alt="KargoBedava" />
+                                <img className='h-12 w-12 ml-7 select-none' src={Cargo} alt="KargoBedava" />
 
                                 <div className="ml-1 mt-2.5 flex">
 

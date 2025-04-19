@@ -163,7 +163,7 @@ function Header() {
 
             </div>
 
-            <div className='flex justify-center h-11 bg-black text-white text-2xl space-x-3'>
+            <div className='flex justify-center h-11 bg-black text-white text-2xl space-x-3 select-none'>
                 <h1 onClick={() => navigate('/Kadın-Ayakkabı')} className='cursor-pointer mt-0.5 hover:text-neutral-400 duration-200'>Kadın</h1>
                 <span className='h-7 w-0.5 mt-1.5 bg-white block '></span>
                 <h1 onClick={() => navigate('/Erkek-Ayakkabı')} className='cursor-pointer mt-0.5 hover:text-neutral-400 duration-200'>Erkek</h1>

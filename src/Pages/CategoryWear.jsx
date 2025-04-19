@@ -9,12 +9,7 @@ function CategoryWear() {
                 <div>
                     <Header />
                 </div>
-
-
                 <h1 className='text-4xl font-semibold text-center mt-72'>Giyim Ürünleri Çok Yakında Sizlerle...</h1>
-
-
-
             </div>
 
         </>

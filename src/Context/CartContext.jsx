@@ -25,17 +25,26 @@ export const CartProvider = ({ children }) => {
     }, [cartItems]);
 
     const addToCart = (item) => {
-        setCartItems(prev => [...prev, {
-            ...item,
-            ShopierLink: item.ShopierLink || ''
-        }]);
+        const isItemInCart = cartItems.some(cartItem => cartItem.id === item.id && cartItem.size === item.size);
+
+        if (isItemInCart) {
+            alert('Bu ürün zaten sepette!');
+            return;
+        }
+
+        setCartItems(prev => [
+            ...prev,
+            {
+                ...item,
+                shopierLink: item.shopierLink || item.ShopierLink || null,
+            }
+        ]);
     };
 
 
     const removeFromCart = (id, size) => {
         setCartItems(prev => prev.filter(item => !(item.id === id && item.size === size)));
     };
-
 
     return (
         <CartContext.Provider value={{ cartItems, setCartItems, removeFromCart, addToCart, isCartReady }}>

@@ -26,10 +26,10 @@ function ShoeStore() {
         }
     }, [cartItems]);
 
+
     return (
         <>
             <Header />
-
 
             <div className='p-8 mb-[350px]'>
                 <h2 className='text-4xl font-bold ml-72 mt-10'>
@@ -52,22 +52,19 @@ function ShoeStore() {
 
                                 <div className='flex'>
 
-                                    <img src={item.image} alt={item.model} className='w-48 h-48 mt-1.5 ml-12 object-cover' />
+                                    <img src={item.image} alt={item.model} className='w-48 h-48 mt-1.5 ml-12 object-cover select-none' />
 
                                     <div className='mt-8 ml-8'>
 
                                         <h3 className='font-semibold text-lg'>{item.brand} - {item.model}</h3>
                                         <p className='font-semibold mt-2'>Seçilen Beden ({item.size})</p>
 
-                                        <a href={item.ShopierLink} target='_blank' rel='noreferrer'>
 
-                                            <button
-                                                className="h-9 w-32 font-semibold hover:bg-black hover:text-white duration-300 rounded-sm mt-4 border-2 border-black"
+                                        <a href={item.ShopierLink || item.shopierLink} target='_blank' rel='noreferrer'>
 
-                                            >
+                                            <button className="h-9 w-32 select-none font-semibold hover:bg-black hover:text-white duration-300 rounded-sm mt-4 border-2 border-black">
                                                 Hemen Al
                                             </button>
-
                                         </a>
 
                                     </div>
