@@ -98,6 +98,13 @@ function Header() {
                     StepCity
                 </h1>
 
+                <h1
+                    onClick={() => navigate('/')}
+                    className='mt-[85px] text-2xl font-semibold select-none cursor-pointer'
+                >
+                    .tr
+                </h1>
+
                 <span className="h-32 w-1 mt-5 ml-14 bg-black/80 block"></span>
 
                 <div className="relative flex flex-col items-start">
