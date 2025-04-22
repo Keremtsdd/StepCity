@@ -15,14 +15,15 @@ function Footer() {
     return (
         <footer>
 
-            <div className='flex -mt-[150px]'>
+            <div className='flex flex-col lg:flex-row'>
 
-                <div className='relative h-[450px] w-[800px] bg-black border-r-2 border-white'>
 
-                    <img className='h-72 w-72 ml-[120px] select-none' src={logo} alt="StepCityLogo" />
-                    <p className='text-white/90 ml-[146px] -mt-14 font-mono'>Adım Attıkça Farkı Hissedin!</p>
+                <div className='relative w-[392px] lg:h-[450px] lg:w-[800px] bg-black border-r-2 border-white'>
 
-                    <div className="flex items-center space-x-5 mt-7 ml-[200px] text-white ">
+                    <img className='h-72 w-72 ml-[60px] lg:ml-[140px]  select-none' src={logo} alt="StepCityLogo" />
+                    <p className='text-white/90 ml-[80px] lg:ml-[160px] -mt-14 font-mono'>Adım Attıkça Farkı Hissedin!</p>
+
+                    <div className="flex items-center space-x-5 mt-7 ml-[140px] lg:ml-[215px] text-white ">
 
                         <Link to={"https://www.instagram.com/stepcitytr/"} target='_blank'>
                             <InstagramIcon style={{ width: "32px", height: "32px" }} />
@@ -43,7 +44,7 @@ function Footer() {
 
                 </div>
 
-                <div className='h-[450px] w-full bg-black flex'>
+                <div className='h-[1100px] lg:h-[450px] w-full bg-black sm:flex md:flex'>
 
                     <div className='text-white ml-20 mt-5 text-lg '>
 
@@ -102,14 +103,13 @@ function Footer() {
                     <div>
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d376.53032098776185!2d28.73090369814754!3d40.976168999757725!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14caa1b07e906093%3A0xe2def87e5423e11d!2zRGVuaXprw7bFn2tsZXIgQ2QuIE5vOjYx!5e0!3m2!1str!2str!4v1745063236041!5m2!1str!2str"
-                            width="170%"
-                            height="70%"
+
                             style={{ border: 0 }}
                             allowFullScreen
                             loading="lazy"
                             referrerPolicy="no-referrer-when-downgrade"
                             title="Google Map showing coffee shop location"
-                            className='select-none mt-[70px] ml-1'
+                            className='select-none mt-[70px] ml-1.5 h-[200px] w-[380px] lg:h-[300px] lg:w-[480px]'
                         ></iframe>
                     </div>
 

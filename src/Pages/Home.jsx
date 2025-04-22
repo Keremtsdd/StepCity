@@ -255,7 +255,7 @@ function Home() {
                 </div>
             </div>
 
-            <div className='mt-10 lg:mt-20 mb-[240px] lg:mb-96'>
+            <div className='mt-10 lg:mt-20 mb-[100px] lg:mb-52'>
 
                 <div className='mt-10 relative'>
 
