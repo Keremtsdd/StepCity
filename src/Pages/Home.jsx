@@ -80,7 +80,7 @@ function Home() {
 
                 <div className="flex overflow-x-auto mt-10 ml-4 sm:ml-[155px] scrollbar-hide">
                     {displayedShoes.map((shoe) => (
-                        <div key={shoe.id} className="flex-none w-[45vw] sm:w-[400px]">
+                        <div key={shoe.id} className="flex-none w-[40vw] sm:w-[400px]">
                             {shoe.link ? (
                                 <a href={shoe.link}>
                                     <div className="h-[200px] sm:h-[400px] bg-white select-none cursor-pointer relative">
@@ -154,41 +154,29 @@ function Home() {
             </div>
 
 
-            <div className='mt-20 flex select-none z-40 cursor-pointer overflow-x-auto sm:overflow-x-visible w-full sm:w-auto flex-nowrap sm:flex-wrap'>
+            <div className='mt-20 lg:ml-24 flex select-none z-40 cursor-pointer overflow-x-auto sm:overflow-x-visible w-full sm:w-auto flex-nowrap sm:flex-wrap snap-x gap-4 sm:gap-6 px-4 sm:px-0'>
 
-                <div onClick={() => navigate('/erkek-ayakkabı?brand=Nike')} className='bg-white border-2 border-black h-48 w-48 ml-11 flex-shrink-0 rounded-full z-50 hover:scale-105 duration-300'>
-                    <img className='rounded-full mt-12' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzVqds5XpuvICAg9dSoXuxTrycPHH-CkYLfg&s" alt="Nike" />
-                </div>
-
-                <div onClick={() => navigate('/kadın-ayakkabı?brand=Adidas')} className='bg-white border-2 border-black h-48 w-48 ml-10 flex-shrink-0 rounded-full z-50 hover:scale-105 duration-300'>
-                    <img className='rounded-full mt-5 pl-1' src="https://i.pinimg.com/736x/3f/0c/76/3f0c767a3d4d448ffb58152f7c199842.jpg" alt="Adidas" />
-                </div>
-
-                <div onClick={() => navigate('/kadın-ayakkabı?brand=Puma')} className='bg-white border-2 border-black h-48 w-48 ml-10 flex-shrink-0 rounded-full z-50 hover:scale-105 duration-300'>
-                    <img className='rounded-full mt-1 ml-5 h-40 w-40' src="https://www.designenlassen.de/blog/wp-content/uploads/2024/03/Puma-585x585.png" alt="Puma" />
-                </div>
-
-                <div onClick={() => navigate('/erkek-ayakkabı?brand=New+Balance')} className='bg-white border-2 border-black h-48 w-48 ml-10 flex-shrink-0 rounded-full z-50 hover:scale-105 duration-300'>
-                    <img className='rounded-full mt-3 ml-3 h-40 w-40' src="https://images.seeklogo.com/logo-png/9/1/new-balance-logo-png_seeklogo-98723.png" alt="NewBalence" />
-                </div>
-
-                <div onClick={() => navigate('/kadın-ayakkabı?brand=Lacoste')} className='bg-white border-2 border-black h-48 w-48 ml-10 flex-shrink-0 rounded-full z-50 hover:scale-105 duration-300'>
-                    <img className='w-36 mt-12 ml-6' src="https://upload.wikimedia.org/wikinews/en/thumb/4/43/Lacoste_logo.svg/2560px-Lacoste_logo.svg.png" alt="Lacoste" />
-                </div>
-
-                <div onClick={() => navigate('/kadın-ayakkabı?brand=Golden+Goose')} className='bg-white border-2 border-black h-48 w-48 ml-10 flex-shrink-0 rounded-full z-50 hover:scale-105 duration-300'>
-                    <img className='rounded-full' src="https://i.pinimg.com/736x/53/14/87/531487f5c990664e1b3ae14f35e26131.jpg" alt="GoldenGoose" />
-                </div>
-
-                <div onClick={() => navigate('/Erkek-Ayakkabı?brand=Dolce%26Gabbana')} className='bg-white border-2 border-black h-48 w-48 ml-10 flex-shrink-0 rounded-full z-50 hover:scale-105 duration-300'>
-                    <img className='h-40 w-40 rounded-full mt-5 ml-3.5' src="https://toplist.info/images/800px/dolce-amp-gabbana-dampg-769123.jpg" alt="Vans" />
-                </div>
-
-                <div onClick={() => navigate('/erkek-ayakkabı?brand=EA7')} className='bg-white border-2 border-black h-48 w-48 ml-10 flex-shrink-0 rounded-full z-40 hover:scale-105 duration-300'>
-                    <img className='rounded-full mt-3 ml-4 w-40' src="https://brandlogos.net/wp-content/uploads/2022/03/ea7_emporio_armani-logo-brandlogos.net_.png" alt="EA7" />
-                </div>
+                {[
+                    { brand: 'Nike', gender: 'erkek', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzVqds5XpuvICAg9dSoXuxTrycPHH-CkYLfg&s' },
+                    { brand: 'Adidas', gender: 'kadın', img: 'https://i.pinimg.com/736x/3f/0c/76/3f0c767a3d4d448ffb58152f7c199842.jpg' },
+                    { brand: 'Puma', gender: 'kadın', img: 'https://www.designenlassen.de/blog/wp-content/uploads/2024/03/Puma-585x585.png' },
+                    { brand: 'New Balance', gender: 'erkek', img: 'https://images.seeklogo.com/logo-png/9/1/new-balance-logo-png_seeklogo-98723.png' },
+                    { brand: 'Lacoste', gender: 'kadın', img: 'https://upload.wikimedia.org/wikinews/en/thumb/4/43/Lacoste_logo.svg/2560px-Lacoste_logo.svg.png' },
+                    { brand: 'Golden Goose', gender: 'kadın', img: 'https://i.pinimg.com/736x/53/14/87/531487f5c990664e1b3ae14f35e26131.jpg' },
+                    { brand: 'Dolce&Gabbana', gender: 'erkek', img: 'https://toplist.info/images/800px/dolce-amp-gabbana-dampg-769123.jpg' },
+                    { brand: 'EA7', gender: 'erkek', img: 'https://brandlogos.net/wp-content/uploads/2022/03/ea7_emporio_armani-logo-brandlogos.net_.png' }
+                ].map(({ brand, gender, img }) => (
+                    <div
+                        key={brand}
+                        onClick={() => navigate(`/${gender}-ayakkabı?brand=${encodeURIComponent(brand)}`)}
+                        className='bg-white border-2 border-black h-36 w-36 sm:h-48 sm:w-48 flex-shrink-0 rounded-full hover:scale-105 duration-300 flex items-center justify-center'
+                    >
+                        <img src={img} alt={brand} className='h-28 w-28 sm:h-40 sm:w-40 object-contain rounded-full' />
+                    </div>
+                ))}
 
             </div>
+
 
 
             <div className=''>

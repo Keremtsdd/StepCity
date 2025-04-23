@@ -6,7 +6,6 @@ import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { useNavigate } from 'react-router-dom';
 
-
 function ShoeStore() {
     const { cartItems, setCartItems, removeFromCart } = useCart();
     const navigate = useNavigate();
@@ -26,67 +25,71 @@ function ShoeStore() {
         }
     }, [cartItems]);
 
-
     return (
         <>
             <Header />
 
-            <div className='p-8 mb-[350px]'>
-                <h2 className='text-4xl font-bold ml-72 mt-10'>
-                    Alışveriş Sepetiniz <LocalGroceryStoreOutlinedIcon style={{ width: "40px", height: "40px" }} />
+            <div className='p-4 lg:p-8 mb-[350px]'>
+                <h2 className='text-3xl lg:text-4xl font-bold ml-2 lg:ml-72 mt-10 flex items-center'>
+                    Alışveriş Sepetiniz <LocalGroceryStoreOutlinedIcon className="ml-2" style={{ width: "32px", height: "32px" }} />
                 </h2>
 
-
                 {cartItems.length === 0 ? (
-                    <div className="flex flex-col items-center justify-center mt-32">
-                        <LocalGroceryStoreOutlinedIcon style={{ width: "150px", height: "150px" }} className="mt-3 ml-4" />
-                        <p className="mt-2 ml-4 text-3xl font-semibold">Alışveriş Sepetiniz Boş</p>
-                        <h1 onClick={() => navigate('/kadın-ayakkabı')} className='text-xl mt-6 ml-7 cursor-pointer text-purple-900 flex items-center'>
+                    <div className="flex flex-col items-center justify-center mt-10 lg:mt-32 text-center">
+                        <LocalGroceryStoreOutlinedIcon className="text-gray-500" style={{ width: "120px", height: "120px" }} />
+                        <p className="mt-4 text-2xl lg:text-3xl font-semibold">Alışveriş Sepetiniz Boş</p>
+                        <h1
+                            onClick={() => navigate('/kadın-ayakkabı')}
+                            className='text-lg lg:text-xl mt-6 cursor-pointer text-purple-900 flex items-center hover:underline'
+                        >
                             Ürünleri Keşfedin <ArrowForwardIosIcon className='ml-1' />
                         </h1>
                     </div>
                 ) : (
                     <ul className='space-y-5'>
                         {cartItems.map((item, index) => (
-                            <li key={index} className='h-52 w-[1000px] border-2 border-black/30 rounded-md mt-14 ml-[285px] relative'>
+                            <li
+                                key={index}
+                                className='border-2 border-black/30 rounded-md mt-10 lg:ml-[285px] mx-2 lg:mx-0 p-4 lg:w-[1000px] bg-white'
+                            >
+                                <div className='flex flex-col lg:flex-row justify-between'>
+                                    {/* Sol kısım: resim ve bilgiler */}
+                                    <div className='flex flex-col lg:flex-row'>
+                                        <img
+                                            src={item.image}
+                                            alt={item.model}
+                                            className='w-36 h-36 lg:w-48 lg:h-48 mx-auto lg:mx-0 object-cover select-none'
+                                        />
 
-                                <div className='flex'>
+                                        <div className='mt-4 lg:mt-8 lg:ml-8 text-center lg:text-left'>
+                                            <h3 className='font-semibold text-lg'>{item.brand} - {item.model}</h3>
+                                            <p className='font-semibold mt-2'>Seçilen Beden ({item.size})</p>
 
-                                    <img src={item.image} alt={item.model} className='w-48 h-48 mt-1.5 ml-12 object-cover select-none' />
-
-                                    <div className='mt-8 ml-8'>
-
-                                        <h3 className='font-semibold text-lg'>{item.brand} - {item.model}</h3>
-                                        <p className='font-semibold mt-2'>Seçilen Beden ({item.size})</p>
-
-
-                                        <a href={item.ShopierLink || item.shopierLink} target='_blank' rel='noreferrer'>
-
-                                            <button className="h-9 w-32 select-none font-semibold hover:bg-black hover:text-white duration-300 rounded-sm mt-4 border-2 border-black">
-                                                Hemen Al
-                                            </button>
-                                        </a>
-
+                                            <a href={item.ShopierLink || item.shopierLink} target='_blank' rel='noreferrer'>
+                                                <button className="h-9 w-32 mt-6 lg:mt-14 font-semibold hover:bg-black hover:text-white duration-300 rounded-sm border-2 border-black">
+                                                    Hemen Al
+                                                </button>
+                                            </a>
+                                        </div>
                                     </div>
 
-                                </div>
+                                    {/* Sağ kısım: fiyat ve silme butonu */}
+                                    <div className='mt-6 lg:mt-8 lg:text-right text-center'>
+                                        <p className="text-gray-900 text-2xl font-semibold">
+                                            {item.price.toLocaleString('tr-TR')} TL
+                                        </p>
+                                        <p className="text-gray-600 text-xl line-through">
+                                            {(item.price * 1.4).toLocaleString('tr-TR')} TL
+                                        </p>
+                                        <p className='mt-3 h-6 w-28 mx-auto lg:mx-0 text-center rounded-sm bg-slate-400'>Ücretsiz Kargo</p>
 
-                                <div className='absolute right-8 top-6 text-right'>
-                                    <p className="text-gray-900 text-2xl font-semibold">
-                                        {item.price.toLocaleString('tr-TR')} TL
-                                    </p>
-                                    <p className="text-gray-600 text-xl line-through">
-                                        {(item.price * 1.4).toLocaleString('tr-TR')} TL
-                                    </p>
-                                    <p className='mt-3 h-6 w-28 text-center rounded-sm bg-slate-400'>Ücretsiz Kargo</p>
-
-                                    <button
-                                        onClick={() => removeFromCart(item.id, item.size)}
-
-                                        className="mt-5 text-red-600 font-semibold"
-                                    >
-                                        <DeleteOutlineOutlinedIcon style={{ width: "25px", height: "25px" }} />
-                                    </button>
+                                        <button
+                                            onClick={() => removeFromCart(item.id, item.size)}
+                                            className="mt-5 text-red-600 font-semibold"
+                                        >
+                                            <DeleteOutlineOutlinedIcon style={{ width: "25px", height: "25px" }} />
+                                        </button>
+                                    </div>
                                 </div>
                             </li>
                         ))}

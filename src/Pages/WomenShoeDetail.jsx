@@ -56,14 +56,14 @@ function WomenShoeDetail() {
     return (
         <>
             {showSuccess && (
-                <div className="fixed top-5 left-1/2 transform -translate-x-1/2 bg-green-800 text-white px-6 py-3 rounded shadow-md z-50 transition duration-300">
+                <div className="fixed lg:top-5 lg:left-1/2 ml-48 lg:ml-0 mt-[400px] lg:mt-1 transform -translate-x-1/2 bg-green-800 text-white px-6 py-3 rounded shadow-md z-50 transition duration-300">
                     Ürün başarıyla sepete eklendi!
                 </div>
             )}
 
             <Header />
 
-            <div className='flex flex-wrap mt-5 ml-20 cursor-pointer max-w-[700px]'>
+            <div className='flex flex-wrap mt-5 lg:ml-20 ml-5 cursor-pointer max-w-[700px]'>
                 <h1 onClick={() => navigate('/')} className='text-black/60'>
                     <HomeIcon style={{ width: "20px", height: "20px" }} className='mr-1 mb-1' />Anasayfa /
                 </h1>
@@ -72,24 +72,24 @@ function WomenShoeDetail() {
                 <h1 className='ml-1'>{shoe.model}</h1>
             </div>
 
-            <div className='flex mb-[360px]'>
+            <div className='lg:flex mb-[100px] lg:mb-[200px] mt-10 lg:-mt-10'>
                 <div>
                     <div className='flex z-10 select-none'>
-                        <img src={shoe.image1} alt={shoe.model} className="my-4 h-[500px] w-[500px] ml-[250px] mt-[120px] relative" />
-                        <img src={shoe.image2} alt={shoe.model} className="my-4 h-[500px] w-[500px] ml-[345px] mt-[120px] rounded-sm absolute left-[345px]" />
+                        <img src={shoe.image1} alt={shoe.model} className="my-4 lg:h-[500px] lg:w-[500px] h-[230px] -ml-5 lg:ml-[250px] lg:mt-[120px] relative" />
+                        <img src={shoe.image2} alt={shoe.model} className="my-4 lg:h-[500px] lg:w-[500px] h-[230px] -ml-[165px] lg:ml-[345px] lg:mt-[120px] rounded-sm absolute left-[345px]" />
                     </div>
 
                     <div className='flex mt-5 select-none'>
                         {shoe.image3 && (
                             <img
-                                className='h-[500px] w-[500px] ml-[250px] relative'
+                                className=' lg:h-[500px] lg:w-[500px] -ml-5 lg:ml-[250px] h-[230px] relative'
                                 src={shoe.image3}
                                 alt={shoe.model}
                             />
                         )}
                         {shoe.image4 && (
                             <img
-                                className='h-[500px] w-[500px] ml-[345px] rounded-sm absolute left-[345px]'
+                                className='lg:h-[500px] lg:w-[500px] h-[230px] -ml-[165px] lg:ml-[345px] rounded-sm absolute left-[345px]'
                                 src={shoe.image4}
                                 alt={shoe.model}
                             />
@@ -98,10 +98,10 @@ function WomenShoeDetail() {
                 </div>
 
                 <div>
-                    <h2 className="text-3xl font-bold w-[600px] ml-[440px] mt-[130px]">{shoe.brand}</h2>
-                    <h2 className="text-2xl font-semibold w-[600px] ml-[440px]">{shoe.model}</h2>
+                    <h2 className="text-3xl font-bold w-[600px] lg:ml-[440px] ml-5 lg:mt-[130px] mt-10">{shoe.brand}</h2>
+                    <h2 className="text-2xl font-semibold w-[600px] lg:ml-[440px] ml-5">{shoe.model}</h2>
 
-                    <div className="flex font-semibold ml-[440px] mt-7">
+                    <div className="flex font-semibold lg:ml-[440px] ml-5 lg:mt-7 mt-4">
                         <p className="text-gray-900 text-2xl">
                             {shoe.price.toLocaleString('tr-TR')} ₺
                         </p>
@@ -110,9 +110,9 @@ function WomenShoeDetail() {
                         </p>
                     </div>
 
-                    <div className="ml-[440px] mt-[30px]">
+                    <div className="lg:ml-[440px] ml-5 mt-[30px]">
                         <h3 className="text-lg font-bold mb-2">Beden Seçiniz</h3>
-                        <div className="flex gap-2 mt-3 font-semibold">
+                        <div className="flex flex-wrap gap-2 mt-3 font-semibold">
                             {[36, 37, 38, 39, 40].map((size) => (
                                 <button
                                     key={size}
@@ -128,57 +128,58 @@ function WomenShoeDetail() {
                         </div>
                     </div>
 
+
                     <div className='mt-10 font-semibold'>
                         <div className="mt-5">
                             <button
                                 onClick={handleAddToCart}
-                                className="h-12 w-[410px] ml-[440px] px-4 py-2 bg-blue-600 hover:bg-blue-800 duration-300 text-white rounded-sm"
+                                className="h-12 lg:w-[410px] w-[350px] lg:ml-[440px] ml-5 px-4 py-2 bg-blue-600 hover:bg-blue-800 duration-300 text-white rounded-sm"
                             >
                                 <LocalGroceryStoreOutlinedIcon style={{ width: "20px", height: "20px" }} className='mb-0.5' /> Sepete Ekle
                             </button>
                         </div>
                     </div>
 
-                    <div className='bg-neutral-300 ml-[440px] mt-12 h-12 w-[410px] rounded-sm'>
+                    <div className='bg-neutral-300 lg:ml-[440px] ml-5 lg:mt-12 mt-8 h-12 lg:w-[410px] w-[350px] rounded-sm'>
                         <div className='flex'>
                             <span><LocalShippingIcon fontSize='large' className='mt-2 ml-4' /></span>
                             <h1 className='ml-4 mt-3 font-bold'>Ücretsiz Kargo</h1>
                         </div>
                     </div>
 
-                    <div className='bg-neutral-300 ml-[440px] mt-5 h-[180px] w-[410px] rounded-sm'>
+                    <div className='bg-neutral-300 lg:ml-[440px] ml-5 mt-5 h-[180px] lg:w-[410px] w-[350px] rounded-sm'>
                         <div className='flex'>
                             <span><CompareArrowsRoundedIcon fontSize='large' className='mt-4 ml-4' /></span>
                             <div>
                                 <h1 className='ml-4 font-bold mt-4'>İade ve Değişim</h1>
-                                <h1 style={{ width: "320px" }} className='ml-4 mt-1.5'>Siparişleriniz size ulaştıktan sonra 7 gün içinde iade veya değişim talebinde bulunabilirsiniz. Ürün kullanılmamış, kutusu zarar görmemiş olmalıdır.</h1>
+                                <h1 style={{ width: "300px" }} className='ml-4 mt-1.5'>Siparişleriniz size ulaştıktan sonra 7 gün içinde iade veya değişim talebinde bulunabilirsiniz. Ürün kullanılmamış, kutusu zarar görmemiş olmalıdır.</h1>
                             </div>
                         </div>
                     </div>
 
-                    <div className='flex h-16 w-[410px] ml-[440px] rounded-sm  bg-neutral-300 mt-5'>
+                    <div className='flex h-16 lg:w-[410px] w-[350px] lg:ml-[440px] ml-5 rounded-sm  bg-neutral-300 mt-5'>
 
                         <div>
-                            <h1 className='ml-14 mt-1.5'><LocalShippingIcon /></h1>
-                            <h1 className='ml-8 font-semibold'>Hızlı Kargo</h1>
+                            <h1 className='lg:ml-14 ml-9 mt-1.5'><LocalShippingIcon /></h1>
+                            <h1 className='lg:ml-8 ml-3 font-semibold'>Hızlı Kargo</h1>
                         </div>
 
                         <div>
-                            <h1 className='mt-1.5 ml-[70px]'><GppGoodIcon /></h1>
-                            <h1 className='ml-6 font-semibold'>Güvenli Alışveriş</h1>
+                            <h1 className='mt-1.5 lg:ml-[70px] ml-16'><GppGoodIcon /></h1>
+                            <h1 className='lg:ml-6 ml-4 font-semibold'>Güvenli Alışveriş</h1>
 
                         </div>
 
                         <div>
-                            <h1 className='ml-14 mt-1.5'><CreditCardIcon /></h1>
-                            <h1 className='ml-6 font-semibold'>Kolay Ödeme</h1>
+                            <h1 className='lg:ml-14 ml-12 mt-1.5'><CreditCardIcon /></h1>
+                            <h1 className='lg:ml-6 ml-4 font-semibold'>Kolay Ödeme</h1>
                         </div>
 
                     </div>
 
                     <div>
-                        <h1 className='ml-[440px] mt-14 text-xl font-bold'>Teslimat Bilgisi</h1>
-                        <p className="text-gray-800 ml-[440px] mt-1 font-semibold underline">{shoe.title}</p>
+                        <h1 className='lg:ml-[440px] ml-5 mt-14 text-xl font-bold'>Teslimat Bilgisi</h1>
+                        <p className="text-gray-800 lg:ml-[440px] ml-5 mt-1 font-semibold underline">{shoe.title}</p>
                     </div>
                 </div>
             </div>

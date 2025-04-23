@@ -18,7 +18,7 @@ function Footer() {
             <div className='flex flex-col lg:flex-row'>
 
 
-                <div className='relative w-[392px] lg:h-[450px] lg:w-[800px] bg-black border-r-2 border-white'>
+                <div className='relative w-full lg:h-[450px] lg:w-[800px] bg-black lg:border-r-2 border-white'>
 
                     <img className='h-72 w-72 ml-[60px] lg:ml-[140px]  select-none' src={logo} alt="StepCityLogo" />
                     <p className='text-white/90 ml-[80px] lg:ml-[160px] -mt-14 font-mono'>Adım Attıkça Farkı Hissedin!</p>

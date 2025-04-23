@@ -39,15 +39,15 @@ function CategoryMan() {
         <div className='bg-white'>
             <Header />
 
-            <div className='mt-7 ml-16 flex select-none'>
+            <div className='mt-7 lg:ml-16 ml-7 flex select-none'>
                 <h1 onClick={() => navigate('/')} className='cursor-pointer text-black/80'>Anasayfa</h1>
                 <span className='ml-2'>/</span>
                 <h1 className='ml-2 font-bold'>Erkek</h1>
             </div>
 
-            <div className='flex'>
+            <div className='lg:flex'>
 
-                <div className='bg-white shadow-xl h-[820px] w-96 ml-12 mt-4 rounded-lg p-6'>
+                <div className='bg-white shadow-xl h-[820px] w-96 lg:ml-12 ml-1 mt-4 rounded-lg p-6'>
 
                     <div className='flex'>
                         <h1 className='font-bold text-xl ml-5 mb-2'>Marka</h1>
@@ -103,7 +103,7 @@ function CategoryMan() {
                 </div>
             </div>
 
-            <div className='h-96 w-full bg-white'></div>
+            <div className='h-40 w-full bg-white'></div>
         </div>
     );
 }
