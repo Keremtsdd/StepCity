@@ -15,6 +15,7 @@ import Error from './Pages/Error';
 import AdminWomenShoes from './Admin/AdminWomenShoes';
 import AdminDashboard from './Admin/AdminDashboard';
 import AdminLogin from './Admin/AdminLogin';
+import AdminWomenAddShoes from './Admin/AdminWomenAddShoes';
 
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
           <Route path='/AdminLogin' element={<AdminLogin />} />
           <Route path='/AdminDashboard' element={<AdminDashboard />} />
           <Route path='/AdminWomenShoes' element={<AdminWomenShoes />} />
+          <Route path='/AdminWomenAddShoes' element={<AdminWomenAddShoes />} />
 
         </Routes>
       </PageTransitionLayout>

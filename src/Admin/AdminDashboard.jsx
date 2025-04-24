@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 import AdminWomenShoes from './AdminWomenShoes';
+import AdminWomenAddShoes from './AdminWomenAddShoes';
 
 
 function AdminDashboard() {
@@ -29,7 +30,7 @@ function AdminDashboard() {
                                     <button onClick={() => setSelectedCategory("WomenShoeList")} className="w-full bg-gray-800 hover:bg-gray-700 text-white text-lg font-semibold p-3 rounded-lg transition duration-200 ease-in-out transform hover:scale-105">
                                         Ürün Listesi Güncelleme ve Silme
                                     </button>
-                                    <button className="w-full bg-gray-800 hover:bg-green-600 text-white text-lg font-semibold p-3 rounded-lg transition duration-200 ease-in-out transform hover:scale-105">
+                                    <button onClick={() => setSelectedCategory("WomenAddShoes")} className="w-full bg-gray-800 hover:bg-green-600 text-white text-lg font-semibold p-3 rounded-lg transition duration-200 ease-in-out transform hover:scale-105">
                                         Ürün Yükle
                                     </button>
                                     <button className="w-full bg-gray-800 hover:bg-orange-500 text-white text-lg font-semibold p-3 rounded-lg transition duration-200 ease-in-out transform hover:scale-105">
@@ -73,6 +74,7 @@ function AdminDashboard() {
                 <div className='ml-20'>
 
                     {selectedCategory === "WomenShoeList" && <AdminWomenShoes />}
+                    {selectedCategory === "WomenAddShoes" && <AdminWomenAddShoes />}
 
 
 

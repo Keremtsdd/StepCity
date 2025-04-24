@@ -3,12 +3,14 @@ import axios from 'axios';
 
 function AdminWomenShoes() {
     const [womenShoes, setWomenShoes] = useState([]);
-    const [selectedShoe, setSelectedShoe] = useState(null); // Güncellenmek istenen ayakkabıyı tutan state
+    const [selectedShoe, setSelectedShoe] = useState(null);
     const [formData, setFormData] = useState({
         id: '',
         brand: '',
         model: '',
         price: '',
+        title: '',
+        cargo: '',
         image1: '',
         image2: '',
         image3: '',
@@ -16,40 +18,38 @@ function AdminWomenShoes() {
         shopierLink: ''
     });
 
-    // Verileri API'den çekme
     useEffect(() => {
-        axios.get('http://localhost:5029/api/WomenShoe') // API URL'ini kendi URL'nizle değiştirmeyi unutmayın
+        axios.get('http://localhost:5029/api/WomenShoe')
             .then(response => {
-                setWomenShoes(response.data); // Veriyi state'e kaydediyoruz.
+                setWomenShoes(response.data);
             })
             .catch(error => {
                 console.error('Bir hata oluştu:', error);
             });
     }, []);
 
-    // Ayakkabıyı silmek için fonksiyon
     const handleDelete = (id) => {
         axios.delete(`http://localhost:5029/api/WomenShoe/${id}`)
             .then(response => {
                 alert('Ayakkabı başarıyla silindi!');
-                setWomenShoes(womenShoes.filter(shoe => shoe.id !== id)); // Ayakkabıyı listeden kaldırıyoruz.
+                setWomenShoes(womenShoes.filter(shoe => shoe.id !== id));
             })
             .catch(error => {
                 console.error('Silme işlemi sırasında bir hata oluştu:', error);
             });
     };
 
-    // Ayakkabıyı güncelleme için formu tetikleyen fonksiyon
     const handleUpdate = (id) => {
-        // Güncellenmek istenen ayakkabıyı bulma
         const shoe = womenShoes.find(shoe => shoe.id === id);
-        setSelectedShoe(shoe); // Güncellenecek ayakkabıyı seçiyoruz
+        setSelectedShoe(shoe);
         setFormData({
             id: shoe.id,
             brand: shoe.brand,
             model: shoe.model,
             price: shoe.price,
-            image1: shoe.image1 || '', // Görsel alanları boş bırakılabilir yapıyoruz
+            title: shoe.title || '',
+            cargo: shoe.cargo || '',
+            image1: shoe.image1 || '',
             image2: shoe.image2 || '',
             image3: shoe.image3 || '',
             image4: shoe.image4 || '',
@@ -57,7 +57,6 @@ function AdminWomenShoes() {
         });
     };
 
-    // Formu güncellemek için input değişikliklerini işleme
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({
@@ -66,18 +65,23 @@ function AdminWomenShoes() {
         });
     };
 
-    // Güncellenmiş veriyi API'ye göndermek için fonksiyon
     const handleSubmit = (e) => {
         e.preventDefault();
-        // API'ye PUT isteği gönderiyoruz
-        axios.put(`http://localhost:5029/api/WomenShoe/${formData.id}`, formData)
+
+        const dataToSend = {
+            ...formData,
+            price: parseFloat(formData.price),
+        };
+
+        axios.put(`http://localhost:5029/api/WomenShoe/${formData.id}`, dataToSend)
             .then(response => {
                 alert('Ayakkabı başarıyla güncellendi!');
-                setWomenShoes(womenShoes.map(shoe => shoe.id === formData.id ? response.data : shoe)); // Listede güncellenmiş ayakkabıyı gösteriyoruz
-                setSelectedShoe(null); // Formu sıfırlıyoruz
+                setWomenShoes(womenShoes.map(shoe => shoe.id === formData.id ? response.data : shoe));
+                setSelectedShoe(null);
             })
             .catch(error => {
                 console.error('Güncelleme sırasında bir hata oluştu:', error);
+                console.log('Backend hatası:', error.response?.data);
             });
     };
 
@@ -130,100 +134,46 @@ function AdminWomenShoes() {
                     <form onSubmit={handleSubmit}>
                         <div className="mb-4">
                             <label htmlFor="brand" className="block text-gray-700">Marka</label>
-                            <input
-                                type="text"
-                                id="brand"
-                                name="brand"
-                                value={formData.brand}
-                                onChange={handleChange}
-                                className="mt-2 p-2 w-full border border-gray-300 rounded-lg"
-                                required
-                            />
+                            <input type="text" id="brand" name="brand" value={formData.brand} onChange={handleChange} className="mt-2 p-2 w-full border border-gray-300 rounded-lg" required />
                         </div>
                         <div className="mb-4">
                             <label htmlFor="model" className="block text-gray-700">Model</label>
-                            <input
-                                type="text"
-                                id="model"
-                                name="model"
-                                value={formData.model}
-                                onChange={handleChange}
-                                className="mt-2 p-2 w-full border border-gray-300 rounded-lg"
-                                required
-                            />
+                            <input type="text" id="model" name="model" value={formData.model} onChange={handleChange} className="mt-2 p-2 w-full border border-gray-300 rounded-lg" required />
                         </div>
                         <div className="mb-4">
                             <label htmlFor="price" className="block text-gray-700">Fiyat</label>
-                            <input
-                                type="number"
-                                id="price"
-                                name="price"
-                                value={formData.price}
-                                onChange={handleChange}
-                                className="mt-2 p-2 w-full border border-gray-300 rounded-lg"
-                                required
-                            />
+                            <input type="text" id="price" name="price" value={formData.price} onChange={handleChange} className="mt-2 p-2 w-full border border-gray-300 rounded-lg" required />
+                        </div>
+                        <div className="mb-4">
+                            <label htmlFor="title" className="block text-gray-700">Başlık</label>
+                            <input type="text" id="title" name="title" value={formData.title} onChange={handleChange} className="mt-2 p-2 w-full border border-gray-300 rounded-lg" required />
+                        </div>
+                        <div className="mb-4">
+                            <label htmlFor="cargo" className="block text-gray-700">Kargo</label>
+                            <input type="text" id="cargo" name="cargo" value={formData.cargo} onChange={handleChange} className="mt-2 p-2 w-full border border-gray-300 rounded-lg" required />
                         </div>
                         <div className="mb-4">
                             <label htmlFor="image1" className="block text-gray-700">Görsel 1</label>
-                            <input
-                                type="text"
-                                id="image1"
-                                name="image1"
-                                value={formData.image1}
-                                onChange={handleChange}
-                                className="mt-2 p-2 w-full border border-gray-300 rounded-lg"
-                            />
+                            <input type="text" id="image1" name="image1" value={formData.image1} onChange={handleChange} className="mt-2 p-2 w-full border border-gray-300 rounded-lg" />
                         </div>
                         <div className="mb-4">
                             <label htmlFor="image2" className="block text-gray-700">Görsel 2</label>
-                            <input
-                                type="text"
-                                id="image2"
-                                name="image2"
-                                value={formData.image2}
-                                onChange={handleChange}
-                                className="mt-2 p-2 w-full border border-gray-300 rounded-lg"
-                            />
+                            <input type="text" id="image2" name="image2" value={formData.image2} onChange={handleChange} className="mt-2 p-2 w-full border border-gray-300 rounded-lg" />
                         </div>
                         <div className="mb-4">
                             <label htmlFor="image3" className="block text-gray-700">Görsel 3</label>
-                            <input
-                                type="text"
-                                id="image3"
-                                name="image3"
-                                value={formData.image3}
-                                onChange={handleChange}
-                                className="mt-2 p-2 w-full border border-gray-300 rounded-lg"
-                            />
+                            <input type="text" id="image3" name="image3" value={formData.image3} onChange={handleChange} className="mt-2 p-2 w-full border border-gray-300 rounded-lg" />
                         </div>
                         <div className="mb-4">
                             <label htmlFor="image4" className="block text-gray-700">Görsel 4</label>
-                            <input
-                                type="text"
-                                id="image4"
-                                name="image4"
-                                value={formData.image4}
-                                onChange={handleChange}
-                                className="mt-2 p-2 w-full border border-gray-300 rounded-lg"
-                            />
+                            <input type="text" id="image4" name="image4" value={formData.image4} onChange={handleChange} className="mt-2 p-2 w-full border border-gray-300 rounded-lg" />
                         </div>
                         <div className="mb-4">
                             <label htmlFor="shopierLink" className="block text-gray-700">Shopier Link</label>
-                            <input
-                                type="text"
-                                id="shopierLink"
-                                name="shopierLink"
-                                value={formData.shopierLink}
-                                onChange={handleChange}
-                                className="mt-2 p-2 w-full border border-gray-300 rounded-lg"
-                            />
+                            <input type="text" id="shopierLink" name="shopierLink" value={formData.shopierLink} onChange={handleChange} className="mt-2 p-2 w-full border border-gray-300 rounded-lg" />
                         </div>
                         <div className="mt-6">
-                            <button
-                                type="submit"
-                                className="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600"
-                            >
+                            <button type="submit" className="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600">
                                 Güncelle
                             </button>
                         </div>
