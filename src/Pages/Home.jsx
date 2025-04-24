@@ -39,6 +39,18 @@ function Home() {
         }
     };
 
+    const brands = [
+        { brand: 'Nike', gender: 'erkek', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzVqds5XpuvICAg9dSoXuxTrycPHH-CkYLfg&s' },
+        { brand: 'Adidas', gender: 'kadın', img: 'https://i.pinimg.com/736x/3f/0c/76/3f0c767a3d4d448ffb58152f7c199842.jpg' },
+        { brand: 'Puma', gender: 'kadın', img: 'https://www.designenlassen.de/blog/wp-content/uploads/2024/03/Puma-585x585.png' },
+        { brand: 'New Balance', gender: 'erkek', img: 'https://images.seeklogo.com/logo-png/9/1/new-balance-logo-png_seeklogo-98723.png' },
+        { brand: 'Lacoste', gender: 'kadın', img: 'https://upload.wikimedia.org/wikinews/en/thumb/4/43/Lacoste_logo.svg/2560px-Lacoste_logo.svg.png' },
+        { brand: 'Golden Goose', gender: 'kadın', img: 'https://i.pinimg.com/736x/53/14/87/531487f5c990664e1b3ae14f35e26131.jpg' },
+        { brand: 'Dolce&Gabbana', gender: 'erkek', img: 'https://toplist.info/images/800px/dolce-amp-gabbana-dampg-769123.jpg' },
+        { brand: 'EA7', gender: 'erkek', img: 'https://brandlogos.net/wp-content/uploads/2022/03/ea7_emporio_armani-logo-brandlogos.net_.png' },
+        { brand: 'Louis Vuitton', gender: 'erkek', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9KMHiWBaRVE8bHzHeiwy0fcIvUMXVJm0OtOADWmAPp5_5wLOrC-Al2YpR1r-vTtVZzNc&usqp=CAU' }
+    ];
+
     return (
         <div className='bg-white'>
 
@@ -154,34 +166,26 @@ function Home() {
             </div>
 
 
-            <div className='mt-20 lg:ml-24 flex select-none z-40 cursor-pointer overflow-x-auto sm:overflow-x-visible w-full sm:w-auto flex-nowrap sm:flex-wrap snap-x gap-4 sm:gap-6 px-4 sm:px-0'>
-
-                {[
-                    { brand: 'Nike', gender: 'erkek', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzVqds5XpuvICAg9dSoXuxTrycPHH-CkYLfg&s' },
-                    { brand: 'Adidas', gender: 'kadın', img: 'https://i.pinimg.com/736x/3f/0c/76/3f0c767a3d4d448ffb58152f7c199842.jpg' },
-                    { brand: 'Puma', gender: 'kadın', img: 'https://www.designenlassen.de/blog/wp-content/uploads/2024/03/Puma-585x585.png' },
-                    { brand: 'New Balance', gender: 'erkek', img: 'https://images.seeklogo.com/logo-png/9/1/new-balance-logo-png_seeklogo-98723.png' },
-                    { brand: 'Lacoste', gender: 'kadın', img: 'https://upload.wikimedia.org/wikinews/en/thumb/4/43/Lacoste_logo.svg/2560px-Lacoste_logo.svg.png' },
-                    { brand: 'Golden Goose', gender: 'kadın', img: 'https://i.pinimg.com/736x/53/14/87/531487f5c990664e1b3ae14f35e26131.jpg' },
-                    { brand: 'Dolce&Gabbana', gender: 'erkek', img: 'https://toplist.info/images/800px/dolce-amp-gabbana-dampg-769123.jpg' },
-                    { brand: 'EA7', gender: 'erkek', img: 'https://brandlogos.net/wp-content/uploads/2022/03/ea7_emporio_armani-logo-brandlogos.net_.png' }
-                ].map(({ brand, gender, img }) => (
-                    <div
-                        key={brand}
-                        onClick={() => navigate(`/${gender}-ayakkabı?brand=${encodeURIComponent(brand)}`)}
-                        className='bg-white border-2 border-black h-36 w-36 sm:h-48 sm:w-48 flex-shrink-0 rounded-full hover:scale-105 duration-300 flex items-center justify-center'
-                    >
-                        <img src={img} alt={brand} className='h-28 w-28 sm:h-40 sm:w-40 object-contain rounded-full' />
-                    </div>
-                ))}
-
+            <div className="w-full overflow-hidden mt-20">
+                <div className="flex animate-marquee w-max gap-10 px-10">
+                    {[...brands, ...brands, ...brands].map(({ brand, gender, img }, i) => (
+                        <div
+                            key={`${brand}-${i}`}
+                            onClick={() => navigate(`/${gender}-ayakkabı?brand=${encodeURIComponent(brand)}`)}
+                            className="bg-white border-2 border-black h-36 w-36 flex-shrink-0 rounded-full duration-300 flex items-center justify-center cursor-pointer"
+                        >
+                            <img src={img} alt={brand} className="h-28 w-28 object-contain rounded-full" />
+                        </div>
+                    ))}
+                </div>
             </div>
 
 
 
-            <div className=''>
 
-                <div className='mt-20 lg:mt-32'>
+            <div onClick={() => navigate('/Kadın-Ayakkabı?brand=Adidas')} className='cursor-pointer'>
+
+                <div className='mt-20 lg:mt-28'>
 
                     <img className=' h-[300px] w-[403px] sm:h-[600px] md:h-[650px] lg:h-[700px] sm:w-[600px] md:w-[900px] lg:w-[1500px] lg:ml-[100px] rounded-sm select-none' src="https://lowerblock.com/wp-content/uploads/2024/03/663742.jpg" alt="AdidasBanner" />
 
@@ -233,7 +237,7 @@ function Home() {
             </div>
 
 
-            <div className="w-full overflow-hidden bg-gray-900 text-white py-7 mt-10 h-[100px]">
+            <div className="w-full overflow-hidden bg-gray-900 text-white py-7 mt-20 h-[100px]">
                 <div className="flex whitespace-nowrap animate-marquee text-4xl font-serif">
                     <span className="mx-4">Yolunuzu şıklıkla keşfedin, her adımda rahatlıkla ilerleyin!<StarBorderPurple500Icon className='ml-6 mb-1' style={{ width: "30px", height: "30px" }} /></span>
                     <span className="mx-4">Adımlarınızı tarz ve konforla buluşturun!<StarBorderPurple500Icon className='ml-6 mb-1' style={{ width: "30px", height: "30px" }} /></span>
@@ -243,7 +247,7 @@ function Home() {
                 </div>
             </div>
 
-            <div className='mt-10 lg:mt-20 mb-[100px] lg:mb-52'>
+            <div onClick={() => navigate('/Erkek-Ayakkabı?brand=Nike')} className='mt-10 lg:mt-20 mb-[100px] lg:mb-52 cursor-pointer'>
 
                 <div className='mt-10 relative'>
 
@@ -295,8 +299,6 @@ function Home() {
                 </div>
 
             </div>
-
-
 
         </div>
     )

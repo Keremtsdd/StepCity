@@ -98,8 +98,8 @@ function WomenShoeDetail() {
                 </div>
 
                 <div>
-                    <h2 className="text-3xl font-bold w-[600px] lg:ml-[440px] ml-5 lg:mt-[130px] mt-10">{shoe.brand}</h2>
-                    <h2 className="text-2xl font-semibold w-[600px] lg:ml-[440px] ml-5">{shoe.model}</h2>
+                    <h2 className="text-3xl font-bold lg:w-[600px] w-80 lg:ml-[440px] ml-5 lg:mt-[130px] mt-10">{shoe.brand}</h2>
+                    <h2 className="text-2xl font-semibold lg:w-[500px] truncate w-72 lg:ml-[440px] ml-5">{shoe.model}</h2>
 
                     <div className="flex font-semibold lg:ml-[440px] ml-5 lg:mt-7 mt-4">
                         <p className="text-gray-900 text-2xl">

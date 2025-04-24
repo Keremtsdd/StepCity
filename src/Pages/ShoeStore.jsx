@@ -29,13 +29,13 @@ function ShoeStore() {
         <>
             <Header />
 
-            <div className='p-4 lg:p-8 mb-[350px]'>
-                <h2 className='text-3xl lg:text-4xl font-bold ml-2 lg:ml-72 mt-10 flex items-center'>
+            <div className='p-4 lg:p-8 lg:mb-[300px] mb-40'>
+                <h2 className='text-3xl lg:text-4xl font-bold ml-8 lg:ml-72 mt-10 flex items-center'>
                     Alışveriş Sepetiniz <LocalGroceryStoreOutlinedIcon className="ml-2" style={{ width: "32px", height: "32px" }} />
                 </h2>
 
                 {cartItems.length === 0 ? (
-                    <div className="flex flex-col items-center justify-center mt-10 lg:mt-32 text-center">
+                    <div className="flex flex-col items-center justify-center mt-10 lg:mt-44  text-center">
                         <LocalGroceryStoreOutlinedIcon className="text-gray-500" style={{ width: "120px", height: "120px" }} />
                         <p className="mt-4 text-2xl lg:text-3xl font-semibold">Alışveriş Sepetiniz Boş</p>
                         <h1
@@ -53,7 +53,6 @@ function ShoeStore() {
                                 className='border-2 border-black/30 rounded-md mt-10 lg:ml-[285px] mx-2 lg:mx-0 p-4 lg:w-[1000px] bg-white'
                             >
                                 <div className='flex flex-col lg:flex-row justify-between'>
-                                    {/* Sol kısım: resim ve bilgiler */}
                                     <div className='flex flex-col lg:flex-row'>
                                         <img
                                             src={item.image}
