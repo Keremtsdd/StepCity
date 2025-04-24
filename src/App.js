@@ -12,6 +12,10 @@ import WomenShoeDetail from './Pages/WomenShoeDetail';
 import Footer from './Components/Footer';
 import ShoeStore from './Pages/ShoeStore';
 import Error from './Pages/Error';
+import AdminWomenShoes from './Admin/AdminWomenShoes';
+import AdminDashboard from './Admin/AdminDashboard';
+import AdminLogin from './Admin/AdminLogin';
+
 
 function App() {
   return (
@@ -28,6 +32,11 @@ function App() {
           <Route path='/Sepetim' element={<ShoeStore />} />
           <Route path='/Kadın-Ayakkabı/:id' element={<WomenShoeDetail />} />
           <Route path='/Erkek-Ayakkabı/:id' element={<ManShoeDetail />} />
+
+          <Route path='/AdminLogin' element={<AdminLogin />} />
+          <Route path='/AdminDashboard' element={<AdminDashboard />} />
+          <Route path='/AdminWomenShoes' element={<AdminWomenShoes />} />
+
         </Routes>
       </PageTransitionLayout>
       <Footer />
