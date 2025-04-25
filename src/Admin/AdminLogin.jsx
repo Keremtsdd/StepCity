@@ -26,11 +26,16 @@ export default function AdminLogin() {
 
             const token = await response.text();
             localStorage.setItem("token", token);
-            navigate("/Admindashboard");
+            navigate("/AdminDashboard");
 
         } catch (err) {
             setError("Sunucuya bağlanılamadı.");
         }
+    };
+
+    const handleLogout = () => {
+        localStorage.removeItem("token");
+        navigate("/AdminLogin");
     };
 
     return (
@@ -71,7 +76,21 @@ export default function AdminLogin() {
                 >
                     Giriş Yap
                 </button>
+
+                <button
+                    onClick={() => navigate('/')}
+                    className="w-full bg-red-600 text-white py-2 mt-3 rounded-xl hover:bg-red-900 transition"
+                >
+                    Geri Dön
+                </button>
             </form>
+
+            <button
+                onClick={handleLogout}
+                className="fixed bottom-5 right-5 bg-red-600 text-white py-2 px-4 rounded-full hover:bg-red-700"
+            >
+                Çıkış Yap
+            </button>
         </div>
     );
 }

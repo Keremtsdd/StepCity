@@ -2,19 +2,25 @@ import React from 'react'
 import { useState } from 'react';
 import AdminWomenShoes from './AdminWomenShoes';
 import AdminWomenAddShoes from './AdminWomenAddShoes';
+import AdminWomenShoesCount from './AdminWomenShoesCount';
+
+import AdminManShoes from './AdminManShoes';
+import AdminManAddShoes from './AdminManAddShoes';
+import AdminManShoesCount from './AdminManShoesCount';
+import { useNavigate } from 'react-router-dom';
 
 
 function AdminDashboard() {
     const [isWomenOpen, setIsWomenOpen] = useState(false);
     const [isMenOpen, setIsMenOpen] = useState(false);
-    const [selectedCategory, setSelectedCategory] = useState();
+    const [selectedCategory, setSelectedCategory] = useState("WomenShoeList");
+    const Navigate = useNavigate();
     return (
-
 
         <>
             <div className='flex'>
 
-                <div className="h-[959px] w-[400px] bg-gradient-to-b from-blue-500 to-blue-600  shadow-lg">
+                <div className="h-auto w-[400px] bg-gradient-to-b from-blue-500 to-blue-600  shadow-lg">
                     <div className="p-6">
                         <h1 className="text-center text-2xl font-semibold text-white">KADIN ÜRÜN PANELİ</h1>
 
@@ -33,7 +39,7 @@ function AdminDashboard() {
                                     <button onClick={() => setSelectedCategory("WomenAddShoes")} className="w-full bg-gray-800 hover:bg-green-600 text-white text-lg font-semibold p-3 rounded-lg transition duration-200 ease-in-out transform hover:scale-105">
                                         Ürün Yükle
                                     </button>
-                                    <button className="w-full bg-gray-800 hover:bg-orange-500 text-white text-lg font-semibold p-3 rounded-lg transition duration-200 ease-in-out transform hover:scale-105">
+                                    <button onClick={() => setSelectedCategory("WomenShoesCount")} className="w-full bg-gray-800 hover:bg-orange-500 text-white text-lg font-semibold p-3 rounded-lg transition duration-200 ease-in-out transform hover:scale-105">
                                         Güncel Ürün Sayısı
                                     </button>
 
@@ -42,8 +48,6 @@ function AdminDashboard() {
                         </div>
 
                         <hr className="my-8 border-t-2 border-gray-200" />
-
-                        {/* Erkek Ürün Paneli */}
                         <h1 className="text-center text-2xl font-semibold text-white">ERKEK ÜRÜN PANELİ</h1>
                         <div className="mt-6">
                             <button
@@ -54,19 +58,23 @@ function AdminDashboard() {
                             </button>
                             {isMenOpen && (
                                 <div className="space-y-3">
-                                    <button className="w-full bg-gray-800 hover:bg-gray-700 text-white text-lg font-semibold p-3 rounded-lg transition duration-200 ease-in-out transform hover:scale-105">
+                                    <button onClick={() => setSelectedCategory("ManShoesList")} className="w-full bg-gray-800 hover:bg-gray-700 text-white text-lg font-semibold p-3 rounded-lg transition duration-200 ease-in-out transform hover:scale-105">
                                         Ürün Listesi Güncelleme ve Silme
                                     </button>
-                                    <button className="w-full bg-gray-800 hover:bg-green-600 text-white text-lg font-semibold p-3 rounded-lg transition duration-200 ease-in-out transform hover:scale-105">
+                                    <button onClick={() => setSelectedCategory("ManAddShoes")} className="w-full bg-gray-800 hover:bg-green-600 text-white text-lg font-semibold p-3 rounded-lg transition duration-200 ease-in-out transform hover:scale-105">
                                         Ürün Yükle
                                     </button>
-                                    <button className="w-full bg-gray-800 hover:bg-orange-500 text-white text-lg font-semibold p-3 rounded-lg transition duration-200 ease-in-out transform hover:scale-105">
+                                    <button onClick={() => setSelectedCategory("ManShoesCount")} className="w-full bg-gray-800 hover:bg-orange-500 text-white text-lg font-semibold p-3 rounded-lg transition duration-200 ease-in-out transform hover:scale-105">
                                         Güncel Ürün Sayısı
                                     </button>
 
                                 </div>
                             )}
                         </div>
+
+                        <button onClick={() => Navigate('/AdminLogin')} className='bg-red-600 text-white font-semibold h-8 w-[300px] mt-10 ml-5 rounded-md'>
+                            Çıkış Yap
+                        </button>
                     </div>
                 </div>
 
@@ -75,8 +83,11 @@ function AdminDashboard() {
 
                     {selectedCategory === "WomenShoeList" && <AdminWomenShoes />}
                     {selectedCategory === "WomenAddShoes" && <AdminWomenAddShoes />}
+                    {selectedCategory === "WomenShoesCount" && <AdminWomenShoesCount />}
 
-
+                    {selectedCategory === "ManShoesList" && <AdminManShoes />}
+                    {selectedCategory === "ManAddShoes" && <AdminManAddShoes />}
+                    {selectedCategory === "ManShoesCount" && <AdminManShoesCount />}
 
                 </div>
 

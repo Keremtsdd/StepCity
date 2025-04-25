@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-function AdminWomenAddShoes() {
+function AdminManAddShoes() {
 
     const [formData, setFormData] = useState({
         brand: '',
@@ -34,7 +34,7 @@ function AdminWomenAddShoes() {
             price: parseFloat(formData.price), // Fiyatı sayıya çeviriyoruz
         };
 
-        axios.post('http://localhost:5029/api/WomenShoe', dataToSend)
+        axios.post('http://localhost:5029/api/ManShoe', dataToSend)
             .then(response => {
                 alert('Yeni ayakkabı başarıyla eklendi!');
                 // Formu sıfırlama işlemi
@@ -191,4 +191,4 @@ function AdminWomenAddShoes() {
     )
 }
 
-export default AdminWomenAddShoes
+export default AdminManAddShoes
