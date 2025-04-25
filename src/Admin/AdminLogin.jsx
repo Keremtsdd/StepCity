@@ -33,10 +33,6 @@ export default function AdminLogin() {
         }
     };
 
-    const handleLogout = () => {
-        localStorage.removeItem("token");
-        navigate("/AdminLogin");
-    };
 
     return (
         <div className="min-h-screen flex items-center justify-center bg-gray-100">
@@ -85,12 +81,7 @@ export default function AdminLogin() {
                 </button>
             </form>
 
-            <button
-                onClick={handleLogout}
-                className="fixed bottom-5 right-5 bg-red-600 text-white py-2 px-4 rounded-full hover:bg-red-700"
-            >
-                Çıkış Yap
-            </button>
+
         </div>
     );
 }

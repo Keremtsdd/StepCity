@@ -86,7 +86,7 @@ function AdminWomenShoes() {
     };
 
     return (
-        <div className="container mx-auto px-4 py-6 w-[1400px]">
+        <div className="container mx-auto px-4 py-6 lg:w-[1400px] w-full">
             <h1 className="text-3xl font-bold mb-6 text-center text-gray-700">Kadın Ayakkabıları</h1>
             <div className="overflow-x-auto mb-8">
                 <table className="min-w-full bg-white border border-gray-300 rounded-lg shadow-lg">

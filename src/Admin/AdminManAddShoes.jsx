@@ -16,7 +16,6 @@ function AdminManAddShoes() {
         shopierLink: ''
     });
 
-    // Input değişikliklerini işleme
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({
@@ -25,19 +24,18 @@ function AdminManAddShoes() {
         });
     };
 
-    // Form verilerini API'ye gönderme
     const handleSubmit = (e) => {
         e.preventDefault();
 
         const dataToSend = {
             ...formData,
-            price: parseFloat(formData.price), // Fiyatı sayıya çeviriyoruz
+            price: parseFloat(formData.price),
         };
 
         axios.post('http://localhost:5029/api/ManShoe', dataToSend)
             .then(response => {
                 alert('Yeni ayakkabı başarıyla eklendi!');
-                // Formu sıfırlama işlemi
+
                 setFormData({
                     brand: '',
                     model: '',
@@ -57,7 +55,7 @@ function AdminManAddShoes() {
             });
     };
     return (
-        <div className="container mx-auto px-4 py-6 w-[800px] ">
+        <div className="container mx-auto px-4 py-6 lg:w-[800px] w-full ">
             <h1 className="text-3xl font-bold mb-6 text-center text-gray-700">Yeni Ayakkabı Ekle</h1>
             <div className="bg-white p-6 rounded-lg shadow-lg">
                 <h2 className="text-xl font-semibold mb-4">Ayakkabı Bilgileri</h2>
