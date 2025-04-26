@@ -83,11 +83,11 @@ function CategoryWomen() {
 
                     <h1 className='font-bold text-xl mb-2'>Fiyata Göre</h1>
                     <select
-                        className='w-full border border-black p-2 rounded-sm cursor-pointer'
+                        className='w-full  border border-black p-2 rounded-sm cursor-pointer'
                         value={searchParams.get("price") || "Onerilen"}
                         onChange={handlePriceChange}
                     >
-                        <option>Onerilen</option>
+                        <option>Önerilen</option>
                         <option value="asc">Artan fiyat</option>
                         <option value="desc">Azalan fiyat</option>
                     </select>

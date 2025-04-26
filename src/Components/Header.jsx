@@ -85,7 +85,7 @@ function Header() {
 
     return (
         <header className="w-full top-0 bg-white shadow-md z-50">
-            <div className="w-full bg-white/95 flex flex-col lg:flex-row items-center justify-center border-b-4 border-black/90 px-4 py-4 space-y-4 lg:space-y-0 lg:space-x-8">
+            <div className=":w-full  bg-white/95 flex flex-col lg:flex-row items-center justify-center border-b-4 border-black/90 px-4 py-4 space-y-4 lg:space-y-0 lg:space-x-8">
 
                 <div className="flex items-center space-x-1 cursor-pointer" onClick={() => navigate('/')}>
                     <h1 className="text-4xl sm:text-5xl lg:text-7xl lg:mt-10 lg:mb-10 lg:-ml-[100px] font-serif text-black select-none">StepCity</h1>

@@ -56,7 +56,7 @@ function Home() {
 
             <div
                 onClick={() => navigate('erkek-ayakkabı?brand=Nike')}
-                className='relative w-full h-[500px] sm:h-[600px] sm:w-full  md:h-[750px] lg:w-full lg:h-[960px] cursor-pointer z-40'
+                className='relative w-full h-[500px] sm:h-[600px] sm:w-full md:w-full md:h-[750px] lg:w-full lg:h-[960px] xl:w-full cursor-pointer z-40'
             >
                 <img
                     className='w-full h-full object-cover select-none'

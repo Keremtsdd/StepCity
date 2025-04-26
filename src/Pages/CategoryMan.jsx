@@ -92,7 +92,7 @@ function CategoryMan() {
                         value={searchParams.get("price") || "Onerilen"}
                         onChange={handlePriceChange}
                     >
-                        <option>Onerilen</option>
+                        <option>Önerilen</option>
                         <option value="asc">Artan fiyat</option>
                         <option value="desc">Azalan fiyat</option>
                     </select>
