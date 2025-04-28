@@ -1,6 +1,5 @@
 import React from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import FilterListIcon from '@mui/icons-material/FilterList';
 import WomenShoeList from '../Components/WomenShoeList';
 import Header from '../Components/Header';
 
@@ -44,16 +43,16 @@ function CategoryWomen() {
             </div>
 
             <div className='lg:flex'>
-                <div className='bg-white/80 shadow-xl h-[720px] w-96 ml-1 lg:ml-12 mt-4 rounded-lg p-6'>
+
+                <div className='bg-white/80 shadow-xl h-[720px] lg:w-96 w-full lg:ml-12 mt-4 rounded-lg p-6'>
+
                     <div className="flex">
                         <h1 className='font-bold text-xl mb-2 ml-5'>Marka</h1>
-                        <span className='ml-[220px]'>
-                            <FilterListIcon style={{ width: "30px", height: "30px" }} />
-                        </span>
                     </div>
+
                     <span className='h-0.5 w-full bg-black/60 block mb-4'></span>
 
-                    <div className='flex flex-col space-y-2 ml-5 mt-5 w-96'>
+                    <div style={{ width: "300px" }} className='flex flex-col space-y-2 ml-5 mt-5 w-96'>
                         {brands.map((brand) => (
                             <label key={brand} className='inline-flex items-center space-x-2 cursor-pointer'>
                                 <input
@@ -62,7 +61,7 @@ function CategoryWomen() {
                                     checked={searchParams.getAll("brand").includes(brand)}
                                     onChange={() => handleBrandChange(brand)}
                                 />
-                                <span>{brand}</span>
+                                <span style={{ width: "120px" }}>{brand}</span>
                             </label>
                         ))}
                     </div>
@@ -83,7 +82,7 @@ function CategoryWomen() {
 
                     <h1 className='font-bold text-xl mb-2'>Fiyata Göre</h1>
                     <select
-                        className='w-full  border border-black p-2 rounded-sm cursor-pointer'
+                        className='w-full border border-black p-2 rounded-sm cursor-pointer'
                         value={searchParams.get("price") || "Onerilen"}
                         onChange={handlePriceChange}
                     >
@@ -96,6 +95,7 @@ function CategoryWomen() {
                 <div>
                     <WomenShoeList searchParams={searchParams} />
                 </div>
+
             </div>
 
             <div className='h-40 w-full bg-white'></div>

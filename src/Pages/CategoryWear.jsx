@@ -4,7 +4,7 @@ import Header from '../Components/Header'
 function CategoryWear() {
     return (
         <>
-            <div className='lg:mb-[500px] mb-32'>
+            <div className='lg:mb-[300px] mb-32'>
 
                 <div>
                     <Header />

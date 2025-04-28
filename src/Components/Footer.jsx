@@ -39,12 +39,12 @@ function Footer() {
 
                     </div>
 
-                    <span className='h-0.5 w-[563px] rounded-sm bg-white block mt-14'></span>
-                    <p className="mt-6 text-sm text-center text-white"><CopyrightIcon style={{ width: "17px", height: "17px" }} className='mb-0.5' /> 2025 StepCity. Tüm Hakları Saklıdır.</p>
+                    <span className='h-0.5 w-full rounded-sm bg-white block mt-14'></span>
+                    <p className="mt-6 mb-6 text-sm text-center text-white"><CopyrightIcon style={{ width: "17px", height: "17px" }} className='mb-0.5' /> 2025 <span className='font-semibold'>StepCity.</span> Tüm Hakları Saklıdır.</p>
 
                 </div>
 
-                <div className='h-[1100px] lg:h-[450px] w-full bg-black sm:flex md:flex'>
+                <div className='h-[1100px] lg:h-[450px] md:w-full lg:w-full sm:w-full bg-black sm:flex md:flex'>
 
                     <div className='text-white ml-20 mt-5 text-lg '>
 
@@ -100,18 +100,18 @@ function Footer() {
 
                     </div>
 
-                    <div>
+                    <div className="flex justify-center items-center">
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d376.53032098776185!2d28.73090369814754!3d40.976168999757725!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14caa1b07e906093%3A0xe2def87e5423e11d!2zRGVuaXprw7bFn2tsZXIgQ2QuIE5vOjYx!5e0!3m2!1str!2str!4v1745063236041!5m2!1str!2str"
-
                             style={{ border: 0 }}
                             allowFullScreen
                             loading="lazy"
                             referrerPolicy="no-referrer-when-downgrade"
                             title="Google Map showing coffee shop location"
-                            className='select-none mt-[70px] ml-1.5 h-[200px] w-[380px] lg:h-[300px] lg:w-[480px]'
+                            className="select-none mt-[50px] h-[200px] w-[380px] lg:h-[300px] lg:w-[480px]"
                         ></iframe>
                     </div>
+
 
                 </div>
 

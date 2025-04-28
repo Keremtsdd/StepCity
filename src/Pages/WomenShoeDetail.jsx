@@ -73,23 +73,23 @@ function WomenShoeDetail() {
             </div>
 
             <div className='lg:flex mb-[100px] lg:mb-[200px] mt-10 lg:-mt-10'>
-                <div>
+                <div className=''>
                     <div className='flex z-10 select-none'>
-                        <img src={shoe.image1} alt={shoe.model} className="my-4 lg:h-[500px] lg:w-[500px] h-[230px] -ml-5 lg:ml-[250px] lg:mt-[120px] relative" />
-                        <img src={shoe.image2} alt={shoe.model} className="my-4 lg:h-[500px] lg:w-[500px] h-[230px] -ml-[165px] lg:ml-[345px] lg:mt-[120px] rounded-sm absolute left-[345px]" />
+                        <img src={shoe.image1} alt={shoe.model} className="my-4 lg:h-[500px] lg:w-[500px] h-[200px] -ml-2 lg:ml-[250px] lg:mt-[120px] relative" />
+                        <img src={shoe.image2} alt={shoe.model} className="my-4 lg:h-[500px] lg:w-[500px] h-[200px] -ml-[165px] lg:ml-[345px] lg:mt-[120px] rounded-sm absolute left-[345px]" />
                     </div>
 
                     <div className='flex mt-5 select-none'>
                         {shoe.image3 && (
                             <img
-                                className=' lg:h-[500px] lg:w-[500px] -ml-5 lg:ml-[250px] h-[230px] relative'
+                                className=' lg:h-[500px] lg:w-[500px] -ml-2 lg:ml-[250px] h-[200px] relative'
                                 src={shoe.image3}
                                 alt={shoe.model}
                             />
                         )}
                         {shoe.image4 && (
                             <img
-                                className='lg:h-[500px] lg:w-[500px] h-[230px] -ml-[165px] lg:ml-[345px] rounded-sm absolute left-[345px]'
+                                className='lg:h-[500px] lg:w-[500px] h-[200px] -ml-[165px] lg:ml-[345px] rounded-sm absolute left-[345px]'
                                 src={shoe.image4}
                                 alt={shoe.model}
                             />
@@ -99,7 +99,7 @@ function WomenShoeDetail() {
 
                 <div>
                     <h2 className="text-3xl font-bold lg:w-[600px] w-80 lg:ml-[440px] ml-5 lg:mt-[130px] mt-10">{shoe.brand}</h2>
-                    <h2 className="text-2xl font-semibold lg:w-[500px] truncate w-72 lg:ml-[440px] ml-5">{shoe.model}</h2>
+                    <h2 className="text-2xl font-semibold lg:w-[500px] w-72 lg:ml-[440px] ml-5">{shoe.model}</h2>
 
                     <div className="flex font-semibold lg:ml-[440px] ml-5 lg:mt-7 mt-4">
                         <p className="text-gray-900 text-2xl">
@@ -179,7 +179,7 @@ function WomenShoeDetail() {
 
                     <div>
                         <h1 className='lg:ml-[440px] ml-5 mt-14 text-xl font-bold'>Teslimat Bilgisi</h1>
-                        <p className="text-gray-800 lg:ml-[440px] ml-5 mt-1 font-semibold underline">{shoe.title}</p>
+                        <p className="text-gray-800 lg:ml-[440px] ml-8 mt-1 font-semibold underline">{shoe.title}</p>
                     </div>
                 </div>
             </div>

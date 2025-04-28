@@ -49,23 +49,23 @@ function ManShoeList({ searchParams }) {
                 {filteredShoes.length} Ürün bulundu.
             </h2>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1 pl-2 -mb-16">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1 -mb-16">
                 {filteredShoes.map((shoe) => (
                     <Link
                         key={shoe.id}
                         to={`/Erkek-Ayakkabı/${shoe.id}-${slugify(shoe.brand, shoe.model)}`}
                     >
-                        <div className="">
+                        <div className="flex flex-col items-center">
 
-                            <img src={shoe.image1} alt={shoe.brand} className="lg:h-[400px] lg:w-[800px] h-[230px] object-cover rounded-xl mt-4 select-none" />
+                            <img src={shoe.image1} alt={shoe.brand} className="lg:h-[400px] lg:w-[800px] h-[220px] object-cover lg:rounded-xl mt-4 select-none" />
 
                             <div className='flex'>
 
-                                <div className='mt-3 lg:ml-8 ml-2.5'>
+                                <div className='mt-3'>
                                     <h1 className='h-10 w-10 text-center font-bold pt-2 bg-black text-white select-none'>%40</h1>
                                 </div>
 
-                                <div className="truncate lg:w-[260px] w-[130px] mt-2">
+                                <div className="truncate lg:w-[260px] w-[120px] mt-2">
                                     <h1 className="text-xl font-bold ml-2">{shoe.brand}</h1>
                                     <h1 className="text-lg font-semibold -mt-1.5 ml-2">{shoe.model}</h1>
                                 </div>
@@ -74,9 +74,9 @@ function ManShoeList({ searchParams }) {
 
                             <div className='flex'>
 
-                                <img className='h-12 w-12 lg:ml-7 ml-1.5 select-none' src={Cargo} alt="KargoBedava" />
+                                <img className='h-12 w-12 lg:-ml-[120px] select-none' src={Cargo} alt="KargoBedava" />
 
-                                <div className="ml-1 mt-2.5 flex">
+                                <div className="ml-0 lg:ml-2 mt-2.5 flex">
 
                                     <p className="text-gray-900 text-lg font-semibold">
                                         {shoe.price.toLocaleString('tr-TR')}₺
@@ -91,7 +91,7 @@ function ManShoeList({ searchParams }) {
                             </div>
 
                             <div className='mb-3'>
-                                <button className='h-10 lg:w-[300px] w-[170px] lg:ml-8 ml-2.5 mt-2 border-2 text-lg font-semibold rounded-sm border-black hover:bg-black hover:text-white duration-300'>Hemen İncele </button>
+                                <button className='h-10 lg:w-[300px] w-[165px] mt-2 ml-1 border-2 text-lg font-semibold rounded-sm border-black hover:bg-black hover:text-white duration-300'>Hemen İncele </button>
                             </div>
 
                         </div>
