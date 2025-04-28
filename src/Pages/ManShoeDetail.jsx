@@ -115,7 +115,7 @@ function ManShoeDetail() {
                     <div className="lg:ml-[440px] ml-5 mt-[30px]">
                         <h3 className="text-lg font-bold mb-2">Beden Seçiniz</h3>
                         <div className="flex flex-wrap gap-2 mt-3 font-semibold">
-                            {[36, 37, 38, 39, 40].map((size) => (
+                            {[40, 41, 42, 43, 44].map((size) => (
                                 <button
                                     key={size}
                                     onClick={() => setSelectedSize(size)}
