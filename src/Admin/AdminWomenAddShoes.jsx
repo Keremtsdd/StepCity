@@ -7,8 +7,6 @@ function AdminWomenAddShoes() {
         brand: '',
         model: '',
         price: '',
-        title: '',
-        cargo: '',
         image1: '',
         image2: '',
         image3: '',
@@ -93,30 +91,6 @@ function AdminWomenAddShoes() {
                             id="price"
                             name="price"
                             value={formData.price}
-                            onChange={handleChange}
-                            className="mt-2 p-2 w-full border border-gray-300 rounded-lg"
-                            required
-                        />
-                    </div>
-                    <div className="mb-2">
-                        <label htmlFor="title" className="block text-gray-700">Başlık</label>
-                        <input
-                            type="text"
-                            id="title"
-                            name="title"
-                            value={formData.title}
-                            onChange={handleChange}
-                            className="mt-2 p-2 w-full border border-gray-300 rounded-lg"
-                            required
-                        />
-                    </div>
-                    <div className="mb-2">
-                        <label htmlFor="cargo" className="block text-gray-700">Kargo</label>
-                        <input
-                            type="text"
-                            id="cargo"
-                            name="cargo"
-                            value={formData.cargo}
                             onChange={handleChange}
                             className="mt-2 p-2 w-full border border-gray-300 rounded-lg"
                             required

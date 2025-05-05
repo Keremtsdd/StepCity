@@ -9,8 +9,6 @@ function AdminManShoes() {
         brand: '',
         model: '',
         price: '',
-        title: '',
-        cargo: '',
         image1: '',
         image2: '',
         image3: '',
@@ -47,8 +45,6 @@ function AdminManShoes() {
             brand: shoe.brand,
             model: shoe.model,
             price: shoe.price,
-            title: shoe.title || '',
-            cargo: shoe.cargo || '',
             image1: shoe.image1 || '',
             image2: shoe.image2 || '',
             image3: shoe.image3 || '',
@@ -143,14 +139,6 @@ function AdminManShoes() {
                         <div className="mb-4">
                             <label htmlFor="price" className="block text-gray-700">Fiyat</label>
                             <input type="text" id="price" name="price" value={formData.price} onChange={handleChange} className="mt-2 p-2 w-full border border-gray-300 rounded-lg" required />
-                        </div>
-                        <div className="mb-4">
-                            <label htmlFor="title" className="block text-gray-700">Başlık</label>
-                            <input type="text" id="title" name="title" value={formData.title} onChange={handleChange} className="mt-2 p-2 w-full border border-gray-300 rounded-lg" required />
-                        </div>
-                        <div className="mb-4">
-                            <label htmlFor="cargo" className="block text-gray-700">Kargo</label>
-                            <input type="text" id="cargo" name="cargo" value={formData.cargo} onChange={handleChange} className="mt-2 p-2 w-full border border-gray-300 rounded-lg" required />
                         </div>
                         <div className="mb-4">
                             <label htmlFor="image1" className="block text-gray-700">Görsel 1</label>
