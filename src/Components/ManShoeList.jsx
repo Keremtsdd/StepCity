@@ -74,21 +74,27 @@ function ManShoeList({ searchParams }) {
 
                             <div className='flex'>
 
-                                <img className='h-12 w-12 lg:-ml-[120px] select-none' src={Cargo} alt="KargoBedava" />
+                                <img className='h-12 w-12 lg:-ml-[105px] select-none' src={Cargo} alt="KargoBedava" />
 
-                                <div className="ml-0 lg:ml-2 mt-2.5 flex">
+                                <div className='flex'>
 
-                                    <p className="text-gray-900 text-lg font-semibold">
-                                        {shoe.price.toLocaleString('tr-TR')}₺
-                                    </p>
+                                    <div className="ml-0 lg:ml-2 mt-2.5 flex">
 
-                                    <p className="text-gray-600 text-lg lg:ml-4 ml-1 line-through">
-                                        {(shoe.price * 1.4).toLocaleString('tr-TR')}₺
-                                    </p>
+                                        <p className="text-gray-900 text-lg font-semibold">
+                                            {shoe.price.toLocaleString('tr-TR')} ₺
+                                        </p>
+
+                                        <p className="text-gray-600 text-lg lg:ml-4 ml-1 line-through">
+                                            {(shoe.price * 1.4).toLocaleString('tr-TR')} ₺
+                                        </p>
+
+                                    </div>
 
                                 </div>
 
                             </div>
+
+
 
                             <div className='mb-3'>
                                 <button className='h-10 lg:w-[300px] w-[165px] mt-2 ml-1 border-2 text-lg font-semibold rounded-sm border-black hover:bg-black hover:text-white duration-300'>Hemen İncele </button>

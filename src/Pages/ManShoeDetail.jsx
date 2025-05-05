@@ -181,7 +181,7 @@ function ManShoeDetail() {
 
                     <div>
                         <h1 className='lg:ml-[440px] ml-5 mt-14 text-xl font-bold'>Teslimat Bilgisi</h1>
-                        <p className="text-gray-800 lg:ml-[440px] ml-8 mt-1 font-semibold underline">{shoe.title}</p>
+                        <p className="text-gray-800 lg:ml-[440px] ml-8 mt-1 font-semibold underline">Bu Sitedeki Tüm Ürünler Ücretsiz Kargo İle Gelmektedir.</p>
                     </div>
                 </div>
             </div>

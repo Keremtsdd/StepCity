@@ -29,7 +29,7 @@ function ShoeStore() {
         <>
             <Header />
 
-            <div className='p-4 lg:p-8 lg:mb-[300px] mb-40'>
+            <div className='p-4 lg:p-8 lg:mb-[150px] mb-40'>
                 <h2 className='text-3xl lg:text-4xl font-bold ml-8 lg:ml-72 mt-10 flex items-center'>
                     Alışveriş Sepetiniz <LocalGroceryStoreOutlinedIcon className="ml-2 lg:mt-3" style={{ width: "32px", height: "32px" }} />
                 </h2>

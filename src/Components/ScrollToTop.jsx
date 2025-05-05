@@ -27,12 +27,12 @@ function ScrollToTop() {
         isVisibility && (
             <motion.button
                 onClick={scrollToTop}
-                className="h-12 w-12 z-50 fixed bottom-7 right-7 border-2 rounded-full border-black shadow-lg hover:bg-black hover:text-white duration-300"
+                className="lg:h-14 lg:w-14 h-12 w-12  z-50 fixed bottom-7 right-7 rounded-full  shadow-lg bg-blue-600 text-white duration-300"
                 initial={{ opacity: 0, scale: 1 }}
                 animate={{ opacity: isVisibility ? 1 : 0, scale: isVisibility ? 1 : 0.5 }}
                 transition={{ duration: 1.2 }}
             >
-                <KeyboardDoubleArrowUpIcon size={24} color='black' className='' style={{ width: "27px", height: "27px" }} />
+                <KeyboardDoubleArrowUpIcon size={24} color='black' style={{ width: "30px", height: "30px" }} />
             </motion.button>
         )
     );

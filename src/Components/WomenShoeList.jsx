@@ -85,11 +85,11 @@ function WomenShoeList({ searchParams }) {
                                 <div className="ml-0 lg:ml-2 mt-2.5 flex">
 
                                     <p className="text-gray-900 text-lg font-semibold">
-                                        {shoe.price.toLocaleString('tr-TR')}₺
+                                        {shoe.price.toLocaleString('tr-TR')} ₺
                                     </p>
 
                                     <p className="text-gray-600 text-lg lg:ml-4 ml-1 line-through">
-                                        {(shoe.price * 1.4).toLocaleString('tr-TR')}₺
+                                        {(shoe.price * 1.4).toLocaleString('tr-TR')} ₺
                                     </p>
 
                                 </div>
