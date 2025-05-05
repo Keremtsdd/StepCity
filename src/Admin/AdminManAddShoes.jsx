@@ -11,7 +11,8 @@ function AdminManAddShoes() {
         image2: '',
         image3: '',
         image4: '',
-        shopierLink: ''
+        shopierLink: '',
+        gender: 'Men'
     });
 
     const handleChange = (e) => {
@@ -33,18 +34,16 @@ function AdminManAddShoes() {
         axios.post('http://localhost:5029/api/ManShoe', dataToSend)
             .then(response => {
                 alert('Yeni ayakkabı başarıyla eklendi!');
-
                 setFormData({
                     brand: '',
                     model: '',
                     price: '',
-                    title: '',
-                    cargo: '',
                     image1: '',
                     image2: '',
                     image3: '',
                     image4: '',
-                    shopierLink: ''
+                    shopierLink: '',
+                    gender: 'Men'
                 });
             })
             .catch(error => {
@@ -52,8 +51,9 @@ function AdminManAddShoes() {
                 alert('Bir hata oluştu. Lütfen tekrar deneyin.');
             });
     };
+
     return (
-        <div className="container mx-auto px-4 py-6 lg:w-[800px] w-full ">
+        <div className="container mx-auto px-4 py-6 lg:w-[800px] w-full">
             <h1 className="text-3xl font-bold mb-6 text-center text-gray-700">Yeni Ayakkabı Ekle</h1>
             <div className="bg-white p-6 rounded-lg shadow-lg">
                 <h2 className="text-xl font-semibold mb-4">Ayakkabı Bilgileri</h2>
@@ -94,7 +94,6 @@ function AdminManAddShoes() {
                             required
                         />
                     </div>
-
                     <div className="mb-2">
                         <label htmlFor="image1" className="block text-gray-700">Görsel 1</label>
                         <input
@@ -161,7 +160,7 @@ function AdminManAddShoes() {
                 </form>
             </div>
         </div>
-    )
+    );
 }
 
-export default AdminManAddShoes
+export default AdminManAddShoes;

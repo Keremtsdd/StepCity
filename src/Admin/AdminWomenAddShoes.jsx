@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-function AdminWomenAddShoes() {
+function AdminWomanAddShoes() {
 
     const [formData, setFormData] = useState({
         brand: '',
@@ -11,9 +11,9 @@ function AdminWomenAddShoes() {
         image2: '',
         image3: '',
         image4: '',
-        shopierLink: ''
+        shopierLink: '',
+        gender: 'Women'
     });
-
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -22,7 +22,6 @@ function AdminWomenAddShoes() {
             [name]: value
         });
     };
-
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -34,19 +33,17 @@ function AdminWomenAddShoes() {
 
         axios.post('http://localhost:5029/api/WomenShoe', dataToSend)
             .then(response => {
-                alert('Yeni ayakkabı başarıyla eklendi!');
-
+                alert('Yeni kadın ayakkabısı başarıyla eklendi!');
                 setFormData({
                     brand: '',
                     model: '',
                     price: '',
-                    title: '',
-                    cargo: '',
                     image1: '',
                     image2: '',
                     image3: '',
                     image4: '',
-                    shopierLink: ''
+                    shopierLink: '',
+                    gender: 'Women'
                 });
             })
             .catch(error => {
@@ -54,9 +51,10 @@ function AdminWomenAddShoes() {
                 alert('Bir hata oluştu. Lütfen tekrar deneyin.');
             });
     };
+
     return (
-        <div className="container mx-auto px-4 py-6 lg:w-[800px] w-full ">
-            <h1 className="text-3xl font-bold mb-6 text-center text-gray-700">Yeni Ayakkabı Ekle</h1>
+        <div className="container mx-auto px-4 py-6 lg:w-[800px] w-full">
+            <h1 className="text-3xl font-bold mb-6 text-center text-gray-700">Yeni Kadın Ayakkabısı Ekle</h1>
             <div className="bg-white p-6 rounded-lg shadow-lg">
                 <h2 className="text-xl font-semibold mb-4">Ayakkabı Bilgileri</h2>
                 <form onSubmit={handleSubmit}>
@@ -140,6 +138,7 @@ function AdminWomenAddShoes() {
                             className="mt-2 p-2 w-full border border-gray-300 rounded-lg"
                         />
                     </div>
+
                     <div className="mb-2">
                         <label htmlFor="shopierLink" className="block text-gray-700">Shopier Link</label>
                         <input
@@ -162,7 +161,7 @@ function AdminWomenAddShoes() {
                 </form>
             </div>
         </div>
-    )
+    );
 }
 
-export default AdminWomenAddShoes
+export default AdminWomanAddShoes;

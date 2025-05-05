@@ -13,7 +13,8 @@ function AdminWomenShoes() {
         image2: '',
         image3: '',
         image4: '',
-        shopierLink: ''
+        shopierLink: '',
+        gender: 'Women'  // Default olarak 'Women' olarak ayarladık
     });
 
     useEffect(() => {
@@ -49,7 +50,8 @@ function AdminWomenShoes() {
             image2: shoe.image2 || '',
             image3: shoe.image3 || '',
             image4: shoe.image4 || '',
-            shopierLink: shoe.shopierLink || ''
+            shopierLink: shoe.shopierLink || '',
+            gender: shoe.gender || 'Women'  // Gender bilgisini ekliyoruz
         });
     };
 
@@ -159,6 +161,19 @@ function AdminWomenShoes() {
                         <div className="mb-4">
                             <label htmlFor="shopierLink" className="block text-gray-700">Shopier Link</label>
                             <input type="text" id="shopierLink" name="shopierLink" value={formData.shopierLink} onChange={handleChange} className="mt-2 p-2 w-full border border-gray-300 rounded-lg" />
+                        </div>
+                        <div className="mb-4">
+                            <label htmlFor="gender" className="block text-gray-700">Cinsiyet</label>
+                            <select
+                                id="gender"
+                                name="gender"
+                                value={formData.gender}
+                                onChange={handleChange}
+                                className="mt-2 p-2 w-full border border-gray-300 rounded-lg"
+                            >
+                                <option value="Women">Kadın</option>
+
+                            </select>
                         </div>
                         <div className="mt-6">
                             <button type="submit" className="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600">
