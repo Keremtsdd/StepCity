@@ -25,7 +25,7 @@ import PrivateRoute from './Components/PrivateRoute';
 function App() {
 
   const location = useLocation();
-  const isAdminRoute = location.pathname.startsWith('/Admin') && location.pathname !== '/AdminLogin';
+  const isAdminRoute = location.pathname.startsWith('/Admin');
 
   return (
     <>
