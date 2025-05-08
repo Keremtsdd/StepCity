@@ -15,38 +15,34 @@ function Footer() {
     return (
         <footer>
 
-            <div className='flex flex-col lg:flex-row'>
+            <div className='flex flex-col lg:flex-row '>
 
+                <div className='relative w-full lg:h-[450px] lg:w-[800px] bg-black lg:border-r-2 border-white flex flex-col items-center justify-center text-center'>
+                    <img className='h-72 w-72 select-none' src={logo} alt="StepCityLogo" />
+                    <p className='text-white/90 -mt-14 font-mono text-center'>Adım Attıkça Farkı Hissedin!</p>
 
-                <div className='relative w-full lg:h-[450px] lg:w-[800px] bg-black lg:border-r-2 border-white'>
-
-                    <img className='h-72 w-72 ml-[60px] lg:ml-[140px]  select-none' src={logo} alt="StepCityLogo" />
-                    <p className='text-white/90 ml-[80px] lg:ml-[160px] -mt-14 font-mono'>Adım Attıkça Farkı Hissedin!</p>
-
-                    <div className="flex items-center space-x-5 mt-7 ml-[140px] lg:ml-[215px] text-white ">
-
+                    <div className="flex items-center space-x-5 mt-7 text-white">
                         <Link to={"https://www.instagram.com/stepcitytr/"} target='_blank'>
                             <InstagramIcon style={{ width: "32px", height: "32px" }} />
                         </Link>
-
                         <Link to={"https://www.tiktok.com/@stepcityy?_t=ZS-8vQGDbr3YiA&_r=1"} target='_blank'>
                             <SiTiktok style={{ width: "25px", height: "25px" }} />
                         </Link>
-
                         <Link to={"https://wa.me/905363956847"} target='_blank'>
                             <WhatsAppIcon style={{ width: "32px", height: "32px" }} />
                         </Link>
-
                     </div>
 
                     <span className='h-0.5 w-full rounded-sm bg-white block mt-14'></span>
-                    <p className="mt-6 mb-6 text-sm text-center text-white"><CopyrightIcon style={{ width: "17px", height: "17px" }} className='mb-0.5' /> 2025 <span className='font-semibold'>StepCity.</span> Tüm Hakları Saklıdır.</p>
-
+                    <p className="mt-6 mb-6 text-sm text-white">
+                        <CopyrightIcon style={{ width: "17px", height: "17px" }} className='mb-0.5' />
+                        2025 <span className='font-semibold'>StepCity.</span> Tüm Hakları Saklıdır.
+                    </p>
                 </div>
 
-                <div className='h-[1100px] lg:h-[450px] md:w-full lg:w-full sm:w-full bg-black sm:flex md:flex'>
+                <div className='h-[1150px] lg:h-[450px] md:w-full lg:w-full sm:w-full bg-black sm:flex md:flex flex flex-col sm:flex-row '>
 
-                    <div className='text-white ml-20 mt-5 text-lg '>
+                    <div className='text-white ml-[20%] lg:ml-20 mt-5 text-lg '>
 
                         <h1 className='text-white font-semibold text-2xl mt-16'>Kategoriler</h1>
 
@@ -60,7 +56,7 @@ function Footer() {
 
                     </div>
 
-                    <div className='text-white ml-20 mt-5  text-lg '>
+                    <div className='text-white ml-[20%] lg:ml-20 mt-5  text-lg '>
 
                         <h1 className='text-white font-semibold text-2xl mt-16 '>Markalar</h1>
 
@@ -77,7 +73,7 @@ function Footer() {
 
                     </div>
 
-                    <div className='text-white ml-20 mt-5  text-lg '>
+                    <div className='text-white ml-[20%] lg:ml-20 mt-5  text-lg '>
 
                         <h1 className='text-white font-semibold text-2xl mt-16 '>İletişim</h1>
 
