@@ -7,7 +7,7 @@ Açıklama ;
 
 ● Frontend: React, JavaScript, HTML, CSS, TailwindCSS
 
-● Backend: Web API
+● Backend: Web API , MS-SQL Server
 
 ● Ödeme Sistemi: Shopier entegrasyonu
 
