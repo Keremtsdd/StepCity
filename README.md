@@ -30,3 +30,20 @@ Açıklama ;
 ● Çoklu sayfa yapısı ve modern gezinme
 
 ● Kolay yönetilebilir, ölçeklenebilir altyapı
+
+⚙️ Kurulum ve Çalıştırma
+
+### Projeyi kendi bilgisayarınızda çalıştırmak için:
+
+```bash
+# Repoyu klonlayın
+git clone https://github.com/Keremtsdd/StepCity.git
+```
+```bash
+# Gerekli bağımlılıkları yükleyin
+npm install
+```
+```bash
+# Projeyi çalıştırın
+npm start
+```
