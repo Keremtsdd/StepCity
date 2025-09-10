@@ -1,9 +1,9 @@
-StepCity – Ayakkabı Satış E-Ticaret Sitesi
+## Ayakkabı Satış E-Ticaret Sitesi
 
 Açıklama ;
 ● StepCity, ayakkabıların satışına odaklanan bir e-ticaret web sitesidir. Kullanıcı dostu arayüzü, gelişmiş filtreleme seçenekleri ve entegre ödeme sistemi ile kolay ve güvenli bir alışveriş deneyimi sunar.
 
-→ Kullanılan Teknolojiler:
+### → Kullanılan Teknolojiler:
 
 ● Frontend: React, JavaScript, HTML, CSS, TailwindCSS
 
@@ -15,7 +15,7 @@ Açıklama ;
 
 ● Tasarım: Responsive ve mobil uyumlu yapı
 
-→ Öne Çıkan Özellikler:
+### → Öne Çıkan Özellikler:
 
 ● Dinamik ürün listeleme , detay sayfası ve Sepet Sistemi
 
